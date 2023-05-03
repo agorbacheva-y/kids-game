@@ -104,3 +104,5 @@ const Register = () => {
 };
 
 export default Register;
+
+// input not showing what user types is
