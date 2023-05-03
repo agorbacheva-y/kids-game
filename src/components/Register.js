@@ -1,7 +1,7 @@
 const Register = () => {
   return (
     <div className="container">
-      register user
+      register user page
     </div>
   );
 };
