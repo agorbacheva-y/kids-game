@@ -5,11 +5,12 @@ const Home = () => {
   return (
     <div>
       <h1>Home</h1>
-      <Button size="lg" variant="primary">
-        <Link to="/register">Create new user</Link>
+      <Button size="lg">
+        Create new user
+        <Link to="/register" />
       </Button>
 
-      <Button size="sm">Log in</Button>
+      <Button size="lg">Log in</Button>
     </div>
   );
 };
