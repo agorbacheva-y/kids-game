@@ -18,15 +18,15 @@ const Register = () => {
   // function when submitting register form
   const handleSubmit = async () => {
     const user = await axios
-    .get("/users") //get users from database
-    .then((res) => checkEmail(res.data, user.email)); //check from results if email already exists
+      .get("/users") //get users from database
+      .then((res) => checkEmail(res.data, email)); //check from results if email already exists
 
     if (user) {
       alert("User alerady exists");
     } else {
-      const user = {myName, email, username, password};
+      const user = { myName, email, username, password };
       axios.post("/users", user)
-      .then(alert("New user created!"));
+        .then(alert("New user created!"));
     }
   };
 
@@ -34,7 +34,7 @@ const Register = () => {
     <div className="container">
       <Card>
         <form>
-          <h1>Register user</h1>
+          <h1>Register User</h1>
           <label>
             <input
               type="text"
