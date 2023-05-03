@@ -3,62 +3,44 @@ import { useState } from "react";
 import axios from "axios";
 
 const Register = () => {
-  // create state for holding user's name, email, username, password
-  const [ user, setUser ] = useState({
-    yourName: "",
-    email: "",
-    username: "",
-    password: "",
-    id: null
-  });
-
-  // state for storing users in array
-  const [ newUser, setNewUsers ] = useState([]);
+  // create states for holding user's name, email, username, password
+  const [ myName, setMyName ] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ username, setUsername ] = useState("");
+  const [ password, setPassword ] = useState("");
 
   // helper function used in submit function to check if email is already registered
   const checkEmail = (users) => {
-    const user = users.find((user) => user.email === user.email);
+    const user = users.find((user) => user.email === email);
     if (user) return user;
   };
 
-  // function when clicking register button
-  const handleSubmit = (e) => {
-    const name = e.target.value;
-    const value = e.target.value;
+  // function when submitting register form
+  const handleSubmit = async () => {
+    const user = await axios
+    .get("/users") //get users from database
+    .then((res) => checkEmail(res.data, user.email)); //check from results if email already exists
 
-    // const newUser = await axios
-    // .get("/users")
-    // .then((res) => checkEmail(res.data, user.email));
-
-    // if (user) {
-    //   alert("User alerady exists");
-    // } else {
-     // const user = {...user};
-      // axios.post("/users", user)
-      // .then(alert("New user created!"));
-
-
-    console.log("name: "+name, "value: "+value);
-    
-    setUser({...user, [name]:value});
-
-    // const user = { ...user };
-    // axios.post("/users", user)
-    // .then(alert("New user registered!"));
-  }
+    if (user) {
+      alert("User alerady exists");
+    } else {
+      const user = {myName, email, username, password};
+      axios.post("/users", user)
+      .then(alert("New user created!"));
+    }
+  };
 
   return (
     <div className="container">
       <Card>
-        <form onSubmit={handleSubmit}>
+        <form>
           <h1>Register user</h1>
           <label>
             <input
               type="text"
               placeholder="Name"
-              name="yourName"
-              value={user.yourName}
-              onChange={handleSubmit}
+              value={myName}
+              onChange={(e) => setMyName(e.target.value)}
             />
           </label>
 
@@ -66,9 +48,8 @@ const Register = () => {
             <input
               type="text"
               placeholder="Email"
-              name="email"
-              value={user.email}
-              onChange={handleSubmit}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </label>
 
@@ -76,9 +57,8 @@ const Register = () => {
             <input
               type="text"
               placeholder="Username"
-              name="username"
-              value={user.username}
-              onChange={handleSubmit}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </label>
 
@@ -86,15 +66,14 @@ const Register = () => {
             <input
               type="password"
               placeholder="Password"
-              name="password"
-              value={user.password}
-              onChange={handleSubmit}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </label>
 
           <button
             type="submit"
-            
+            onSubmit={handleSubmit}
             >Submit
           </button>
         </form>
@@ -104,5 +83,3 @@ const Register = () => {
 };
 
 export default Register;
-
-// input not showing what user types is
