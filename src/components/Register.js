@@ -1,6 +1,8 @@
 const Register = () => {
   return (
-    <div>register user</div>
+    <div className="container">
+      register user
+    </div>
   );
 };
 

@@ -3,15 +3,19 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <Button size="lg">
-        Create new user
-        <Link to="/register" />
-      </Button>
+    <>
+      <div className="container">
+        <h1>Home</h1>
+      </div>
 
-      <Button size="lg">Log in</Button>
-    </div>
+      <div className="btnContainer">
+        <Button size="lg">
+          <Link to="/register" className="btn">Create new user</Link>
+        </Button>
+
+        <Button size="lg">Log in</Button>
+      </div>
+    </>
   );
 };
 
