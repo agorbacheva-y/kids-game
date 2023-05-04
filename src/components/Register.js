@@ -11,8 +11,8 @@ const Register = () => {
 
   // helper function used in submit function to check if email is already registered
   const checkEmail = (users) => {
-    const user = users.find((user) => user.email === email);
-    if (user) return user;
+    const user = user.find((users) => user.email === email);
+    if (users) return user;
   };
 
   // function when submitting register form
@@ -33,7 +33,7 @@ const Register = () => {
   return (
     <div className="container">
       <Card>
-        <form>
+        <form onSubmit={handleSubmit}>
           <h1>Register User</h1>
           <label>
             <input
@@ -73,7 +73,7 @@ const Register = () => {
 
           <button
             type="submit"
-            onSubmit={handleSubmit}
+            // onClick={handleSubmit}
             >Submit
           </button>
         </form>

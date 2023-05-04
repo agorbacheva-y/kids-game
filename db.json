@@ -6,6 +6,20 @@
       "username": "test1",
       "password": "abcd",
       "id": 1
+    },
+    {
+      "myName": "a",
+      "email": "a",
+      "username": "a",
+      "password": "a",
+      "id": 2
+    },
+    {
+      "myName": "userA",
+      "email": "user@gmail.com",
+      "username": "user1",
+      "password": "abcde",
+      "id": 3
     }
   ]
 }
