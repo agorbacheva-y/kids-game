@@ -11,8 +11,8 @@ const Register = () => {
 
   // helper function used in submit function to check if email is already registered
   const checkEmail = (users) => {
-    const user = user.find((users) => user.email === email);
-    if (users) return user;
+    const user = users.find((user) => user.email === email);
+    if (user) return user;
   };
 
   // function when submitting register form
@@ -25,8 +25,10 @@ const Register = () => {
       alert("User alerady exists");
     } else {
       const user = { myName, email, username, password };
+      console.log(user);
       axios.post("/users", user)
         .then(alert("New user created!"));
+      
     }
   };
 
