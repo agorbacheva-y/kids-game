@@ -12,14 +12,15 @@ const Register = () => {
   // helper function used in submit function to check if email is already registered
   const checkEmail = (users) => {
     const user = users.find((user) => user.email === email);
-    if (user) return user;
+    if (users) return user;
   };
 
   // function when submitting register form
-  const handleSubmit = async () => {
-    const user = await axios
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let user = await axios
       .get("/users") //get users from database
-      .then((res) => checkEmail(res.data, email)); //check from results if email already exists
+      .then((res) => checkEmail(res.data)); //check from results if email already exists
 
     if (user) {
       alert("User alerady exists");
@@ -28,14 +29,13 @@ const Register = () => {
       console.log(user);
       axios.post("/users", user)
         .then(alert("New user created!"));
-      
     }
   };
 
   return (
     <div className="container">
       <Card>
-        <form onSubmit={handleSubmit}>
+        <form>
           <h1>Register User</h1>
           <label>
             <input
@@ -75,7 +75,7 @@ const Register = () => {
 
           <button
             type="submit"
-            // onClick={handleSubmit}
+            onClick={handleSubmit}
             >Submit
           </button>
         </form>

@@ -8,11 +8,25 @@
       "id": 1
     },
     {
-      "myName": "usera",
+      "myName": "userA",
       "email": "usera@gmail.com",
-      "username": "usera",
+      "username": "userA",
       "password": "aaaa",
       "id": 2
+    },
+    {
+      "myName": "userB",
+      "email": "userb@gmail.com",
+      "username": "userB",
+      "password": "bbbb",
+      "id": 3
+    },
+    {
+      "myName": "userC",
+      "email": "userc@email.com",
+      "username": "userC",
+      "password": "cccc",
+      "id": 4
     }
   ]
 }
