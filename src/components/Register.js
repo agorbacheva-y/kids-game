@@ -1,4 +1,6 @@
 import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import axios from "axios";
 
@@ -35,50 +37,58 @@ const Register = () => {
   return (
     <div className="container">
       <Card>
-        <form>
+        <Form>
           <h1>Register User</h1>
-          <label>
-            <input
-              type="text"
-              placeholder="Name"
-              value={myName}
-              onChange={(e) => setMyName(e.target.value)}
-            />
-          </label>
+          <Form.Group controlId="formBasicName">
+            <Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Name"
+                value={myName}
+                onChange={(e) => setMyName(e.target.value)}
+              />
+            </Form.Label>
+          </Form.Group>
 
-          <label>
-            <input
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Label>
+          </Form.Group>
 
-          <label>
-            <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </label>
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </Form.Label>
+          </Form.Group>
 
-          <label>
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Label>
+          </Form.Group>
 
-          <button
+          <Button
             type="submit"
             onClick={handleSubmit}
             >Submit
-          </button>
-        </form>
+          </Button>
+        </Form>
       </Card>
     </div>
   );
