@@ -1,8 +1,6 @@
-import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import axios from "axios";
+import RegisterForm from "./RegisterForm";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -50,60 +48,7 @@ const Register = () => {
 
   return (
     <div className="container">
-      <Card>
-        <Form>
-          <h1>Register User</h1>
-          <Form.Group controlId="formBasicName">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Name"
-                value={myName}
-                onChange={(e) => setMyName(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
-
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
-
-          <Form.Group controlId="formBasicUsername">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
-
-          <Form.Group controlId="formBasicUsername">
-            <Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
-
-          <Button
-            type="submit"
-            onClick={handleSubmit}
-            >Submit
-          </Button>
-        </Form>
-      </Card>
+      <RegisterForm myName={myName} email={email} username={username} password={password} />
     </div>
   );
 };
