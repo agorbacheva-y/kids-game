@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Register = () => {
@@ -86,7 +87,7 @@ const Register = () => {
             </Form.Label>
           </Form.Group>
 
-          <Form.Group controlId="formBasicUsername">
+          <Form.Group controlId="formBasicPassword">
             <Form.Label>
               <Form.Control
                 type="password"
@@ -104,6 +105,10 @@ const Register = () => {
           </Button>
         </Form>
       </Card>
+
+      <Button size="lg">
+          <Link to="/mainmenu" className="btn">Start Game</Link>
+      </Button>
     </div>
   );
 };
