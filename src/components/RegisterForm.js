@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const RegisterForm = ({ myName, setMyName, email, setEmail, username, setUsername, password, setPassword, handleSubmit }) => {
+const RegisterForm = ({ newUser, handleChange, handleSubmit }) => {
   return (
     <Card>
       <Form>
@@ -12,8 +12,9 @@ const RegisterForm = ({ myName, setMyName, email, setEmail, username, setUsernam
             <Form.Control
               type="text"
               placeholder="Name"
-              value={myName}
-              onChange={(e) => setMyName(e.target.value)}
+              name="myName"
+              defaultValue={newUser.myName}
+              onChange={handleChange}
             />
           </Form.Label>
         </Form.Group>
@@ -23,8 +24,9 @@ const RegisterForm = ({ myName, setMyName, email, setEmail, username, setUsernam
             <Form.Control
               type="text"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              defaultValue={newUser.email}
+              onChange={handleChange}
             />
           </Form.Label>
         </Form.Group>
@@ -34,8 +36,9 @@ const RegisterForm = ({ myName, setMyName, email, setEmail, username, setUsernam
             <Form.Control
               type="text"
               placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              name="username"
+              defaultValue={newUser.username}
+              onChange={handleChange}
             />
           </Form.Label>
         </Form.Group>
@@ -45,8 +48,9 @@ const RegisterForm = ({ myName, setMyName, email, setEmail, username, setUsernam
             <Form.Control
               type="password"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              defaultValue={newUser.password}
+              onChange={handleChange}
             />
           </Form.Label>
         </Form.Group>

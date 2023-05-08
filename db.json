@@ -23,16 +23,16 @@
     },
     {
       "myName": "userC",
-      "email": "userc@email.com",
+      "email": "userc@gmail.com",
       "username": "userC",
-      "password": "cccc",
+      "password": "ccccc",
       "id": 4
     },
     {
       "myName": "userD",
       "email": "userd@gmail.com",
       "username": "userD",
-      "password": "dddd",
+      "password": "ddddd",
       "id": 5
     }
   ]
