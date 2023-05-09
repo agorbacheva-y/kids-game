@@ -1,6 +1,5 @@
-const Message = () => {
-    return <span>Hello, world!</span>
-    
+const Message = ({greet, who}) => {
+    return <span>{greet}, {who}</span>;
 };
 
 export default Message;
