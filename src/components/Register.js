@@ -23,19 +23,15 @@ const Register = () => {
   // function when submitting register form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //e.stopPropagation();
 
-      // helper function used in submit function to check if email is already registered
-      let user = {};
-    
-      const checkEmail = (users) => {
-      user = users.find((user) => user.email === newUser.email);
-      if (users) return user;
+    // helper function used in submit function to check if email is already registered
+    let user = {};
+  
+    const checkEmail = (users) => {
+    user = users.find((user) => user.email === newUser.email);
+    if (users) return user;
     };
-
-    if (newUser.myName === "" || newUser.email === "" || newUser.username === "" || newUser.password === "") {
-      alert("All fields are required");
-      return user;
-    }
 
     user = await axios
       .get("/users") //get users from database
@@ -46,6 +42,8 @@ const Register = () => {
 
     if (user) {
       alert("User alerady exists");
+    } else if (newUser.myName === "" || newUser.email === "" || newUser.username === "" || newUser.password === "") {
+      alert("All fields are required");
     } else {
       const user = { ...newUser };
       console.log(user);
@@ -53,7 +51,10 @@ const Register = () => {
         .then(alert("New user created!"));
     }
 
+    // !! clear form not working...
     setNewUser({ myName:"", email:"", username:"", password:"" });
+
+    setNewUser({});
   };
 
   return (

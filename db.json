@@ -18,22 +18,13 @@
       "myName": "userB",
       "email": "userb@gmail.com",
       "username": "userB",
-      "password": "bbbb",
+      "password": "bbbbb",
       "id": 3
     },
     {
-      "myName": "userC",
+      "password": "cccc",
       "email": "userc@gmail.com",
-      "username": "userC",
-      "password": "ccccc",
       "id": 4
-    },
-    {
-      "myName": "userD",
-      "email": "userd@gmail.com",
-      "username": "userD",
-      "password": "ddddd",
-      "id": 5
     }
   ]
 }
