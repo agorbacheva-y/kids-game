@@ -26,21 +26,21 @@ const Register = () => {
     //e.stopPropagation();
 
     // helper function used in submit function to check if email is already registered
-    let user = {};
+    //let user = {};
   
     const checkEmail = (users) => {
-    user = users.find((user) => user.email === newUser.email);
-    if (users) return user;
+    newUser = users.find((newUser) => newUser.email === newUser.email);
+    if (users) return newUser;
     };
 
-    user = await axios
+    newUser = await axios
       .get("/users") //get users from database
       .then((res) => checkEmail(res.data)) //check from results if email already exists
       .catch((error) => {
         console.log(error);
       });
 
-    if (user) {
+    if (newUser) {
       alert("User alerady exists");
     } else if (newUser.myName === "" || newUser.email === "" || newUser.username === "" || newUser.password === "") {
       alert("All fields are required");

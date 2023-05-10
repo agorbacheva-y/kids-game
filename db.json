@@ -22,8 +22,10 @@
       "id": 3
     },
     {
-      "password": "cccc",
+      "myName": "userC",
       "email": "userc@gmail.com",
+      "username": "userC",
+      "password": "cccc",
       "id": 4
     }
   ]
