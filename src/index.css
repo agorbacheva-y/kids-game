@@ -39,20 +39,17 @@ body {
 
 .svg-boy {
   position: relative;
-  border: 1px solid blue;
   width: 560px;
   height: 850px;
 }
 
 .svg-overlay {
   position: absolute;
-  border: 1px solid red;
   width: 560px;
   height: 850px;
 }
 
 .svg-click {
-  fill: green;
-  opacity: 0.5;
+  fill: transparent;
   cursor: pointer;
 }

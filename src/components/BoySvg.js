@@ -17,43 +17,27 @@ const BoySvg = () => {
           y="0"
         >
           <a className="svg-click">
-            <rect 
-              x="210" 
-              y="300" 
-              width="550" 
-              height="300" 
-              onClick={() => alert("face")}
-            />
+            <ellipse cx="490" cy="445" rx="275" ry="165" onClick={() => alert("face")} />
           </a> 
 
           <a className="svg-click">
-            <rect 
-              x="360" 
-              y="600" 
-              width="295" 
-              height="420" 
-              onClick={() => alert("body")}
-            />
+            <rect x="360" y="600" width="295" height="420" onClick={() => alert("body")} />
           </a>    
 
           <a className="svg-click">
-            <rect 
-              x="80" 
-              y="665" 
-              width="140" 
-              height="140" 
-              onClick={() => alert("left hand")}
-            />
+            <circle cx="150" cy="740" r="80" onClick={() => alert("left hand")} />
           </a> 
 
           <a className="svg-click">
-            <rect 
-              x="790" 
-              y="645" 
-              width="140" 
-              height="140" 
-              onClick={() => alert("right hand")}
-            />
+            <circle cx="850" cy="710" r="80" onClick={() => alert("right hand")} />
+          </a> 
+
+          <a className="svg-click">
+            <ellipse cx="400" cy="1240" rx="80" ry="30" onClick={() => alert("left foot")} />
+          </a> 
+
+          <a className="svg-click">
+            <ellipse cx="630" cy="1240" rx="80" ry="30" onClick={() => alert("right foot")} />
           </a> 
 
         </svg>
@@ -61,7 +45,3 @@ const BoySvg = () => {
   );
 };
 export default BoySvg;
-
-/*
-
-*/
