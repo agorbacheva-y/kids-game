@@ -11,36 +11,34 @@ const Register = () => {
     password: ""
   });
 
+  // function to get values from input in Form 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
-    // console.log("name: " + name, "value: " + value);
+    console.log("name: " + name, "value: " + value);
 
     setNewUser({ ...newUser, [name]:value })
   }
 
+  // helper function used in submit function to check if email is already registered
+  const checkEmail = (users) => {
+    const user = users.find((user) => user.email === newUser.email);
+    if (user) return user;
+  };
+
   // function when submitting register form
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //e.stopPropagation();
 
-    // helper function used in submit function to check if email is already registered
-    //let user = {};
-  
-    const checkEmail = (users) => {
-    newUser = users.find((newUser) => newUser.email === newUser.email);
-    if (users) return newUser;
-    };
-
-    newUser = await axios
+    const user = await axios
       .get("/users") //get users from database
       .then((res) => checkEmail(res.data)) //check from results if email already exists
       .catch((error) => {
-        console.log(error);
+        console.log(error.response.data);
       });
 
-    if (newUser) {
+    if (user) {
       alert("User alerady exists");
     } else if (newUser.myName === "" || newUser.email === "" || newUser.username === "" || newUser.password === "") {
       alert("All fields are required");

@@ -20,13 +20,6 @@
       "username": "userB",
       "password": "bbbbb",
       "id": 3
-    },
-    {
-      "myName": "userC",
-      "email": "userc@gmail.com",
-      "username": "userC",
-      "password": "cccc",
-      "id": 4
     }
   ]
 }
