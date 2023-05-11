@@ -12,6 +12,9 @@ const Register = () => {
   const [ username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
 
+  // state for disabled status of start game button
+  const [ disabled, setDisabled ] = useState(false);
+
   // helper function used in submit function to check if email is already registered
   const checkEmail = (users) => {
     const user = users.find((user) => user.email === email);
@@ -47,6 +50,11 @@ const Register = () => {
     setEmail("");
     setUsername("");
     setPassword("");
+
+    // callback set disabled to true
+    const onClick = () => {
+      setDisabled(true);
+    };
   };
 
   return (
@@ -106,7 +114,7 @@ const Register = () => {
         </Form>
       </Card>
 
-      <Button size="lg">
+      <Button size="lg" disabled={disabled} onClick={onClick}>
           <Link to="/mainmenu" className="btn">Start Game</Link>
       </Button>
     </div>
