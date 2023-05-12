@@ -1,7 +1,6 @@
 import Boy from "../images/Boy.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Confetti from "react-confetti";
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -16,7 +15,6 @@ const BoySvg = () => {
     console.log("count: " + count);
 
     if (count > 2) {
-      <Confetti />;
       navigate('/mainmenu', { replace:true });
     }
   };
