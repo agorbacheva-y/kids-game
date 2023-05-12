@@ -1,18 +1,22 @@
 import Boy from "../images/Boy.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Confetti from "react-confetti";
 
 const BoySvg = () => {
   // state to hold count of clicks
   let [ count, setCount ] = useState(null);
+
+  // useNavigate to route to main menu after 5 clicks
   const navigate = useNavigate();
 
   const handleClick = () => {
-
+    // count number of clicks
     setCount(count += 1);
     console.log("count: " + count);
 
-    if (count > 5) {
+    if (count > 2) {
+      <Confetti />;
       navigate('/mainmenu', { replace:true });
     }
   };
@@ -60,3 +64,5 @@ const BoySvg = () => {
   );
 };
 export default BoySvg;
+
+// Confetti won't fire when placed in if statement
