@@ -51,10 +51,6 @@ const Register = () => {
     setUsername("");
     setPassword("");
 
-    // callback set disabled to true
-    const onClick = () => {
-      setDisabled(true);
-    };
   };
 
   return (
@@ -114,7 +110,7 @@ const Register = () => {
         </Form>
       </Card>
 
-      <Button size="lg" disabled={disabled} onClick={onClick}>
+      <Button size="lg">
           <Link to="/mainmenu" className="btn">Start Game</Link>
       </Button>
     </div>
@@ -122,3 +118,5 @@ const Register = () => {
 };
 
 export default Register;
+
+// start game button will move to main menu page once it is created
