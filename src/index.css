@@ -53,3 +53,9 @@ body {
   fill: transparent;
   cursor: pointer;
 }
+
+.svg-click:hover {
+  stroke: blue;
+  stroke-width: 0.5rem;
+  opacity: 0.5;
+}
