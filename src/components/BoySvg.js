@@ -1,13 +1,20 @@
 import Boy from "../images/Boy.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const BoySvg = () => {
   // state to hold count of clicks
   let [ count, setCount ] = useState(null);
+  const navigate = useNavigate();
 
   const handleClick = () => {
+
     setCount(count += 1);
     console.log("count: " + count);
+
+    if (count > 5) {
+      navigate('/mainmenu', { replace:true });
+    }
   };
 
   const handleAlert = (bodyPart) => {
