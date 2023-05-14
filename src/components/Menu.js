@@ -1,9 +1,9 @@
 import ReusableButton from "./ReusableButton";
+import { useHistory } from "react-router-dom";
+import Home from "./Home";
 
 
 const Menu = () => {
-
-
     return (
      <div className="container"> 
         <h1>Choose a Game</h1>
@@ -12,7 +12,7 @@ const Menu = () => {
       <ReusableButton>Drag & drop</ReusableButton>
 
       <br></br>
-      <ReusableButton>Logout</ReusableButton>
+      <ReusableButton onClick={handleLogout}>Logout</ReusableButton>
      </div>
     );
 };
