@@ -1,8 +1,8 @@
 import Boy from "../images/Boy.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import FinishGame from "./FinishGame";
 import Modal from "./Modal";
+import Confetti from "react-confetti";
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -11,16 +11,15 @@ const BoySvg = () => {
   // state for modal open and close
   const [ status, setStatus ] = useState(false);
 
-  // useNavigate to route to main menu after 5 clicks
-  const navigate = useNavigate();
-
   const handleClick = () => {
     // count number of clicks
     setCount(count += 1);
     console.log("count: " + count);
 
     if (count > 2) {
+      // set modal state to true after x clicks
       setStatus(true);
+      setCount(0);
       // return to main menu after x clicks
       // navigate('/mainmenu', { replace:true });
     }
@@ -74,16 +73,15 @@ const BoySvg = () => {
         </svg>
       </div>
 
-      <div>
+      <div className="container">
       {status && (
         // set state to false when click on close icon
         <Modal close={() => setStatus(false)}>
           <div className="container">
-            <p>This is the modal</p>
+            <p>Congratulations! You've finished the game!</p>
           </div>
+          <Confetti />
         </Modal>
-        // set state to true after ...
-        
       )}
       </div>
     </>
