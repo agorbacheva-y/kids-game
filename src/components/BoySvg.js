@@ -89,12 +89,11 @@ const BoySvg = () => {
       </div>
 
       <div className="container">
-        
         {status && (
           // set state to false when click on close icon
           <Modal close={() => setStatus(false)}>
-              <p>Congratulations! You've finished the game!</p>
-              <div className="finish-overlay"><Confetti /></div>
+            <div className="finish-overlay"><Confetti /></div>
+            <p>Congratulations! You've finished the game!</p>
           </Modal>
         )}
       </div>
