@@ -53,8 +53,13 @@ const BoySvg = () => {
     console.log("count: " + count);
 
     if (count > 5) {
-      // set modal state to true after x clicks
-      setStatus(true);
+      // wait 3 secs before finish modal appears
+      document.addEventListener('click', function() {
+        setTimeout(function() {
+          setStatus(true)
+        }, 3000 );
+      });
+        
       setCount(0);
     }
   };
