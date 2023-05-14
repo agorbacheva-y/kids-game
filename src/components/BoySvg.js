@@ -22,7 +22,7 @@ const BoySvg = () => {
     setCount(count += 1);
     console.log("count: " + count);
 
-    if (count > 1) {
+    if (count > 5) {
       // set modal state to true after x clicks
       setStatus(true);
       setCount(0);
