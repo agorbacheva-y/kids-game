@@ -3,6 +3,7 @@ import Boy from "../images/Boy.svg";
 import Modal from "./Modal";
 import Confetti from "react-confetti";
 import { Link } from "react-router-dom";
+import BodyPartModal from "./BodyPartModal";
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -11,9 +12,14 @@ const BoySvg = () => {
   // state for modal open and close
   const [ status, setStatus ] = useState(false);
 
+  // state for body part open and close
+  const [ modalStatus, setModalStatus ] = useState(false);
+
   // function for alert when click on body part
-  const handleAlert = (bodyPart) => {
-    alert(bodyPart);
+  const handleAlert = () => {
+    b0d7
+    //alert(bodyPart);
+    setModalStatus(true);
   };
 
   // function to show modal at completion of game
@@ -41,7 +47,7 @@ const BoySvg = () => {
           y="0"
         >
           <a className="svg-click">
-            <ellipse cx="490" cy="445" rx="275" ry="165" onClick={() => {handleClick(); handleAlert("face")}} />
+            <ellipse cx="490" cy="445" rx="275" ry="165" onClick={() => {handleClick(); handleAlert("face") }} />
           </a> 
 
           <a className="svg-click">
@@ -65,6 +71,16 @@ const BoySvg = () => {
           </a> 
 
         </svg>
+      </div>
+
+      <div className="container">
+        {modalStatus && (
+          <BodyPartModal close={() => setModalStatus(false)}>
+            <div className="container">
+              <p>{bodyPart}</p>
+            </div>
+          </BodyPartModal>
+        )}
       </div>
 
       <div className="container">
