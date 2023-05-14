@@ -1,9 +1,8 @@
 import Boy from "../images/Boy.svg";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import Confetti from "react-confetti";
-import useWindowSize from 'react-use/lib/useWindowSize'
+import { Link } from "react-router-dom";
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -27,22 +26,8 @@ const BoySvg = () => {
       // set modal state to true after x clicks
       setStatus(true);
       setCount(0);
-      // return to main menu after x clicks
-      // navigate('/mainmenu', { replace:true });
     }
   };
-
-    // window size for confetti
-    // const { width, height } = useWindowSize();
-    // console.log(width, height);
-
-    // const confettiSource = {
-    //   x: 0,
-    //   y: 0,
-    //   w: width,
-    //   h: height
-    // }
-
 
   return (
     <>
@@ -90,12 +75,16 @@ const BoySvg = () => {
 
       <div className="container">
         {status && (
-          // set state to false when click on close icon
-          <Modal close={() => setStatus(false)}>
+          // overlay with confetti underneath modal
+          <Modal>
             <div className="finish-overlay"><Confetti /></div>
             <p>Congratulations! You've finished the game!</p>
+            <button onClick={() => setStatus(true)} className="modal-btn">
+              <Link to="/mainmenu" className="btn">Back to menu</Link>
+            </button>
           </Modal>
         )}
+        
       </div>
     </>
   );
