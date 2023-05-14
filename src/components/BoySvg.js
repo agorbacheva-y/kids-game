@@ -13,13 +13,37 @@ const BoySvg = () => {
   const [ status, setStatus ] = useState(false);
 
   // state for body part open and close
-  const [ modalStatus, setModalStatus ] = useState(false);
+  const [ faceStatus, setFaceStatus ] = useState(false);
+  const [ bodyStatus, setBodyStatus ] = useState(false);
+  const [ leftHandStatus, setLeftHandStatus ] = useState(false);
+  const [ rightHandStatus, setRightHandStatus ] = useState(false);
+  const [ leftFootStatus, setLeftFootStatus ] = useState(false);
+  const [ rightFootStatus, setRightFootStatus ] = useState(false);
+  
 
   // function for alert when click on body part
-  const handleAlert = () => {
-    b0d7
-    //alert(bodyPart);
-    setModalStatus(true);
+  const handleFace = () => {
+    setFaceStatus(true);
+  };
+
+  const handleBody = () => {
+    setBodyStatus(true);
+  };
+
+  const handleLeftHand = () => {
+    setLeftHandStatus(true);
+  };
+
+  const handleRightHand = () => {
+    setRightHandStatus(true);
+  };
+
+  const handleLeftFoot = () => {
+    setLeftFootStatus(true);
+  };
+
+  const handleRightFoot = () => {
+    setRightFootStatus(true);
   };
 
   // function to show modal at completion of game
@@ -47,37 +71,87 @@ const BoySvg = () => {
           y="0"
         >
           <a className="svg-click">
-            <ellipse cx="490" cy="445" rx="275" ry="165" onClick={() => {handleClick(); handleAlert("face") }} />
+            <ellipse cx="490" cy="445" rx="275" ry="165" onClick={() => {handleClick(); handleFace() }} />
           </a> 
 
           <a className="svg-click">
-            <rect x="360" y="600" width="295" height="420" onClick={() => {handleClick(); handleAlert("body")}} />
+            <rect x="360" y="600" width="295" height="420" onClick={() => {handleClick(); handleBody() }} />
           </a>    
 
           <a className="svg-click">
-            <circle cx="150" cy="740" r="80" onClick={() => {handleClick(); handleAlert("left hand")}} />
+            <circle cx="150" cy="740" r="80" onClick={() => {handleClick(); handleLeftHand() }} />
           </a> 
 
           <a className="svg-click">
-            <circle cx="850" cy="710" r="80" onClick={() => {handleClick(); handleAlert("right hand")}} />
+            <circle cx="850" cy="710" r="80" onClick={() => {handleClick(); handleRightHand() }} />
           </a> 
 
           <a className="svg-click">
-            <ellipse cx="400" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleAlert("left foot")}} />
+            <ellipse cx="400" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleLeftFoot() }} />
           </a> 
 
           <a className="svg-click">
-            <ellipse cx="630" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleAlert("right foot")}} />
+            <ellipse cx="630" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleRightFoot() }} />
           </a> 
 
         </svg>
       </div>
 
       <div className="container">
-        {modalStatus && (
-          <BodyPartModal close={() => setModalStatus(false)}>
+        {faceStatus && (
+          <BodyPartModal close={() => setFaceStatus(false)}>
             <div className="container">
-              <p>{bodyPart}</p>
+              <p>face</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {bodyStatus && (
+          <BodyPartModal close={() => setBodyStatus(false)}>
+            <div className="container">
+              <p>body</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {leftHandStatus && (
+          <BodyPartModal close={() => setLeftHandStatus(false)}>
+            <div className="container">
+              <p>left hand</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {rightHandStatus && (
+          <BodyPartModal close={() => setRightHandStatus(false)}>
+            <div className="container">
+              <p>right hand</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {leftFootStatus && (
+          <BodyPartModal close={() => setLeftFootStatus(false)}>
+            <div className="container">
+              <p>left foot</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {rightFootStatus && (
+          <BodyPartModal close={() => setRightFootStatus(false)}>
+            <div className="container">
+              <p>right foot</p>
             </div>
           </BodyPartModal>
         )}
