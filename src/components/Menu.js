@@ -13,13 +13,13 @@ const Menu = () => {
          
         <h1>Choose a Game</h1>
         <ReusableButton>
-            <Link to="bodypartsgame">Body Parts </Link>
+            <Link className="menulink" to="bodypartsgame">Body Parts </Link>
         </ReusableButton>
         <ReusableButton>
-             <Link to="findobjectsgame">Find Objects </Link>
+             <Link className="menulink" to="findobjectsgame">Find Objects </Link>
         </ReusableButton>
         <ReusableButton>
-           <Link to="dragndropgame">Drag & Drop </Link>        
+           <Link className="menulink" to="dragndropgame">Drag & Drop </Link>        
       </ReusableButton>
      </div>
     );
