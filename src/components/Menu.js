@@ -13,14 +13,14 @@ const Menu = () => {
          
         <h1>Choose a Game</h1>
         <ReusableButton>
-            Body Parts <Link to="bodypartsgame"/>
+            <Link to="bodypartsgame">Body Parts </Link>
         </ReusableButton>
         <ReusableButton>
-        Find objects <Link to="findobjectgame"/>
+             <Link to="findobjectsgame">Find Objects </Link>
         </ReusableButton>
-      <ReusableButton>
-        Drag & drop <Link to="dragndropgame"/>
-        </ReusableButton>
+        <ReusableButton>
+           <Link to="dragndropgame">Drag & Drop </Link>        
+      </ReusableButton>
      </div>
     );
 };
