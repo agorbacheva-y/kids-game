@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import Confetti from "react-confetti";
-import useWindowSize from 'react-use/lib/useWindowSize' 
+import useWindowSize from 'react-use/lib/useWindowSize'
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -23,7 +23,7 @@ const BoySvg = () => {
     setCount(count += 1);
     console.log("count: " + count);
 
-    if (count > 2) {
+    if (count > 1) {
       // set modal state to true after x clicks
       setStatus(true);
       setCount(0);
@@ -32,9 +32,17 @@ const BoySvg = () => {
     }
   };
 
-  // window size for confetti
-  const { width, height } = useWindowSize();
-  console.log(width, height);
+    // window size for confetti
+    // const { width, height } = useWindowSize();
+    // console.log(width, height);
+
+    // const confettiSource = {
+    //   x: 0,
+    //   y: 0,
+    //   w: width,
+    //   h: height
+    // }
+
 
   return (
     <>
@@ -81,22 +89,16 @@ const BoySvg = () => {
       </div>
 
       <div className="container">
-      {status && (
-        // set state to false when click on close icon
-        <Modal close={() => setStatus(false)}>
-          <div className="container">
-            <p>Congratulations! You've finished the game!</p>
-          </div>
-        <Confetti 
-          width={width}
-          height={height}
-        />
-        </Modal>
-      )}
+        
+        {status && (
+          // set state to false when click on close icon
+          <Modal close={() => setStatus(false)}>
+              <p>Congratulations! You've finished the game!</p>
+              <div className="finish-overlay"><Confetti /></div>
+          </Modal>
+        )}
       </div>
     </>
   );
 };
 export default BoySvg;
-
-// need to move origin of Confetti to top left of screen
