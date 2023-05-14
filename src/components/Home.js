@@ -13,7 +13,9 @@ const Home = () => {
           <Link to="/register" className="btn">Create new user</Link>
         </Button>
 
-        <Button size="lg">Log in</Button>
+        <Button size="lg">
+          <Link to="/loginbackup" className="btn">Log in</Link>
+        </Button>
       </div>
     </>
   );
