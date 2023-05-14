@@ -10,6 +10,7 @@ const ShapeGame = () => {
    function getTimerRemaining(e) {
     const total = Date.parse(e) - Date.parse(new Date())
     const seconds = Math.floor((total / 1000) % 60);
+    
 
     return {total, seconds}
    }
@@ -17,9 +18,10 @@ const ShapeGame = () => {
     let {total, seconds} = getTimerRemaining(e);
     if(total >= 0) {
         setTimer(seconds > 1 ? seconds : '0' + seconds);
-       
      }
-   }
+   } 
+   // timer starts
+
    function clearTimer (e) {
     setTimer("0")
     if(Ref.current) clearInterval(Ref.current)
@@ -27,19 +29,22 @@ const ShapeGame = () => {
         startTimer(e)
     }, 10)
     Ref.current = id;
+    // starts with 0 when refreshed or at the start
    }
+
+
    function getDeadTime() {
      let deadline = new Date(); 
      deadline.setSeconds(deadline.getSeconds() + 15)
      return deadline;
    }
+   // timer starts at 15 and counts down to 0
 
    function Reset() {
      clearTimer(getDeadTime())
    }
-
-  
-
+    
+   // game information desplayed here
     return (
       <div className="container"> 
         <h1>Shape Game</h1>
