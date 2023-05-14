@@ -1,13 +1,13 @@
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import Badge from 'react-bootstrap/Badge';
+
 
 const EndGame = () => {
 
     return (
         <div className="container">
-            <h1>
-                Game Over! 
-            </h1>
+             <Badge bg="danger"><h2>Game over!</h2></Badge>{' '}
             <p>Play again?</p>
             <Button size="lg">
           <Link to="/game" className="btn">Play Game</Link>
