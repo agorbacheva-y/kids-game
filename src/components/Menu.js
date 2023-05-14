@@ -1,14 +1,14 @@
+import React from "react";
 import ReusableButton from "./ReusableButton";
 import CloseButton from 'react-bootstrap/CloseButton';
-import Home from "./Home";
-
-
+import { Link } from "react-router-dom";
 
 const Menu = () => {
     return (
      <div className="container"> 
-      <CloseButton className="closebtn"></CloseButton>
-
+    
+         <Link to="/"> <CloseButton className="closebtn"></CloseButton> </Link>
+    
         <h1>Choose a Game</h1>
         <ReusableButton>Body Parts</ReusableButton>
       <ReusableButton>Find objects</ReusableButton>
