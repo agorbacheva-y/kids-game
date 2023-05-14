@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import Confetti from "react-confetti";
+import useWindowSize from 'react-use/lib/useWindowSize' 
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -11,6 +12,12 @@ const BoySvg = () => {
   // state for modal open and close
   const [ status, setStatus ] = useState(false);
 
+  // function for alert when click on body part
+  const handleAlert = (bodyPart) => {
+    alert(bodyPart);
+  };
+
+  // function to show modal at completion of game
   const handleClick = () => {
     // count number of clicks
     setCount(count += 1);
@@ -25,9 +32,9 @@ const BoySvg = () => {
     }
   };
 
-  const handleAlert = (bodyPart) => {
-    alert(bodyPart);
-  };
+  // window size for confetti
+  const { width, height } = useWindowSize();
+  console.log(width, height);
 
   return (
     <>
@@ -80,7 +87,10 @@ const BoySvg = () => {
           <div className="container">
             <p>Congratulations! You've finished the game!</p>
           </div>
-          <Confetti />
+        <Confetti 
+          width={width}
+          height={height}
+        />
         </Modal>
       )}
       </div>
@@ -89,4 +99,4 @@ const BoySvg = () => {
 };
 export default BoySvg;
 
-// Confetti won't fire when placed in if statement
+// need to move origin of Confetti to top left of screen
