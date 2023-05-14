@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Boy from "../images/Boy.svg";
-import { useState } from "react";
 import Modal from "./Modal";
 import Confetti from "react-confetti";
 import { Link } from "react-router-dom";
