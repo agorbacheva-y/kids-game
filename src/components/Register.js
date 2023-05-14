@@ -25,11 +25,6 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (myName === "" || email === "" || username === "" || password === "") {
-      alert("All fields are required");
-      return user;
-    }
-
     let user = await axios
       .get("/users") //get users from database
       .then((res) => checkEmail(res.data)) //check from results if email already exists
@@ -37,7 +32,10 @@ const Register = () => {
         console.log(error);
       });
 
-    if (user) {
+    if (myName === "" || email === "" || username === "" || password === "") {
+      alert("All fields are required");
+      return user;
+    } else if (user) {
       alert("User alerady exists");
     } else {
       const user = { myName, email, username, password };
@@ -50,7 +48,6 @@ const Register = () => {
     setEmail("");
     setUsername("");
     setPassword("");
-
   };
 
   return (
