@@ -10,7 +10,7 @@ const LoginBackup = () => {
   const [ username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
 
-  // hook to route back to main mage
+  // hook to route to main menu
   const navigate = useNavigate();
 
   // check input data against db to see if we can find
@@ -18,8 +18,10 @@ const LoginBackup = () => {
   const checkUser = (users) => {
     const user = users.find(
       (user) => user.username === username && user.password === password);
-      console.log(user);
-      if (users) return user;
+      //console.log(user);
+      if (users) {
+        return user;
+      }
   };
 
   const handleSubmit = async (e) => {
@@ -36,14 +38,16 @@ const LoginBackup = () => {
         console.log(error);
       });
 
-    // if successful login redirect to game page
-    if (user.username === username && user.password === password) {
-      navigate("/bodypartgame");
+    // if successful login redirect to main menu
+    if (user) {
+      // set user in localStorage if login successful
+      // use user to go to private route
+      localStorage.setItem("user", JSON.stringify(user.id));
+      navigate("/mainmenu");
+      console.log(user);
+    } else {
+      alert("Incorrect username or password");
     }
-
-    // set user in localStorage if login successful
-    // use user to go to private route
-    localStorage.setItem("user", JSON.stringify(user.id));
 
     setUsername("");
     setPassword("");
@@ -53,7 +57,7 @@ const LoginBackup = () => {
     <div className="container">
       <Card>
         <Form>
-          <h1>Register User</h1>
+          <h1>Log In</h1>
           <Form.Group controlId="formBasicUsername">
             <Form.Label>
               <Form.Control
@@ -83,14 +87,8 @@ const LoginBackup = () => {
           </Button>
         </Form>
       </Card>
-
-      <Button size="lg">
-          <Link to="/mainmenu" className="btn">Start Game</Link>
-      </Button>
     </div>
   );
 };
 
 export default LoginBackup;
-
-// add function for when user is not registered or username/pw incorrect
