@@ -134,7 +134,7 @@ const Register = () => {
 
         <div className="container">
           <Button size="lg">
-            <Link to="/bodypartgame" className="btn">temp button to jump to game</Link>
+            <Link to="/mainmenu" className="btn">temp button to jump to mainmenu</Link>
           </Button>
         </div>
       </div>
