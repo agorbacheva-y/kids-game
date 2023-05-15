@@ -9,12 +9,12 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
-  background-color: #000;
-  color: #fff;
+  background-color: #E8E1C5;
+  color: #000;
 }
 
 .container {
@@ -23,6 +23,18 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #4dbc94;
 }
 
 .btn {
@@ -117,4 +129,9 @@ body {
   font-weight: 600;
   cursor: pointer;
   background-color: #000;
+}
+
+.custom-card {
+  border: none !important; 
+  background-color: #E8E1C5 !important;
 }

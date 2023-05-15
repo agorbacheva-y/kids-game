@@ -9,11 +9,13 @@ const Home = () => {
       </div>
 
       <div className="btnContainer">
+        <Button size="lg">Log in</Button>
+
         <Button size="lg">
           <Link to="/register" className="btn">Create new user</Link>
         </Button>
 
-        <Button size="lg">Log in</Button>
+        
       </div>
     </>
   );
