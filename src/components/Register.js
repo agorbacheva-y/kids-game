@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Header from "./Header";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -12,8 +14,12 @@ const Register = () => {
   const [ username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
 
-  // state for disabled status of start game button
-  const [ disabled, setDisabled ] = useState(false);
+  // state and function for disabled status of start game button
+  const [ disabled, setDisabled ] = useState(true);
+
+  const handleDisable = () => {
+    setDisabled(false);
+  };
 
   // helper function used in submit function to check if email is already registered
   const checkEmail = (users) => {
@@ -42,6 +48,7 @@ const Register = () => {
       console.log(user);
       axios.post("/users", user)
         .then(alert("New user created!"));
+        handleDisable();
     }
 
     setMyName("");
@@ -51,65 +58,76 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <Card>
-        <Form>
-          <h1>Register User</h1>
-          <Form.Group controlId="formBasicName">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Name"
-                value={myName}
-                onChange={(e) => setMyName(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
+    <div>
+      <Header>
+          <Link to="/"><BsFillArrowLeftCircleFill className="back-btn"/></Link>
+      </Header>
+        
+      
+      
+      <div className="container">
+        <Card className="custom-card">
+          <Form className="custom-form">
+            <h1>Register User</h1>
+            <Form.Group controlId="formBasicName">
+              <Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Name"
+                  value={myName}
+                  onChange={(e) => setMyName(e.target.value)}
+                />
+              </Form.Label>
+            </Form.Group>
 
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Form.Label>
+            </Form.Group>
 
-          <Form.Group controlId="formBasicUsername">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
+            <Form.Group controlId="formBasicUsername">
+              <Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </Form.Label>
+            </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Form.Label>
+            </Form.Group>
 
-          <Button
-            type="submit"
-            onClick={handleSubmit}
-            >Submit
-          </Button>
-        </Form>
-      </Card>
+            <Button
+              type="submit"
+              onClick={handleSubmit}
+              >Submit
+            </Button>
+          </Form>
+        </Card>
 
-      <Button size="lg">
-          <Link to="/mainmenu" className="btn">Start Game</Link>
-      </Button>
+        <Button 
+          size="lg" 
+          disabled={disabled} 
+          onClick={handleDisable}>
+            <Link to="/mainmenu" className="btn" >Start Game</Link>
+        </Button>
+      </div>
     </div>
   );
 };
