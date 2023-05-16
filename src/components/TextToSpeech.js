@@ -10,21 +10,20 @@ const TextToSpeech = () => {
   // function to speak text
   const SpeechHandler = (msg) => {
     msg.text = text;
+    setText("face");
     window.speechSynthesis.speak(msg)
   };
 
   return (
     <div>
       <h1>Text to Speech</h1>
-      <input 
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value) }
-        />
+  
       <button onClick={() => SpeechHandler(msg)}>SPEAK</button>
     </div>
   );
 };
 
 export default TextToSpeech;
+
+// speech works from second click???
 
