@@ -1,24 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const TextToSpeech = () => {
+const TextToSpeech = ({ text }) => {
   // state to store text to read aloud
-  const [ text, setText ] = useState("");
+  const [ utterance, setUtterance ] = useState(null);
 
-  // initiates instance of SpeechSynthesisUtterance obj
-  const msg = new SpeechSynthesisUtterance();
+  useEffect(() => {
+    const synth = window.speechSynthesis;
+    const u = new SpeechSynthesisUtterance(text);
+
+    setUtterance(u);
+
+    return () => {
+      synth.cancel();
+    };
+  }, [text]);
 
   // function to speak text
-  const SpeechHandler = (msg) => {
-    msg.text = text;
-    setText("face");
-    window.speechSynthesis.speak(msg)
+  const handlePlay = () => {
+    const synth = window.speechSynthesis;
+
+    synth.speak(utterance);
   };
 
   return (
     <div>
       <h1>Text to Speech</h1>
   
-      <button onClick={() => SpeechHandler(msg)}>SPEAK</button>
+      <button onClick={handlePlay}>SPEAK</button>
     </div>
   );
 };

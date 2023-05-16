@@ -4,11 +4,13 @@ import TextToSpeech from "./TextToSpeech";
 
 const Home = () => {
 
+  const text = "hello";
+  
   return (
     <>
       <div className="container">
         <h1>Home</h1>
-        <TextToSpeech />
+        <TextToSpeech text={text} />
       </div>
 
       <div className="btnContainer">
