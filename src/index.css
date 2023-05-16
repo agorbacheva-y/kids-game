@@ -69,3 +69,8 @@ margin: 100px;}
 .menulink:hover{
   color: #000;
 }
+
+/* Endgame badge*/
+.badge{
+  margin: 50px;
+}
