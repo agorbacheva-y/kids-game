@@ -1,6 +1,6 @@
 import BoySvg from "./BoySvg";
 
-const BodyPartGame = ({ onClick }) => {
+const BodyPartGame = () => {
   return (
     <div className="container">
       <h1>body part game</h1>
