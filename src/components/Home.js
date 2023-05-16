@@ -12,7 +12,7 @@ const Home = () => {
         <Button size="lg">Log in</Button>
 
         <Button size="lg">
-          <Link to="/register" className="btn">Create new user</Link>
+          <Link to="/register" className="btn">Register</Link>
         </Button>
 
         
