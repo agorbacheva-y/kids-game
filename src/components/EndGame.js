@@ -9,13 +9,15 @@ const EndGame = () => {
         <div className="container">
           
              <Badge bg="danger"><h2>Game over!</h2></Badge>{' '}
-            <p>Play again?</p>
+            <h3>Play Again?</h3>
 
               <ReusableButton className="reuse-btn">
                 <Link to="/game" >Play Game</Link>
               </ReusableButton>
             <p>or </p>
-            <p>Go back to menu</p> 
+
+            <h3>Go back to menu</h3>
+           
              <ReusableButton className="reuse-btn">
               <Link to="/" >Menu</Link>
              </ReusableButton>
