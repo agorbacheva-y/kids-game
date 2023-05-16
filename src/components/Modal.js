@@ -1,7 +1,4 @@
-import { MdClose } from "react-icons/md";
-
-
-const Modal = ({ children, close }) => {
+const Modal = ({ children }) => {
   return (
     <div className="overlay">
       <div className="content">

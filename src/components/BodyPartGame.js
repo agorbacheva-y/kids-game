@@ -10,5 +10,3 @@ const BodyPartGame = () => {
 };
 
 export default BodyPartGame;
-
-//Confetti placed here to test - it works!

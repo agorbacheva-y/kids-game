@@ -1,8 +1,9 @@
-import Boy from "../images/Boy.svg";
 import { useState } from "react";
+import Boy from "../images/Boy.svg";
 import Modal from "./Modal";
 import Confetti from "react-confetti";
 import { Link } from "react-router-dom";
+import BodyPartModal from "./BodyPartModal";
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -11,9 +12,38 @@ const BoySvg = () => {
   // state for modal open and close
   const [ status, setStatus ] = useState(false);
 
+  // state for body part open and close
+  const [ faceStatus, setFaceStatus ] = useState(false);
+  const [ bodyStatus, setBodyStatus ] = useState(false);
+  const [ leftHandStatus, setLeftHandStatus ] = useState(false);
+  const [ rightHandStatus, setRightHandStatus ] = useState(false);
+  const [ leftFootStatus, setLeftFootStatus ] = useState(false);
+  const [ rightFootStatus, setRightFootStatus ] = useState(false);
+  
+
   // function for alert when click on body part
-  const handleAlert = (bodyPart) => {
-    alert(bodyPart);
+  const handleFace = () => {
+    setFaceStatus(true);
+  };
+
+  const handleBody = () => {
+    setBodyStatus(true);
+  };
+
+  const handleLeftHand = () => {
+    setLeftHandStatus(true);
+  };
+
+  const handleRightHand = () => {
+    setRightHandStatus(true);
+  };
+
+  const handleLeftFoot = () => {
+    setLeftFootStatus(true);
+  };
+
+  const handleRightFoot = () => {
+    setRightFootStatus(true);
   };
 
   // function to show modal at completion of game
@@ -23,8 +53,13 @@ const BoySvg = () => {
     console.log("count: " + count);
 
     if (count > 5) {
-      // set modal state to true after x clicks
-      setStatus(true);
+      // wait 3 secs before finish modal appears
+      document.addEventListener('click', function() {
+        setTimeout(function() {
+          setStatus(true)
+        }, 3000 );
+      });
+        
       setCount(0);
     }
   };
@@ -40,37 +75,91 @@ const BoySvg = () => {
           x="0" 
           y="0"
         >
-          <ellipse  
-            cx="490" cy="445" rx="275" ry="165" 
-            className="svg-click" 
-            onClick={() => {handleClick(); handleAlert("face")}} />
+          <a className="svg-click">
+            <ellipse cx="490" cy="445" rx="275" ry="165" onClick={() => {handleClick(); handleFace() }} />
+          </a> 
 
-          <rect 
-            x="360" y="600" width="295" height="420" 
-            className="svg-click" 
-            onClick={() => {handleClick(); handleAlert("body")}} />  
+          <a className="svg-click">
+            <rect x="360" y="600" width="295" height="420" onClick={() => {handleClick(); handleBody() }} />
+          </a>    
 
-          <circle 
-            cx="150" cy="740" r="80" 
-            className="svg-click" 
-            onClick={() => {handleClick(); handleAlert("left hand")}} /> 
+          <a className="svg-click">
+            <circle cx="150" cy="740" r="80" onClick={() => {handleClick(); handleLeftHand() }} />
+          </a> 
 
-          <circle 
-            cx="850" cy="710" r="80" 
-            className="svg-click" 
-            onClick={() => {handleClick(); handleAlert("right hand")}} />
+          <a className="svg-click">
+            <circle cx="850" cy="710" r="80" onClick={() => {handleClick(); handleRightHand() }} />
+          </a> 
 
-          <ellipse 
-            cx="400" cy="1240" rx="80" ry="30" 
-            className="svg-click" 
-            onClick={() => {handleClick(); handleAlert("left foot")}} />
+          <a className="svg-click">
+            <ellipse cx="400" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleLeftFoot() }} />
+          </a> 
 
-          <ellipse 
-            cx="630" cy="1240" rx="80" ry="30" 
-            className="svg-click" 
-            onClick={() => {handleClick(); handleAlert("right foot")}} />
+          <a className="svg-click">
+            <ellipse cx="630" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleRightFoot() }} />
+          </a> 
 
         </svg>
+      </div>
+
+      <div className="container">
+        {faceStatus && (
+          <BodyPartModal close={() => setFaceStatus(false)}>
+            <div className="container">
+              <p>face</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {bodyStatus && (
+          <BodyPartModal close={() => setBodyStatus(false)}>
+            <div className="container">
+              <p>body</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {leftHandStatus && (
+          <BodyPartModal close={() => setLeftHandStatus(false)}>
+            <div className="container">
+              <p>left hand</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {rightHandStatus && (
+          <BodyPartModal close={() => setRightHandStatus(false)}>
+            <div className="container">
+              <p>right hand</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {leftFootStatus && (
+          <BodyPartModal close={() => setLeftFootStatus(false)}>
+            <div className="container">
+              <p>left foot</p>
+            </div>
+          </BodyPartModal>
+        )}
+      </div>
+
+      <div className="container">
+        {rightFootStatus && (
+          <BodyPartModal close={() => setRightFootStatus(false)}>
+            <div className="container">
+              <p>right foot</p>
+            </div>
+          </BodyPartModal>
+        )}
       </div>
 
       <div className="container">

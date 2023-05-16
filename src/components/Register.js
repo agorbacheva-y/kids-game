@@ -125,7 +125,7 @@ const Register = () => {
           size="lg" 
           disabled={disabled} 
           onClick={handleDisable}>
-            <Link to="/mainmenu" className="btn" >Start Game</Link>
+            <Link to="/menu" className="btn" >Start Game</Link>
         </Button>
 
         <p>Already a member?</p>
@@ -134,7 +134,7 @@ const Register = () => {
 
         <div className="container">
           <Button size="lg">
-            <Link to="/mainmenu" className="btn">temp button to jump to mainmenu</Link>
+            <Link to="/menu" className="btn">temp button to jump to mainmenu</Link>
           </Button>
         </div>
       </div>
