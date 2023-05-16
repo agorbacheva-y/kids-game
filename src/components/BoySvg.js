@@ -4,6 +4,7 @@ import Modal from "./Modal";
 import Confetti from "react-confetti";
 import { Link } from "react-router-dom";
 import BodyPartModal from "./BodyPartModal";
+import TextToSpeech from "./TextToSpeech";
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -20,6 +21,8 @@ const BoySvg = () => {
   const [ leftFootStatus, setLeftFootStatus ] = useState(false);
   const [ rightFootStatus, setRightFootStatus ] = useState(false);
   
+  // var for text to speech
+  let text = "";
 
   // function for alert when click on body part
   const handleFace = () => {
@@ -107,6 +110,7 @@ const BoySvg = () => {
           <BodyPartModal close={() => setFaceStatus(false)}>
             <div className="container">
               <p>face</p>
+              <TextToSpeech text={"face"} />
             </div>
           </BodyPartModal>
         )}
@@ -117,6 +121,7 @@ const BoySvg = () => {
           <BodyPartModal close={() => setBodyStatus(false)}>
             <div className="container">
               <p>body</p>
+              <TextToSpeech text={"body"} />
             </div>
           </BodyPartModal>
         )}
@@ -127,6 +132,7 @@ const BoySvg = () => {
           <BodyPartModal close={() => setLeftHandStatus(false)}>
             <div className="container">
               <p>left hand</p>
+              <TextToSpeech text={"left hand"} />
             </div>
           </BodyPartModal>
         )}
@@ -137,6 +143,7 @@ const BoySvg = () => {
           <BodyPartModal close={() => setRightHandStatus(false)}>
             <div className="container">
               <p>right hand</p>
+              <TextToSpeech text={"right hand"} />
             </div>
           </BodyPartModal>
         )}
@@ -147,6 +154,7 @@ const BoySvg = () => {
           <BodyPartModal close={() => setLeftFootStatus(false)}>
             <div className="container">
               <p>left foot</p>
+              <TextToSpeech text={"left foot"} />
             </div>
           </BodyPartModal>
         )}
@@ -157,6 +165,7 @@ const BoySvg = () => {
           <BodyPartModal close={() => setRightFootStatus(false)}>
             <div className="container">
               <p>right foot</p>
+              <TextToSpeech text={"right foot"} />
             </div>
           </BodyPartModal>
         )}

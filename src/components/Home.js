@@ -1,16 +1,14 @@
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import TextToSpeech from "./TextToSpeech";
 
 const Home = () => {
 
   const text = "hello";
-  
+
   return (
     <>
       <div className="container">
         <h1>Home</h1>
-        <TextToSpeech text={text} />
       </div>
 
       <div className="btnContainer">

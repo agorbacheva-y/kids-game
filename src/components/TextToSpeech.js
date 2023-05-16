@@ -6,11 +6,14 @@ const TextToSpeech = ({ text }) => {
 
   useEffect(() => {
     const synth = window.speechSynthesis;
+    // create SpeechSynthesisUtterance object (text = what will be read)
     const u = new SpeechSynthesisUtterance(text);
 
+    // initialize utterance state
     setUtterance(u);
 
     return () => {
+      // cancel any ongoing speech synthesis when unmounted
       synth.cancel();
     };
   }, [text]);
@@ -23,15 +26,12 @@ const TextToSpeech = ({ text }) => {
   };
 
   return (
-    <div>
-      <h1>Text to Speech</h1>
-  
-      <button onClick={handlePlay}>SPEAK</button>
+    <div> 
+      <button onClick={handlePlay}>Click for sound!</button>
     </div>
   );
 };
 
 export default TextToSpeech;
 
-// speech works from second click???
-
+// reference: https://edvins.io/react-text-to-speech
