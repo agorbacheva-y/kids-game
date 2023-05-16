@@ -4,6 +4,8 @@ import Modal from "./Modal";
 import Confetti from "react-confetti";
 import { Link } from "react-router-dom";
 import BodyPartModal from "./BodyPartModal";
+import Button from "react-bootstrap/Button";
+
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -168,9 +170,9 @@ const BoySvg = () => {
           <Modal>
             <div className="finish-overlay"><Confetti /></div>
             <p>Congratulations! You've finished the game!</p>
-            <button onClick={() => setStatus(true)} className="modal-btn">
+            <Button onClick={() => setStatus(true)} className="modal-btn">
               <Link to="/mainmenu" className="btn">Back to menu</Link>
-            </button>
+            </Button>
           </Modal>
         )}
         

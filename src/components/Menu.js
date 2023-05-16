@@ -8,7 +8,7 @@ const Menu = () => {
      <div className="container"> 
     
          <Link to="/"> 
-           <CloseButton className="closebtn"></CloseButton> 
+           <CloseButton></CloseButton> 
          </Link>
          
         <h1>Choose a Game</h1>
