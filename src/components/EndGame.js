@@ -8,7 +8,7 @@ const EndGame = () => {
     return (
         <div className="container">
           
-             <Badge bg="danger"><h2>Game over!</h2></Badge>{' '}
+             <Badge bg="danger"><h2>Oh no, leaving so soon?</h2></Badge>{' '}
             <h3>Play Again?</h3>
 
               <ReusableButton className="reuse-btn">
