@@ -31,10 +31,10 @@
   margin: 2rem;
 }
 
-.back-btn {
+.close-btn {
   text-decoration: none;
   font-size: 2rem;
-  color: #4dbc94;
+  color: black;
 }
 
 .btn {

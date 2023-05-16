@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { MdClose } from "react-icons/md";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -60,7 +60,7 @@ const Register = () => {
   return (
     <div>
       <Header>
-          <Link to="/"><BsFillArrowLeftCircleFill className="back-btn"/></Link>
+          <Link to="/"><MdClose className="close-btn"/></Link>
       </Header>
         
       
