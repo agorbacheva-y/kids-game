@@ -27,4 +27,3 @@ const EndGame = () => {
 
 export default EndGame;
 
-// Link to correct paths

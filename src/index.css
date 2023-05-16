@@ -36,4 +36,36 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+/* Css for ReusableButton */
+.reuse-btn{
+  box-sizing: border-box;
+  margin: 10px;
+width: 192px;
+height: 63px;
+background: #E4D379;
+border: 1px solid #55288E;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
 
+.reuse-btn:hover {
+  background-color: #d5c88b;
+}
+
+/* Css for the blose button */
+.closebtn {
+  margin-left: 150px;
+margin: 100px;}
+
+/* css for the links in menu and Endgame*/
+.menulink{
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #000;
+}
+
+.menulink:hover{
+  color: #000;
+}
