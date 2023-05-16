@@ -35,3 +35,6 @@ const TextToSpeech = ({ text }) => {
 export default TextToSpeech;
 
 // reference: https://edvins.io/react-text-to-speech
+
+// when replacing <button> with custom <ReusableButton> text-to-speech
+// button does not play ???
