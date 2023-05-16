@@ -12,10 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" exact element={<Register />} />
-        <Route path="/Menu" exact element={<Menu />} />
+        <Route path="/menu" exact element={<Menu />} />
         <Route path="/bodypartgame" exact element={<BodyPartGame />} />
       </Routes>
-      <Menu></Menu>
     </BrowserRouter>
   );
 };

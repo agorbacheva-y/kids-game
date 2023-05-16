@@ -111,7 +111,7 @@ const Register = () => {
       </Card>
 
       <Button size="lg">
-          <Link to="/mainmenu" className="btn">Start Game</Link>
+          <Link to="/menu" className="btn">Start Game</Link>
       </Button>
     </div>
   );
