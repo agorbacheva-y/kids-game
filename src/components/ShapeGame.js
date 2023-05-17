@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import css from "./shapeGame.css"
 import Button from "react-bootstrap/Button";
 import yellowStar from "./shapesImg/yellowStar.png";
 import orangeCircle from "./shapesImg/orangeCircle.png"
