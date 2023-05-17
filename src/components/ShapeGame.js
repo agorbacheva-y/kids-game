@@ -3,6 +3,12 @@ import css from "./shapeGame.css"
 import Button from "react-bootstrap/Button";
 import yellowStar from "./shapesImg/yellowStar.png";
 import orangeCircle from "./shapesImg/orangeCircle.png"
+import bluePentagon from "./shapesImg/BluePentagon.png"
+import redTriangle from "./shapesImg/redTriangle.png"
+import blueRectangle from "./shapesImg/blueRectangle.png"
+
+
+
 
 /**
  1. se till att kunna slumpa fram en random bild tex när man klickar på en knapp
@@ -63,14 +69,19 @@ const ShapeGame = () => {
         object that is displayed on the screen in your home.
       </p>
 
-      <img src={yellowStar} className="star" />
-      <img src={orangeCircle} className="circle" />
+      <img src={yellowStar} className="shapeimg" alt="star"/>
+      <img src={orangeCircle} className="shapeimg" alt="circle"/>
+      <img src={bluePentagon} className="shapeimg" alt="pentagon"/>
+      <img src={redTriangle} className="shapeimg" alt="triangle"/>
+      <img src={blueRectangle} className="shapeimg" alt="rectangle"/>
+
+
 
 
       <h5>Start the timer when you are ready!</h5>
       <h2>{timer}</h2>
 
-      <Button size="lg" onClick={Reset}>
+      <Button className="btn" size="lg" onClick={Reset}>
         Start Timer
       </Button>
     </div>
