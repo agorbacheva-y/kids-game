@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
+import { BsPlayCircleFill, BsFillStopCircleFill } from "react-icons/bs";
 
 const TextToSpeech = ({ text }) => {
   // state to store text to read aloud
@@ -26,9 +27,16 @@ const TextToSpeech = ({ text }) => {
     synth.speak(utterance);
   };
 
+  const handleStop = () => {
+    const synth = window.speechSynthesis;
+
+    synth.cancel();
+  };
+
   return (
     <div> 
-      <Button onClick={handlePlay}>Click for sound!</Button>
+      <Button onClick={handlePlay}><BsPlayCircleFill /></Button>
+      <Button onClick={handleStop}><BsFillStopCircleFill /></Button>
     </div>
   );
 };
