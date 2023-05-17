@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Button from "react-bootstrap/Button";
 
 const TextToSpeech = ({ text }) => {
   // state to store text to read aloud
@@ -27,7 +28,7 @@ const TextToSpeech = ({ text }) => {
 
   return (
     <div> 
-      <button onClick={handlePlay}>Click for sound!</button>
+      <Button onClick={handlePlay}>Click for sound!</Button>
     </div>
   );
 };
@@ -35,6 +36,3 @@ const TextToSpeech = ({ text }) => {
 export default TextToSpeech;
 
 // reference: https://edvins.io/react-text-to-speech
-
-// when replacing <button> with custom <ReusableButton> text-to-speech
-// button does not play ???

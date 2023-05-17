@@ -5,16 +5,16 @@ import Confetti from "react-confetti";
 import { Link } from "react-router-dom";
 import BodyPartModal from "./BodyPartModal";
 import TextToSpeech from "./TextToSpeech";
-import ReusableButton from "./ReusableButton";
+import Button from "react-bootstrap/Button";
 
 const BoySvg = () => {
   // state to hold count of clicks
   let [ count, setCount ] = useState(null);
 
-  // state for modal open and close
+  // state for finish modal open and close
   const [ status, setStatus ] = useState(false);
 
-  // state for body part open and close
+  // state for body part modal open and close
   const [ faceStatus, setFaceStatus ] = useState(false);
   const [ bodyStatus, setBodyStatus ] = useState(false);
   const [ leftHandStatus, setLeftHandStatus ] = useState(false);
@@ -22,9 +22,6 @@ const BoySvg = () => {
   const [ leftFootStatus, setLeftFootStatus ] = useState(false);
   const [ rightFootStatus, setRightFootStatus ] = useState(false);
   
-  // var for text to speech
-  let text = "";
-
   // function for alert when click on body part
   const handleFace = () => {
     setFaceStatus(true);
@@ -178,9 +175,9 @@ const BoySvg = () => {
           <Modal>
             <div className="finish-overlay"><Confetti /></div>
             <p>Congratulations! You've finished the game!</p>
-            <ReusableButton onClick={() => setStatus(true)} className="modal-btn">
+            <Button onClick={() => setStatus(true)} className="modal-btn">
               <Link to="/mainmenu" className="btn">Back to menu</Link>
-            </ReusableButton>
+            </Button>
           </Modal>
         )}
         
