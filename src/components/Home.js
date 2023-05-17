@@ -2,9 +2,6 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-
-  const text = "hello";
-
   return (
     <>
       <div className="container">
@@ -12,11 +9,11 @@ const Home = () => {
       </div>
 
       <div className="btnContainer">
-        <Button size="lg">
-          <Link to="/register" className="btn">Create new user</Link>
-        </Button>
+        <button className="reuse-btn">
+          <Link to="/register" className="link">Register</Link>
+        </button>
 
-        <Button size="lg">Log in</Button>
+        <button className="reuse-btn">Log in</button>
       </div>
     </>
   );
