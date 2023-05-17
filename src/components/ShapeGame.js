@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import yellowStar from "./shapesImg/yellowStar.png";
+import orangeCircle from "./shapesImg/orangeCircle.png"
 
 /**
  1. se till att kunna slumpa fram en random bild tex när man klickar på en knapp
@@ -62,6 +63,8 @@ const ShapeGame = () => {
       </p>
 
       <img src={yellowStar} className="star" />
+      <img src={orangeCircle} className="circle" />
+
 
       <h5>Start the timer when you are ready!</h5>
       <h2>{timer}</h2>
