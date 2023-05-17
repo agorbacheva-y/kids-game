@@ -60,6 +60,23 @@ const ShapeGame = () => {
     clearTimer(getDeadTime());
   }
 
+  // array for storing the shape images
+  const shapeImages = [
+    yellowStar, orangeCircle,
+    bluePentagon, blueRectangle,
+    redTriangle
+  ];
+   
+  // here is thw state variable that displays the current image
+  const [currentImg, setCurrentImg] = useState("");
+ 
+// here an random img from thw array and currentimg selects
+function Reset() {
+  clearTimer(getDeadTime());
+  const randomIndex = Math.floor(Math.random() * shapeImages.length);
+  setCurrentImg(shapeImages[randomIndex]);
+};
+
   // game information desplayed here
   return (
     <div className="container">
@@ -69,13 +86,7 @@ const ShapeGame = () => {
         object that is displayed on the screen in your home.
       </p>
 
-      <img src={yellowStar} className="shapeimg" alt="star"/>
-      <img src={orangeCircle} className="shapeimg" alt="circle"/>
-      <img src={bluePentagon} className="shapeimg" alt="pentagon"/>
-      <img src={redTriangle} className="shapeimg" alt="triangle"/>
-      <img src={blueRectangle} className="shapeimg" alt="rectangle"/>
-
-
+      <img src={currentImg} className="shapeimg" alt="star"/>
 
 
       <h5>Start the timer when you are ready!</h5>
