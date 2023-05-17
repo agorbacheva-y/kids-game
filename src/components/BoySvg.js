@@ -107,8 +107,8 @@ const BoySvg = () => {
         {faceStatus && (
           <BodyPartModal close={() => setFaceStatus(false)}>
             <div className="container">
-              <p>face</p>
-              <TextToSpeech text={"face"} />
+              <p>Touch your face</p>
+              <TextToSpeech text={"Touch your face"} />
             </div>
           </BodyPartModal>
         )}
@@ -118,8 +118,8 @@ const BoySvg = () => {
         {bodyStatus && (
           <BodyPartModal close={() => setBodyStatus(false)}>
             <div className="container">
-              <p>body</p>
-              <TextToSpeech text={"body"} />
+              <p>Shake your body</p>
+              <TextToSpeech text={"Shake your body"} />
             </div>
           </BodyPartModal>
         )}
@@ -129,8 +129,8 @@ const BoySvg = () => {
         {leftHandStatus && (
           <BodyPartModal close={() => setLeftHandStatus(false)}>
             <div className="container">
-              <p>left hand</p>
-              <TextToSpeech text={"left hand"} />
+              <p>Wave your left hand</p>
+              <TextToSpeech text={"Wave your left hand"} />
             </div>
           </BodyPartModal>
         )}
@@ -140,8 +140,8 @@ const BoySvg = () => {
         {rightHandStatus && (
           <BodyPartModal close={() => setRightHandStatus(false)}>
             <div className="container">
-              <p>right hand</p>
-              <TextToSpeech text={"right hand"} />
+              <p>Point to the ceiling with your right hand</p>
+              <TextToSpeech text={"Point to the ceiling with your right hand"} />
             </div>
           </BodyPartModal>
         )}
@@ -151,8 +151,8 @@ const BoySvg = () => {
         {leftFootStatus && (
           <BodyPartModal close={() => setLeftFootStatus(false)}>
             <div className="container">
-              <p>left foot</p>
-              <TextToSpeech text={"left foot"} />
+              <p>Lift your left foot</p>
+              <TextToSpeech text={"Lift your left foot"} />
             </div>
           </BodyPartModal>
         )}
@@ -162,8 +162,8 @@ const BoySvg = () => {
         {rightFootStatus && (
           <BodyPartModal close={() => setRightFootStatus(false)}>
             <div className="container">
-              <p>right foot</p>
-              <TextToSpeech text={"right foot"} />
+              <p>Stomp your right foot</p>
+              <TextToSpeech text={"Stomp your right foot"} />
             </div>
           </BodyPartModal>
         )}
@@ -186,5 +186,3 @@ const BoySvg = () => {
   );
 };
 export default BoySvg;
-
-// when replacing <button> with custom <ReusableButton> 

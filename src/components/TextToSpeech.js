@@ -1,18 +1,25 @@
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import { BsPlayCircleFill, BsFillStopCircleFill } from "react-icons/bs";
+import { BsFillPlayCircleFill, BsFillStopCircleFill } from "react-icons/bs";
 
 const TextToSpeech = ({ text }) => {
   // state to store text to read aloud
   const [ utterance, setUtterance ] = useState(null);
+  const [ voice, setVoice ] = useState(null);
+  const [ rate, setRate ] = useState(1);
 
   useEffect(() => {
     const synth = window.speechSynthesis;
     // create SpeechSynthesisUtterance object (text = what will be read)
     const u = new SpeechSynthesisUtterance(text);
 
-    // initialize utterance state
+    // create voices
+    const voices = synth.getVoices();
+
+    // initialize utterance and voice state
     setUtterance(u);
+    setVoice(voices[27]); // searched for female voice
+    setRate(0.8); // slower speed for targeted audience
 
     return () => {
       // cancel any ongoing speech synthesis when unmounted
@@ -24,6 +31,8 @@ const TextToSpeech = ({ text }) => {
   const handlePlay = () => {
     const synth = window.speechSynthesis;
 
+    utterance.voice = voice;
+    utterance.rate = rate;
     synth.speak(utterance);
   };
 
@@ -35,8 +44,8 @@ const TextToSpeech = ({ text }) => {
 
   return (
     <div> 
-      <Button onClick={handlePlay}><BsPlayCircleFill /></Button>
-      <Button onClick={handleStop}><BsFillStopCircleFill /></Button>
+      <button onClick={handlePlay} className="speech-btn"><BsFillPlayCircleFill className="speech-btn-icon"/></button>
+      <button onClick={handleStop} className="speech-btn"><BsFillStopCircleFill className="speech-btn-icon"/></button>
     </div>
   );
 };
