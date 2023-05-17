@@ -17,7 +17,6 @@ function App() {
         <Route path="/menu" exact element={<Menu />} />
         <Route path="/bodypartgame" exact element={<BodyPartGame />} />
       </Routes>
-     <EndGame></EndGame>
     </BrowserRouter>
   );
 };
