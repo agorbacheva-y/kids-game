@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import CloseButton from 'react-bootstrap/CloseButton';
+import { MdArrowCircleLeft } from "react-icons/md";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -60,7 +60,7 @@ const Register = () => {
   return (
     <div>
       <Header>
-          <Link to="/"><CloseButton/></Link>
+          <Link to="/"><MdArrowCircleLeft className="left-arrow"/></Link>
       </Header>
         
       

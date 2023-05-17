@@ -43,6 +43,11 @@
   align-items: center;
 }
 
+.left-arrow {
+  font-size: 3rem;
+  color: #51bd96;
+}
+
 .svg-boy {
   position: relative;
   width: 560px;
