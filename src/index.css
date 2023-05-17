@@ -137,8 +137,15 @@ border-radius: 20px;
 
 /* Css for the blose button */
 .closebtn {
-  margin-left: 150px;
-margin: 100px;}
+  margin-right: 20px;
+  font-size: 1.5rem;
+}
+
+/* css for close button container */
+.closebtn-container {
+  display: flex;
+  justify-content: flex-end;
+}
 
 /* css for the links in menu and Endgame*/
 .menulink{
