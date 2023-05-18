@@ -1,25 +1,5 @@
 {
   "users": [
-    {
-      "myName": "test",
-      "email": "test@gmail.com",
-      "username": "test1",
-      "password": "abcd",
-      "id": 1
-    },
-    {
-      "myName": "userA",
-      "email": "usera@gmail.com",
-      "username": "userA",
-      "password": "aaaa",
-      "id": 2
-    },
-    {
-      "myName": "userB",
-      "email": "userb@gmail.com",
-      "username": "userB",
-      "password": "bbbb",
-      "id": 3
-    }
+
   ]
 }

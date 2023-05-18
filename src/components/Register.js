@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -29,7 +30,7 @@ const Register = () => {
       .get("/users") //get users from database
       .then((res) => checkEmail(res.data)) //check from results if email already exists
       .catch((error) => {
-        console.log(error);
+        console.log(error.response.data);
       });
 
     if (myName === "" || email === "" || username === "" || password === "") {
@@ -38,7 +39,7 @@ const Register = () => {
     } else if (user) {
       alert("User alerady exists");
     } else {
-      const user = { myName, email, username, password };
+      const user = { myName, email, username, password, id:uuidv4() };
       console.log(user);
       axios.post("/users", user)
         .then(alert("New user created!"));
