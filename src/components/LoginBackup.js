@@ -42,7 +42,7 @@ const LoginBackup = () => {
     if (user) {
       // set user in localStorage if login successful
       // use user to go to private route
-      localStorage.setItem("user", JSON.stringify(user.id));
+      localStorage.setItem("currentUser", user.username);
       navigate("/mainmenu");
       console.log(user);
     } else {
