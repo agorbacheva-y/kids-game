@@ -41,6 +41,7 @@ const Register = () => {
     } else {
       const user = { myName, email, username, password, id:uuidv4() };
       console.log(user);
+      localStorage.setItem("currentUser", user.username);
       axios.post("/users", user)
         .then(alert("New user created!"));
     }

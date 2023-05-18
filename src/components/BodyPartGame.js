@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Greeting from "./Greeting";
 
 const BodyPartGame = () => {
+  const currentUser = localStorage.getItem("currentUser")
   return (
     <>
       <div className="closebtn-container">
@@ -13,7 +14,7 @@ const BodyPartGame = () => {
       </div>
       
       <div className="container">
-        <Greeting>Hi!</Greeting>
+        <Greeting>Hi {currentUser}!</Greeting>
         <BoySvg />
       </div>
     </>

@@ -13,6 +13,13 @@
       "username": "userA",
       "password": "AAAA",
       "id": "cb0605dc-8b1c-4b0d-b6c5-110b03c5f565"
+    },
+    {
+      "myName": "userB",
+      "email": "userb@gmail.com",
+      "username": "userB",
+      "password": "bbbb",
+      "id": "189f0b01-af9b-4cb2-bce3-4d2711e86740"
     }
   ]
 }
