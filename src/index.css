@@ -167,12 +167,13 @@ border-radius: 20px;
 }
 
 /* title on top of pages */
+
 .greeting {
   font-family: 'Luckiest Guy';
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 30px;
+  font-size: 2.5rem;
+  line-height: 5px;
   /* or 136% */
   text-align: center;
   letter-spacing: 4px;
@@ -185,8 +186,8 @@ border-radius: 20px;
   font-family: 'Luckiest Guy';
   font-style: normal;
   font-weight: 400;
-  font-size: 35px;
-  line-height: 50px;
+  font-size: 4rem;
+  line-height: 6rem;
   /* or 143% */
   text-align: center;
   letter-spacing: 2px;
