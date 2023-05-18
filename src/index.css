@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 *,
 ::after,
@@ -9,12 +9,10 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
-  background-color: #000;
-  color: #fff;
 }
 
 .container {
@@ -37,6 +35,7 @@ body {
   align-items: center;
 }
 
+/* Body Part Game */
 .svg-boy {
   position: relative;
   width: 560px;
@@ -60,6 +59,7 @@ body {
   opacity: 0.5;
 }
 
+/* Body Part Game modal */
 .overlay {
   position: fixed;
   display: block;
@@ -91,6 +91,7 @@ body {
   cursor: pointer;
 }
 
+/* Finish Game */
 .confetti {
   position: absolute;
   height: 100vh;
@@ -135,7 +136,7 @@ border-radius: 20px;
   background-color: #d5c88b;
 }
 
-/* Css for the blose button */
+/* Css for the close button */
 .closebtn {
   margin-right: 20px;
   font-size: 1.5rem;
@@ -163,4 +164,32 @@ border-radius: 20px;
 /* Endgame badge*/
 .badge{
   margin: 50px;
+}
+
+/* title on top of pages */
+.greeting {
+  font-family: 'Luckiest Guy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  /* or 136% */
+  text-align: center;
+  letter-spacing: 4px;
+  color: #164B8A;
+  mix-blend-mode: normal;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+  font-family: 'Luckiest Guy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  /* or 143% */
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

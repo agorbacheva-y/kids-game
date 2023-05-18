@@ -15,6 +15,7 @@ const BodyPartGame = () => {
       
       <div className="container">
         <Greeting>Hi {currentUser}!</Greeting>
+        <h1 className="title">Guess Body Part</h1>
         <BoySvg />
       </div>
     </>
