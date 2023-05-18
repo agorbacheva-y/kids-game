@@ -1,6 +1,7 @@
 import BoySvg from "./BoySvg";
 import CloseButton from "react-bootstrap/CloseButton";
 import { Link } from "react-router-dom";
+import Greeting from "./Greeting";
 
 const BodyPartGame = () => {
   return (
@@ -12,7 +13,7 @@ const BodyPartGame = () => {
       </div>
       
       <div className="container">
-        <h1>body part game</h1>
+        <Greeting>Hi!</Greeting>
         <BoySvg />
       </div>
     </>
