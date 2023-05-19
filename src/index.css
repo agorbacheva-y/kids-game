@@ -146,6 +146,14 @@ border-radius: 20px;
 .closebtn-container {
   display: flex;
   justify-content: flex-end;
+  border: 1px solid red;
+}
+
+/* css for logout icon */
+.logout {
+  font-size: 4rem;
+  color: #164B8A;
+  margin: 2rem;
 }
 
 /* css for the links in menu and Endgame*/
@@ -167,7 +175,6 @@ border-radius: 20px;
 }
 
 /* title on top of pages */
-
 .greeting {
   font-family: 'Luckiest Guy';
   font-style: normal;
