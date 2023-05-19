@@ -25,11 +25,6 @@ body {
   flex-direction: column;
 }
 
-.btn {
-  color: white !important;
-  text-decoration: none;
-}
-
 .btnContainer {
   margin: 2rem;
   display: flex;
@@ -78,7 +73,7 @@ body {
   margin: 15% auto;
   background-color: white;
   border-radius: 0.25rem;
-  width: 40vw;
+  width: 60vw;
   padding: 2rem;
   position: relative;
   text-align: center;
@@ -163,4 +158,20 @@ border-radius: 20px;
 /* Endgame badge*/
 .badge{
   margin: 50px;
+}
+
+.link {
+  text-decoration: none;
+  color: #164B8A;
+}
+
+.speech-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0 2rem;
+}
+
+.speech-btn-icon {
+  fill: #164B8A;
+  font-size: 2.5rem;
 }

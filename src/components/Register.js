@@ -54,7 +54,7 @@ const Register = () => {
     <div className="container">
       <Card>
         <Form>
-          <h1>Register User</h1>
+          <h1>Log In</h1>
           <Form.Group controlId="formBasicName">
             <Form.Label>
               <Form.Control
@@ -99,11 +99,12 @@ const Register = () => {
             </Form.Label>
           </Form.Group>
 
-          <Button
+          <button
             type="submit"
+            className="reuse-btn"
             onClick={handleSubmit}
             >Submit
-          </Button>
+          </button>
         </Form>
       </Card>
 
