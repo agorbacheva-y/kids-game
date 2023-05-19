@@ -4,15 +4,17 @@ import Modal from "./Modal";
 import Confetti from "react-confetti";
 import { Link } from "react-router-dom";
 import BodyPartModal from "./BodyPartModal";
+import TextToSpeech from "./TextToSpeech";
+import Button from "react-bootstrap/Button";
 
 const BoySvg = () => {
   // state to hold count of clicks
   let [ count, setCount ] = useState(null);
 
-  // state for modal open and close
+  // state for finish modal open and close
   const [ status, setStatus ] = useState(false);
 
-  // state for body part open and close
+  // state for body part modal open and close
   const [ faceStatus, setFaceStatus ] = useState(false);
   const [ bodyStatus, setBodyStatus ] = useState(false);
   const [ leftHandStatus, setLeftHandStatus ] = useState(false);
@@ -20,7 +22,6 @@ const BoySvg = () => {
   const [ leftFootStatus, setLeftFootStatus ] = useState(false);
   const [ rightFootStatus, setRightFootStatus ] = useState(false);
   
-
   // function for alert when click on body part
   const handleFace = () => {
     setFaceStatus(true);
@@ -106,7 +107,8 @@ const BoySvg = () => {
         {faceStatus && (
           <BodyPartModal close={() => setFaceStatus(false)}>
             <div className="container">
-              <p>face</p>
+              <p>Touch your face</p>
+              <TextToSpeech text={"Touch your face"} />
             </div>
           </BodyPartModal>
         )}
@@ -116,7 +118,8 @@ const BoySvg = () => {
         {bodyStatus && (
           <BodyPartModal close={() => setBodyStatus(false)}>
             <div className="container">
-              <p>body</p>
+              <p>Shake your body</p>
+              <TextToSpeech text={"Shake your body"} />
             </div>
           </BodyPartModal>
         )}
@@ -126,7 +129,8 @@ const BoySvg = () => {
         {leftHandStatus && (
           <BodyPartModal close={() => setLeftHandStatus(false)}>
             <div className="container">
-              <p>left hand</p>
+              <p>Wave your left hand</p>
+              <TextToSpeech text={"Wave your left hand"} />
             </div>
           </BodyPartModal>
         )}
@@ -136,7 +140,8 @@ const BoySvg = () => {
         {rightHandStatus && (
           <BodyPartModal close={() => setRightHandStatus(false)}>
             <div className="container">
-              <p>right hand</p>
+              <p>Point to the ceiling with your right hand</p>
+              <TextToSpeech text={"Point to the ceiling with your right hand"} />
             </div>
           </BodyPartModal>
         )}
@@ -146,7 +151,8 @@ const BoySvg = () => {
         {leftFootStatus && (
           <BodyPartModal close={() => setLeftFootStatus(false)}>
             <div className="container">
-              <p>left foot</p>
+              <p>Lift your left foot</p>
+              <TextToSpeech text={"Lift your left foot"} />
             </div>
           </BodyPartModal>
         )}
@@ -156,7 +162,8 @@ const BoySvg = () => {
         {rightFootStatus && (
           <BodyPartModal close={() => setRightFootStatus(false)}>
             <div className="container">
-              <p>right foot</p>
+              <p>Stomp your right foot</p>
+              <TextToSpeech text={"Stomp your right foot"} />
             </div>
           </BodyPartModal>
         )}
@@ -168,9 +175,9 @@ const BoySvg = () => {
           <Modal>
             <div className="finish-overlay"><Confetti /></div>
             <p>Congratulations! You've finished the game!</p>
-            <button onClick={() => setStatus(true)} className="modal-btn">
+            <Button onClick={() => setStatus(true)} className="modal-btn">
               <Link to="/mainmenu" className="btn">Back to menu</Link>
-            </button>
+            </Button>
           </Modal>
         )}
         
