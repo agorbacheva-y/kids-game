@@ -18,8 +18,8 @@ const TextToSpeech = ({ text }) => {
 
     // initialize utterance and voice state
     setUtterance(u);
-    setVoice(voices[27]); // searched for female voice
-    setRate(0.8); // slower speed for targeted audience
+    setVoice(voices[29]); // searched for female voice
+    setRate(0.4); // slower speed for targeted audience
 
     return () => {
       // cancel any ongoing speech synthesis when unmounted
