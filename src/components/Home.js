@@ -15,7 +15,7 @@ const Home = () => {
           <Link to="/register" className="btn">Register</Link>
         </Button>
 
-        
+        <Button size="lg">Log in</Button>
       </div>
     </>
   );

@@ -89,7 +89,7 @@
   margin: 15% auto;
   background-color: white;
   border-radius: 0.25rem;
-  width: 40vw;
+  width: 60vw;
   padding: 2rem;
   position: relative;
   text-align: center;
@@ -130,6 +130,67 @@
   background-color: #000;
 }
 
+/* Css for ReusableButton */
+.reuse-btn{
+  box-sizing: border-box;
+  margin: 10px;
+width: 192px;
+height: 63px;
+background: #E4D379;
+border: 1px solid #55288E;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+.reuse-btn:hover {
+  background-color: #d5c88b;
+}
+
+/* Css for the blose button */
+.closebtn {
+  margin-right: 20px;
+  font-size: 1.5rem;
+}
+
+/* css for close button container */
+.closebtn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* css for the links in menu and Endgame*/
+.menulink{
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #000;
+}
+
+.menulink:hover{
+  color: #000;
+}
+
+/* Endgame badge*/
+.badge{
+  margin: 50px;
+}
+
+.link {
+  text-decoration: none;
+  color: #164B8A;
+}
+
+.speech-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0 2rem;
+}
+
+.speech-btn-icon {
+  fill: #164B8A;
+  font-size: 2.5rem;
+}
 .custom-card {
   border: none !important; 
   background-color: #E8E1C5 !important;
