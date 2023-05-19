@@ -6,7 +6,8 @@ import orangeCircle from "./shapesImg/orangeCircle.png";
 import bluePentagon from "./shapesImg/BluePentagon.png";
 import redTriangle from "./shapesImg/redTriangle.png";
 import blueRectangle from "./shapesImg/blueRectangle.png";
-import ReusableButton from "./ReusableButton"
+import { CloseButton } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const ShapeGame = () => {
@@ -76,6 +77,13 @@ function Reset() {
   // game information desplayed here
   return (
     <div className="container">
+
+      {/*Here is the button to go back to home page*/}
+      <div className="closebtn-container">
+        <Link to="/">
+            <CloseButton className="closebtn"></CloseButton>
+        </Link>
+      </div>
       <h1>Shape Game</h1>
       <p>
         You have 15 seconds to find an object that is similar <br /> to the
@@ -110,3 +118,5 @@ function Reset() {
 };
 
 export default ShapeGame;
+
+// add a link to the endgame in the closebutton link
