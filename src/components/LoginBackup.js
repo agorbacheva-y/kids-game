@@ -19,30 +19,27 @@ const LoginBackup = () => {
     const user = users.find(
       (user) => user.username === username && user.password === password);
       //console.log(user);
-      if (users) {
-        return user;
-      }
+      if (users) return user;
+      console.log(user);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (username === "" || password === "") {
-      alert("All fields are required");
-    }
-
     let user = await axios
       .get("/users")
       .then((res) => checkUser(res.data))
       .catch((error) => {
-        console.log(error);
+        console.log(error.response.data);
       });
 
-    // if successful login redirect to main menu
-    if (user) {
+    if (username === "" || password === "") {
+      alert("All fields are required");
+      return user;
+    } else if (user) {
       // set user in localStorage if login successful
-      // use user to go to private route
       localStorage.setItem("currentUser", user.username);
+      alert("Login successful!");
       navigate("/mainmenu");
       console.log(user);
     } else {
@@ -86,7 +83,17 @@ const LoginBackup = () => {
             >Submit
           </Button>
         </Form>
-      </Card>
+      </Card>          
+
+      <p>Don't have an account?</p>
+      <Button>add link to register pg</Button>
+
+
+      <div className="container">
+        <Button size="lg">
+          <Link to="/menu" className="btn">temp button to jump to mainmenu</Link>
+        </Button>
+      </div>
     </div>
   );
 };
