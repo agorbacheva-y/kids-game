@@ -9,13 +9,13 @@ const Home = () => {
       </div>
 
       <div className="btnContainer">
-        <Button size="lg">
-          <Link to="/register" className="btn">Create new user</Link>
-        </Button>
+        <button className="reuse-btn">
+          <Link to="/register" className="link">Register</Link>
+        </button>
 
-        <Button size="lg">
+        <button className="reuse-btn">
           <Link to="/loginbackup" className="btn">Log in</Link>
-        </Button>
+        </button>
       </div>
     </>
   );
