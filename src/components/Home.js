@@ -1,7 +1,8 @@
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import ReusableButton from "./ReusableButton";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="container">
@@ -9,11 +10,19 @@ const Home = () => {
       </div>
 
       <div className="btnContainer">
-        <button className="reuse-btn">
-          <Link to="/register" className="link">Register</Link>
-        </button>
+        <ReusableButton 
+          className="reuse-btn"
+          onClick={() => navigate("/register")}
+        >
+          Register
+        </ReusableButton>
 
-        <button className="reuse-btn">Log in</button>
+        <ReusableButton 
+          className="reuse-btn"
+          onClick={() => navigate("/login")}
+        >
+          Log in
+        </ReusableButton>
       </div>
     </>
   );

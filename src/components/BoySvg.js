@@ -2,7 +2,7 @@ import { useState } from "react";
 import Boy from "../images/Boy.svg";
 import Modal from "./Modal";
 import Confetti from "react-confetti";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BodyPartModal from "./BodyPartModal";
 import TextToSpeech from "./TextToSpeech";
 import Button from "react-bootstrap/Button";
@@ -21,6 +21,8 @@ const BoySvg = () => {
   const [ rightHandStatus, setRightHandStatus ] = useState(false);
   const [ leftFootStatus, setLeftFootStatus ] = useState(false);
   const [ rightFootStatus, setRightFootStatus ] = useState(false);
+
+  const navigate = useNavigate();
   
   // function for alert when click on body part
   const handleFace = () => {
@@ -175,8 +177,14 @@ const BoySvg = () => {
           <Modal>
             <div className="finish-overlay"><Confetti /></div>
             <p>Congratulations! You've finished the game!</p>
-            <Button onClick={() => setStatus(true)} className="modal-btn">
-              <Link to="/mainmenu" className="btn">Back to menu</Link>
+            <Button 
+              onClick={() => {
+                setStatus(true)
+                navigate("/menu")
+              }}
+              className="modal-btn"
+            >
+              Back to menu
             </Button>
           </Modal>
         )}

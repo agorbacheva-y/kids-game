@@ -1,17 +1,20 @@
 import BoySvg from "./BoySvg";
 import CloseButton from "react-bootstrap/CloseButton";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Greeting from "./Greeting";
 import { MdOutlineLogout } from "react-icons/md";
 
 const BodyPartGame = () => {
   const currentUser = localStorage.getItem("currentUser")
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="closebtn-container">
-        <Link to="/endgame"> 
-          <CloseButton className="closebtn" /> 
-        </Link>
+        <CloseButton 
+          className="closebtn" 
+          onClick={() => navigate("/endgame")}
+        /> 
       </div>
       
       <div className="container">
@@ -21,9 +24,10 @@ const BodyPartGame = () => {
       </div>
 
       <div className="closebtn-container">
-        <Link to="/logout">
-          <MdOutlineLogout className="logout"/>
-        </Link>
+        <MdOutlineLogout 
+          className="logout"
+          onClick={() => navigate("/logout")}
+        />
       </div>
     </>
   );

@@ -1,8 +1,8 @@
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import ReusableButton from "./ReusableButton";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
@@ -15,6 +15,8 @@ const Register = () => {
 
   // state for disabled status of start game button
   const [ disabled, setDisabled ] = useState(false);
+
+  let navigate = useNavigate();
 
   // helper function used in submit function to check if email is already registered
   const checkEmail = (users) => {
@@ -56,7 +58,7 @@ const Register = () => {
     <div className="container">
       <Card>
         <Form>
-          <h1>Log In</h1>
+          <h1>Register</h1>
           <Form.Group controlId="formBasicName">
             <Form.Label>
               <Form.Control
@@ -101,18 +103,16 @@ const Register = () => {
             </Form.Label>
           </Form.Group>
 
-          <button
+          <ReusableButton
             type="submit"
             className="reuse-btn"
             onClick={handleSubmit}
             >Submit
-          </button>
+          </ReusableButton>
         </Form>
       </Card>
 
-      <Button size="lg">
-          <Link to="/menu" className="btn">Start Game</Link>
-      </Button>
+      <ReusableButton onClick={() => navigate("/menu")}>Start Game</ReusableButton>
     </div>
   );
 };
