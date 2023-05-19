@@ -7,7 +7,6 @@ import EndGame from "./components/EndGame";
 import BodyPartGame from "./components/BodyPartGame";
 import Menu from "./components/Menu";
 
-
 function App() {
   return (
     <BrowserRouter>
