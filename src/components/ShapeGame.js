@@ -67,7 +67,6 @@ function Reset() {
       setCurrentImg(null) //img disapars when timer is 00
       setShowModal(true);
     }, 15000); // this the 15 seconds in the timer
- 
 
 };
 
