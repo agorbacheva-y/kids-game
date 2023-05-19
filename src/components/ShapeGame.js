@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import css from "./shapeGame.css"
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import yellowStar from "./shapesImg/yellowStar.png";
@@ -7,6 +6,7 @@ import orangeCircle from "./shapesImg/orangeCircle.png";
 import bluePentagon from "./shapesImg/BluePentagon.png";
 import redTriangle from "./shapesImg/redTriangle.png";
 import blueRectangle from "./shapesImg/blueRectangle.png";
+import ReusableButton from "./ReusableButton"
 
 
 const ShapeGame = () => {
@@ -92,7 +92,7 @@ function Reset() {
           <p>Press the button for the next image.</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={() => setShowModal(false)}>
+          <Button className="modal-btn " variant="primary" onClick={() => setShowModal(false)}>
             OK
           </Button>
         </Modal.Footer>
@@ -102,7 +102,6 @@ function Reset() {
        )}
       
       <h1>{timer}</h1>
-
       <Button className="btn" size="lg" onClick={Reset}>
         Start Timer
       </Button>
