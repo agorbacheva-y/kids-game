@@ -108,9 +108,9 @@ const Register = () => {
         </Form>
       </Card>
 
-      <button className="reuse-btn">
-          <Link to="/mainmenu" className="link">Start Game</Link>
-      </button>
+      <Button size="lg">
+          <Link to="/menu" className="btn">Start Game</Link>
+      </Button>
     </div>
   );
 };
