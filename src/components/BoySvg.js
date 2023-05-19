@@ -102,7 +102,7 @@ const BoySvg = () => {
         </svg>
       </div>
 
-      <div className="container">
+      <div>
         {faceStatus && (
           <BodyPartModal close={() => setFaceStatus(false)}>
             <div className="container">
@@ -112,7 +112,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {bodyStatus && (
           <BodyPartModal close={() => setBodyStatus(false)}>
             <div className="container">
@@ -122,7 +122,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {leftHandStatus && (
           <BodyPartModal close={() => setLeftHandStatus(false)}>
             <div className="container">
@@ -132,7 +132,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {rightHandStatus && (
           <BodyPartModal close={() => setRightHandStatus(false)}>
             <div className="container">
@@ -142,7 +142,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {leftFootStatus && (
           <BodyPartModal close={() => setLeftFootStatus(false)}>
             <div className="container">
@@ -152,7 +152,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {rightFootStatus && (
           <BodyPartModal close={() => setRightFootStatus(false)}>
             <div className="container">
@@ -162,7 +162,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {status && (
           // overlay with confetti underneath modal
           <Modal>
