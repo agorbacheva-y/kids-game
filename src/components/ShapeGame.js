@@ -31,7 +31,7 @@ const ShapeGame = () => {
   function startTimer(e) {
     let { total, seconds } = getTimerRemaining(e);
     if (total >= 0) {
-      setTimer(seconds > 1 ? seconds : "0" + seconds);
+      setTimer(seconds >= 1 ? seconds : "0" + seconds);
     }
   }
   // timer starts
