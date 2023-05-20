@@ -18,7 +18,7 @@ const Menu = () => {
                 <Link className="menulink" to="/bodypartgame">Body Parts </Link>
             </ReusableButton>
             <ReusableButton>
-                <Link className="menulink" to="findobjectsgame">Find Objects </Link>
+                <Link className="menulink" to="/shapegame">Find Objects </Link>
             </ReusableButton>
             <ReusableButton>
                 <Link className="menulink" to="dragndropgame">Drag & Drop </Link>        
