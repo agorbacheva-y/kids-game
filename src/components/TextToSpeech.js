@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
 import { BsFillPlayCircleFill, BsFillStopCircleFill } from "react-icons/bs";
 
 const TextToSpeech = ({ text }) => {

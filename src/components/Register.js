@@ -1,10 +1,11 @@
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import ReusableButton from "./ReusableButton";
 import { MdArrowCircleLeft } from "react-icons/md";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
 
 const Register = () => {
@@ -21,6 +22,8 @@ const Register = () => {
     setDisabled(false);
   };
 
+  let navigate = useNavigate();
+
   // helper function used in submit function to check if email is already registered
   const checkEmail = (users) => {
     const user = users.find((user) => user.email === email);
@@ -35,7 +38,7 @@ const Register = () => {
       .get("/users") //get users from database
       .then((res) => checkEmail(res.data)) //check from results if email already exists
       .catch((error) => {
-        console.log(error);
+        console.log(error.response.data);
       });
 
     if (myName === "" || email === "" || username === "" || password === "") {
@@ -44,8 +47,9 @@ const Register = () => {
     } else if (user) {
       alert("User alerady exists");
     } else {
-      const user = { myName, email, username, password };
+      const user = { myName, email, username, password, id:uuidv4() };
       console.log(user);
+      localStorage.setItem("currentUser", user.username);
       axios.post("/users", user)
         .then(alert("New user created!"));
         handleDisable();
@@ -58,27 +62,25 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <Header>
+  <div>
+    <Header>
           <Link to="/"><MdArrowCircleLeft className="left-arrow"/></Link>
-      </Header>
-        
-      
-      
-      <div className="container">
-        <Card className="custom-card">
-          <Form className="custom-form">
-            <h1>Register User</h1>
-            <Form.Group controlId="formBasicName">
-              <Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Name"
-                  value={myName}
-                  onChange={(e) => setMyName(e.target.value)}
-                />
-              </Form.Label>
-            </Form.Group>
+    </Header>
+    
+    <div className="container">
+      <Card className="custom-card">
+        <Form className="custom-form">
+          <h1>Register User</h1>
+          <Form.Group controlId="formBasicName">
+            <Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Name"
+                value={myName}
+                onChange={(e) => setMyName(e.target.value)}
+              />
+            </Form.Label>
+          </Form.Group>
 
             <Form.Group controlId="formBasicEmail">
               <Form.Label>
@@ -113,15 +115,16 @@ const Register = () => {
               </Form.Label>
             </Form.Group>
 
-            <Button
-              type="submit"
-              onClick={handleSubmit}
-              >Submit
-            </Button>
-          </Form>
-        </Card>
+          <ReusableButton
+            type="submit"
+            className="reuse-btn"
+            onClick={handleSubmit}
+            >Submit
+          </ReusableButton>
+        </Form>
+      </Card>
 
-        <Button 
+      <Button 
           size="lg" 
           disabled={disabled} 
           onClick={handleDisable}>
@@ -138,7 +141,9 @@ const Register = () => {
           </Button>
         </div>
       </div>
+
     </div>
+
   );
 };
 
