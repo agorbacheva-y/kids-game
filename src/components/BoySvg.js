@@ -174,10 +174,7 @@ const BoySvg = () => {
         {status && (
           <FinishGame>
             <Button 
-              onClick={() => {
-                setStatus(true)
-                navigate("/menu")
-              }}
+              onClick={() => {navigate("/menu")}}
               className="modal-btn"
             >
               Back to menu
