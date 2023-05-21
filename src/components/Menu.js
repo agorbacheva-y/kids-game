@@ -1,27 +1,35 @@
 import React from "react";
 import ReusableButton from "./ReusableButton";
 import CloseButton from 'react-bootstrap/CloseButton';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
+    const navigate = useNavigate();
     return (
         <>
         <div className="closebtn-container">
-            <Link to="/"> 
-                <CloseButton className="closebtn"></CloseButton> 
-            </Link>
+            <CloseButton onClick={() => navigate("/")} className="closebtn"></CloseButton> 
         </div>
         
         <div className="container"> 
             <h1>Choose a Game</h1>
-            <ReusableButton>
-                <Link className="menulink" to="/bodypartgame">Body Parts </Link>
+            <ReusableButton 
+                className="menulink"
+                onClick={() => navigate("/bodypartgame")}
+            >
+                Body Part Game
             </ReusableButton>
-            <ReusableButton>
-                <Link className="menulink" to="/shapegame">Find Objects </Link>
+            <ReusableButton 
+                className="menulink"
+                onClick={() => navigate("/findobjectsgame")}
+            >
+                Find Objects
             </ReusableButton>
-            <ReusableButton>
-                <Link className="menulink" to="dragndropgame">Drag & Drop </Link>        
+            <ReusableButton
+                className="menulink"
+                onClick={() => navigate("/dragndropgame")}
+            >
+                Drag & Drop       
             </ReusableButton>
         </div>
         </>

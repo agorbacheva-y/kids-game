@@ -6,6 +6,7 @@ import ShapeGame from "./components/ShapeGame";
 import EndGame from "./components/EndGame";
 import BodyPartGame from "./components/BodyPartGame";
 import Menu from "./components/Menu";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/endgame" exact element={<EndGame />} />
         <Route path="/menu" exact element={<Menu />} />
         <Route path="/bodypartgame" exact element={<BodyPartGame />} />
+        <Route path="/logout" exact element={<Logout />} />
       </Routes>
     </BrowserRouter>
   );
