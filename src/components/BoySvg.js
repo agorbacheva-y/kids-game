@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Boy from "../images/Boy.svg";
-import Modal from "./Modal";
-import Confetti from "react-confetti";
 import { useNavigate } from "react-router-dom";
 import BodyPartModal from "./BodyPartModal";
 import TextToSpeech from "./TextToSpeech";
 import Button from "react-bootstrap/Button";
+import FinishGame from "./FinishGame";
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -173,10 +172,7 @@ const BoySvg = () => {
 
       <div>
         {status && (
-          // overlay with confetti underneath modal
-          <Modal>
-            <div className="finish-overlay"><Confetti /></div>
-            <p>Congratulations! You've finished the game!</p>
+          <FinishGame>
             <Button 
               onClick={() => {
                 setStatus(true)
@@ -186,9 +182,8 @@ const BoySvg = () => {
             >
               Back to menu
             </Button>
-          </Modal>
+          </FinishGame>
         )}
-        
       </div>
     </>
   );
