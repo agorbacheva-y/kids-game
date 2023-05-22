@@ -74,6 +74,10 @@ p {
   background-size: contain;
 }
 
+.reg-image {
+  width: 100%;
+}
+
 /* .btn {
   color: white !important;
   text-decoration: none;
