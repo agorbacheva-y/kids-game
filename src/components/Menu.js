@@ -21,9 +21,6 @@ const Menu = () => {
             <ReusableButton>
                 <Link className="menulink" to="findobjectsgame">Find Objects </Link>
             </ReusableButton>
-            <ReusableButton>
-                <Link className="menulink" to="dragndropgame">Drag & Drop </Link>        
-            </ReusableButton>
             <InfoForParents></InfoForParents>
         </div>
         </>
