@@ -172,16 +172,22 @@
   justify-content: flex-end;
 }
 
-/* css for logout icon */
+/* css for logout and setting icon */
 .logout {
   font-size: 4rem;
   color: #164B8A;
-  margin: 0 2rem 2rem 2rem;
+  margin: 0 3rem 2rem 3rem;
   cursor: pointer;
 }
 
 .logout:hover {
   color: #55288E;
+}
+
+/* logout and setting */
+.settings {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* css for the links in menu and Endgame*/

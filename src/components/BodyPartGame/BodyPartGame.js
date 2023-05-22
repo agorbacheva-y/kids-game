@@ -2,8 +2,8 @@ import BoySvg from "./BoySvg";
 import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
 import Greeting from "../Greeting";
-import { MdOutlineLogout } from "react-icons/md";
-import ReusableButton from "../ReusableButton";
+import { MdOutlineLogout, MdSettings, MdSettingsApplications } from "react-icons/md";
+import Setting from "./Setting";
 
 const BodyPartGame = () => {
   const currentUser = localStorage.getItem("currentUser")
@@ -15,7 +15,9 @@ const BodyPartGame = () => {
         <CloseButton 
           className="closebtn" 
           onClick={() => navigate("/endgame")}
-        /> 
+        >
+          Exit
+        </CloseButton> 
       </div>
       
       <div className="container">
@@ -24,13 +26,12 @@ const BodyPartGame = () => {
         <BoySvg />
       </div>
 
-      <ReusableButton onClick={() => navigate("/facepartgame")}>Face game</ReusableButton>
-
-      <div className="closebtn-container">
+      <div className="settings">
         <MdOutlineLogout 
           className="logout"
           onClick={() => navigate("/logout")}
         />
+        <Setting />
       </div>
     </>
   );

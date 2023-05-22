@@ -3,7 +3,7 @@ import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
 import Greeting from "../Greeting";
 import { MdOutlineLogout } from "react-icons/md";
-import ReusableButton from "../ReusableButton";
+import Setting from "./Setting";
 
 const FacePartGame = () => {
   const currentUser = localStorage.getItem("currentUser")
@@ -24,11 +24,12 @@ const FacePartGame = () => {
         <GirlSvg />
       </div>
       
-      <div className="closebtn-container">
+      <div className="settings">
         <MdOutlineLogout 
           className="logout"
           onClick={() => navigate("/logout")}
         />
+        <Setting />
       </div>
     </>
   );
