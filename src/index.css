@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 *,
 ::after,
@@ -9,12 +9,12 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
-  background-color: #000;
-  color: #fff;
+  background-color: #E8E1C5;
+  color: #000;
 }
 
 .container {
@@ -25,6 +25,28 @@ body {
   flex-direction: column;
 }
 
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.btn {
+  color: white !important;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.btn {
+  color: white !important;
+  text-decoration: none;
+}
+
 .btnContainer {
   margin: 2rem;
   display: flex;
@@ -32,6 +54,12 @@ body {
   align-items: center;
 }
 
+.left-arrow {
+  font-size: 3rem;
+  color: #51bd96;
+}
+
+/* Body Part Game */
 .svg-boy {
   position: relative;
   width: 560px;
@@ -55,6 +83,7 @@ body {
   opacity: 0.5;
 }
 
+/* Body Part Game modal */
 .overlay {
   position: fixed;
   display: block;
@@ -86,6 +115,7 @@ body {
   cursor: pointer;
 }
 
+/* Finish Game */
 .confetti {
   position: absolute;
   height: 100vh;
@@ -118,19 +148,19 @@ body {
 .reuse-btn{
   box-sizing: border-box;
   margin: 10px;
-width: 192px;
-height: 63px;
-background: #E4D379;
-border: 1px solid #55288E;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 20px;
+  width: 192px;
+  height: 63px;
+  background: #E4D379;
+  border: 1px solid #55288E;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 }
 
 .reuse-btn:hover {
   background-color: #d5c88b;
 }
 
-/* Css for the blose button */
+/* Css for the close button */
 .closebtn {
   margin-right: 20px;
   font-size: 1.5rem;
@@ -140,6 +170,13 @@ border-radius: 20px;
 .closebtn-container {
   display: flex;
   justify-content: flex-end;
+}
+
+/* css for logout icon */
+.logout {
+  font-size: 4rem;
+  color: #164B8A;
+  margin: 0 2rem 2rem 2rem;
 }
 
 /* css for the links in menu and Endgame*/
@@ -174,4 +211,44 @@ border-radius: 20px;
 .speech-btn-icon {
   fill: #164B8A;
   font-size: 2.5rem;
+}
+.custom-card {
+  border: none !important; 
+  background-color: #E8E1C5 !important;
+}
+
+/*the images in shapegame*/
+.shapeimg {
+  width: 200px;
+  border: 1px solid #55288E;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+/* title on top of pages */
+.greeting {
+  font-family: 'Luckiest Guy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 5px;
+  /* or 136% */
+  text-align: center;
+  letter-spacing: 4px;
+  color: #164B8A;
+  mix-blend-mode: normal;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+  font-family: 'Luckiest Guy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 6rem;
+  /* or 143% */
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

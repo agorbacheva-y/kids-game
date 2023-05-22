@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
 import { BsFillPlayCircleFill, BsFillStopCircleFill } from "react-icons/bs";
 
 const TextToSpeech = ({ text }) => {
-  // state to store text to read aloud
-  const [ utterance, setUtterance ] = useState(null);
-  const [ voice, setVoice ] = useState(null);
+  // state to store text, voice, speed for speech synthesis
+  const [ utterance, setUtterance ] = useState("");
+  const [ voice, setVoice ] = useState("");
   const [ rate, setRate ] = useState(1);
 
   useEffect(() => {
@@ -13,19 +12,27 @@ const TextToSpeech = ({ text }) => {
     // create SpeechSynthesisUtterance object (text = what will be read)
     const u = new SpeechSynthesisUtterance(text);
 
-    // create voices
     const voices = synth.getVoices();
-
+    
     // initialize utterance and voice state
     setUtterance(u);
-    setVoice(voices[29]); // searched for female voice
-    setRate(0.4); // slower speed for targeted audience
+    setVoice(voices.filter(function(voice) { return voice.name == 'Google UK English Female'; })[0] );
+    // set female voice
+    setRate(0.8); // slower speed for targeted audience
 
     return () => {
       // cancel any ongoing speech synthesis when unmounted
       synth.cancel();
     };
   }, [text]);
+
+    var speech_voices;
+      if ('speechSynthesis' in window) {
+        speech_voices = window.speechSynthesis.getVoices();
+        window.speechSynthesis.onvoiceschanged = function() {
+          speech_voices = window.speechSynthesis.getVoices();
+        };
+      }
 
   // function to speak text
   const handlePlay = () => {
@@ -34,6 +41,9 @@ const TextToSpeech = ({ text }) => {
     utterance.voice = voice;
     utterance.rate = rate;
     synth.speak(utterance);
+
+    // voice array empty on first call?
+    console.log(utterance);
   };
 
   const handleStop = () => {
@@ -53,3 +63,5 @@ const TextToSpeech = ({ text }) => {
 export default TextToSpeech;
 
 // reference: https://edvins.io/react-text-to-speech
+
+// need to set interval or reload page in order for voice array to populate

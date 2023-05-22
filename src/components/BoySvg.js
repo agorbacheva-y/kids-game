@@ -2,7 +2,7 @@ import { useState } from "react";
 import Boy from "../images/Boy.svg";
 import Modal from "./Modal";
 import Confetti from "react-confetti";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BodyPartModal from "./BodyPartModal";
 import TextToSpeech from "./TextToSpeech";
 import Button from "react-bootstrap/Button";
@@ -21,6 +21,8 @@ const BoySvg = () => {
   const [ rightHandStatus, setRightHandStatus ] = useState(false);
   const [ leftFootStatus, setLeftFootStatus ] = useState(false);
   const [ rightFootStatus, setRightFootStatus ] = useState(false);
+
+  const navigate = useNavigate();
   
   // function for alert when click on body part
   const handleFace = () => {
@@ -103,7 +105,7 @@ const BoySvg = () => {
         </svg>
       </div>
 
-      <div className="container">
+      <div>
         {faceStatus && (
           <BodyPartModal close={() => setFaceStatus(false)}>
             <div className="container">
@@ -114,7 +116,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {bodyStatus && (
           <BodyPartModal close={() => setBodyStatus(false)}>
             <div className="container">
@@ -125,7 +127,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {leftHandStatus && (
           <BodyPartModal close={() => setLeftHandStatus(false)}>
             <div className="container">
@@ -136,7 +138,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {rightHandStatus && (
           <BodyPartModal close={() => setRightHandStatus(false)}>
             <div className="container">
@@ -147,7 +149,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {leftFootStatus && (
           <BodyPartModal close={() => setLeftFootStatus(false)}>
             <div className="container">
@@ -158,7 +160,7 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {rightFootStatus && (
           <BodyPartModal close={() => setRightFootStatus(false)}>
             <div className="container">
@@ -169,14 +171,20 @@ const BoySvg = () => {
         )}
       </div>
 
-      <div className="container">
+      <div>
         {status && (
           // overlay with confetti underneath modal
           <Modal>
             <div className="finish-overlay"><Confetti /></div>
             <p>Congratulations! You've finished the game!</p>
-            <Button onClick={() => setStatus(true)} className="modal-btn">
-              <Link to="/mainmenu" className="btn">Back to menu</Link>
+            <Button 
+              onClick={() => {
+                setStatus(true)
+                navigate("/menu")
+              }}
+              className="modal-btn"
+            >
+              Back to menu
             </Button>
           </Modal>
         )}
