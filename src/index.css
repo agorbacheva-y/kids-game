@@ -74,6 +74,7 @@
 
 .svg-click {
   fill: transparent;
+  stroke: blue;
   cursor: pointer;
 }
 

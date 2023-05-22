@@ -135,10 +135,11 @@ const Register = () => {
         <p>Already a member?</p>
         <ReusableButton>add link to log in pg</ReusableButton>
 
-        <button>
+        <button
           onClick={() => {
             navigate("/menu")
           }}
+        >
           temp button to jump to mainmenu
         </button>
 

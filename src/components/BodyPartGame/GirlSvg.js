@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Boy from "../BodyPartGame/images/Boy.svg";
+import Girl from "../BodyPartGame/images/Girl.svg";
 import Modal from "../Modal";
 import Confetti from "react-confetti";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import BodyPartModal from "./BodyPartModal";
 import TextToSpeech from "./TextToSpeech";
 import Button from "react-bootstrap/Button";
 
-const BoySvg = () => {
+const GirlSvg = () => {
   // state to hold count of clicks
   let [ count, setCount ] = useState(null);
 
@@ -70,38 +70,35 @@ const BoySvg = () => {
   return (
     <>
       <div className="container">
-        <img src={Boy} className="svg-boy" alt="boy full-body"/>
+        <img src={Girl} className="svg-boy" alt="boy full-body"/>
         <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 1000 1140" 
           className="svg-overlay"
+          viewBox="0 0 458.16 515.14" 
+          xmlns="http://www.w3.org/2000/svg"
           x="0" 
           y="0"
         >
-          <a className="svg-click">
-            <ellipse cx="490" cy="445" rx="275" ry="165" onClick={() => {handleClick(); handleFace() }} />
+          <a className="svg-click" eyes>
+            <ellipse cx="170" cy="220" rx="25" ry="25" onClick={() => {handleClick(); handleFace() }} />
+            <ellipse cx="290" cy="225" rx="25" ry="25" onClick={() => {handleClick(); handleFace() }} />
           </a> 
 
-          <a className="svg-click">
-            <rect x="360" y="600" width="295" height="420" onClick={() => {handleClick(); handleBody() }} />
-          </a>    
-
-          <a className="svg-click">
-            <circle cx="150" cy="740" r="80" onClick={() => {handleClick(); handleLeftHand() }} />
+          <a className="svg-click" nose>
+            <circle cx="230" cy="265" r="20" onClick={() => {handleClick(); handleLeftHand() }} />
           </a> 
 
-          <a className="svg-click">
-            <circle cx="850" cy="710" r="80" onClick={() => {handleClick(); handleRightHand() }} />
+          <a className="svg-click" mouth>
+            <ellipse cx="230" cy="330" rx="90" ry="40" onClick={() => {handleClick(); handleLeftFoot() }} />
           </a> 
 
-          <a className="svg-click">
-            <ellipse cx="400" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleLeftFoot() }} />
+          <a className="svg-click" cheeks>
+            <circle cx="110" cy="270" r="40" onClick={() => {handleClick(); handleRightHand() }} />
+            <circle cx="350" cy="270" r="40" onClick={() => {handleClick(); handleRightHand() }} />
           </a> 
 
-          <a className="svg-click">
-            <ellipse cx="630" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleRightFoot() }} />
+          <a className="svg-click" chin>
+            <ellipse cx="230" cy="420" rx="70" ry="30" onClick={() => {handleClick(); handleLeftFoot() }} />
           </a> 
-
         </svg>
       </div>
 
@@ -193,4 +190,4 @@ const BoySvg = () => {
     </>
   );
 };
-export default BoySvg;
+export default GirlSvg;

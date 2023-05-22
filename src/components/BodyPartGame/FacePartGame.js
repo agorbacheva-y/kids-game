@@ -1,11 +1,11 @@
-import BoySvg from "./BoySvg";
+import GirlSvg from "./GirlSvg";
 import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
 import Greeting from "../Greeting";
 import { MdOutlineLogout } from "react-icons/md";
 import ReusableButton from "../ReusableButton";
 
-const BodyPartGame = () => {
+const FacePartGame = () => {
   const currentUser = localStorage.getItem("currentUser")
   const navigate = useNavigate();
 
@@ -20,12 +20,10 @@ const BodyPartGame = () => {
       
       <div className="container">
         <Greeting>Hi {currentUser}!</Greeting>
-        <h1 className="title">Guess Body Part</h1>
-        <BoySvg />
+        <h1 className="title">Guess Face Part</h1>
+        <GirlSvg />
       </div>
-
-      <ReusableButton onClick={() => navigate("/facepartgame")}>Face game</ReusableButton>
-
+      
       <div className="closebtn-container">
         <MdOutlineLogout 
           className="logout"
@@ -36,4 +34,4 @@ const BodyPartGame = () => {
   );
 };
 
-export default BodyPartGame;
+export default FacePartGame;
