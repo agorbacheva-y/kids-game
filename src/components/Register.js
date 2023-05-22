@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import ReusableButton from "./ReusableButton";
 import { MdArrowCircleLeft } from "react-icons/md";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -118,12 +117,12 @@ const Register = () => {
                 </Form.Label>
               </Form.Group>
 
-            <ReusableButton
+            <button
               type="submit"
               className="reuse-btn"
               onClick={handleSubmit}
               >Submit
-            </ReusableButton>
+            </button>
           </Form>
         </Card>
 
@@ -139,7 +138,10 @@ const Register = () => {
         
         <div className="container">
           <p>Already a member?</p>
-          <ReusableButton>Log In</ReusableButton>
+          <button 
+            className="reuse-btn"
+          >Log In
+          </button>
         </div>
         
 

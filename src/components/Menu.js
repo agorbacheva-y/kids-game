@@ -7,31 +7,34 @@ const Menu = () => {
     const navigate = useNavigate();
     return (
         <>
-        <div className="closebtn-container">
-            <CloseButton onClick={() => navigate("/")} className="closebtn"></CloseButton> 
-        </div>
-        
-        <div className="container"> 
-            <h1>Choose a Game</h1>
-            <ReusableButton 
-                className="menulink"
-                onClick={() => navigate("/bodypartgame")}
-            >
-                Body Part Game
-            </ReusableButton>
-            <ReusableButton 
-                className="menulink"
-                onClick={() => navigate("/findobjectsgame")}
-            >
-                Find Objects
-            </ReusableButton>
-            <ReusableButton
-                className="menulink"
-                onClick={() => navigate("/dragndropgame")}
-            >
-                Drag & Drop       
-            </ReusableButton>
-        </div>
+            <div className="closebtn-container">
+                <CloseButton onClick={() => navigate("/")} className="closebtn"></CloseButton> 
+            </div>
+            
+            <div className="container"> 
+                <h1>Choose a Game</h1>
+
+                <div className="menu-container">
+                    <button 
+                        className="menu-btn"
+                        onClick={() => navigate("/bodypartgame")}
+                    >
+                        Body Part Game
+                    </button>
+                    <button 
+                        className="menu-btn"
+                        onClick={() => navigate("/findobjectsgame")}
+                    >
+                        Find Objects
+                    </button>
+                    <button
+                        className="menu-btn"
+                        onClick={() => navigate("/dragndropgame")}
+                    >
+                        Drag & Drop       
+                    </button>
+                </div>
+            </div>
         </>
     );
 };

@@ -1,4 +1,3 @@
-import ReusableButton from "./ReusableButton";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import hamster from "./image/hamster.webp";
@@ -16,19 +15,19 @@ const Home = () => {
       </div>
 
       <div className="btnContainer">
-        <ReusableButton 
+        <button 
           className="reuse-btn"
           onClick={() => navigate("/register")}
         >
           Register
-        </ReusableButton>
+        </button>
 
-        <ReusableButton 
+        <button 
           className="reuse-btn"
           onClick={() => navigate("/login")}
         >
           Log in
-        </ReusableButton>
+        </button>
       </div>
     </>
   );
