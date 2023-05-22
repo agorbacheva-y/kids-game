@@ -50,7 +50,7 @@ const GirlSvg = () => {
     setCount(count += 1);
     console.log("count: " + count);
 
-    if (count > 5) {
+    if (count > 4) {
       // wait 3 secs before finish modal appears
       document.addEventListener('click', function() {
         setTimeout(function() {
