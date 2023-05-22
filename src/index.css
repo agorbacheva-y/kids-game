@@ -177,6 +177,11 @@
   font-size: 4rem;
   color: #164B8A;
   margin: 0 2rem 2rem 2rem;
+  cursor: pointer;
+}
+
+.logout:hover {
+  color: #55288E;
 }
 
 /* css for the links in menu and Endgame*/
