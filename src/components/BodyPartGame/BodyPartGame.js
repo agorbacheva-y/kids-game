@@ -1,7 +1,7 @@
 import BoySvg from "./BoySvg";
 import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
-import Greeting from "./Greeting";
+import Greeting from "../Greeting";
 import { MdOutlineLogout } from "react-icons/md";
 
 const BodyPartGame = () => {
