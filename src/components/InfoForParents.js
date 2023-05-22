@@ -11,9 +11,9 @@ const InfoForParents = () => {
             {status && (
             <Modal close={() => setStatus(false)}>
               <div className="container">
-                   <h2>For parents!</h2>
+                   <h2> Welcome, parents!</h2>
                     <p>
-                     Welcome, parents! SmartKids is a fun and educational 
+                     SmartKids is a fun and educational 
                      app designed to stimulate your child's learning and 
                      development. With engaging games focused on cognitive
                      skills, shape recognition and body awareness our app
