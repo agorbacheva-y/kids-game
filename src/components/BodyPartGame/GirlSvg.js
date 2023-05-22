@@ -15,41 +15,36 @@ const GirlSvg = () => {
   const [ status, setStatus ] = useState(false);
 
   // state for body part modal open and close
-  const [ faceStatus, setFaceStatus ] = useState(false);
-  const [ bodyStatus, setBodyStatus ] = useState(false);
-  const [ leftHandStatus, setLeftHandStatus ] = useState(false);
-  const [ rightHandStatus, setRightHandStatus ] = useState(false);
-  const [ leftFootStatus, setLeftFootStatus ] = useState(false);
-  const [ rightFootStatus, setRightFootStatus ] = useState(false);
+  const [ eyesStatus, setEyesStatus ] = useState(false);
+  const [ noseStatus, setNoseStatus ] = useState(false);
+  const [ mouthStatus, setMouthStatus ] = useState(false);
+  const [ cheeksStatus, setCheeksStatus ] = useState(false);
+  const [ chinStatus, setChinStatus ] = useState(false);
 
   const navigate = useNavigate();
   
-  // function for alert when click on body part
-  const handleFace = () => {
-    setFaceStatus(true);
+  // function for opening modal when click on body part
+  const handleEyes = () => {
+    setEyesStatus(true);
   };
 
-  const handleBody = () => {
-    setBodyStatus(true);
+  const handleNose = () => {
+    setNoseStatus(true);
   };
 
-  const handleLeftHand = () => {
-    setLeftHandStatus(true);
+  const handleMouth = () => {
+    setMouthStatus(true);
   };
 
-  const handleRightHand = () => {
-    setRightHandStatus(true);
+  const handleCheeks = () => {
+    setCheeksStatus(true);
   };
 
-  const handleLeftFoot = () => {
-    setLeftFootStatus(true);
+  const handleChin = () => {
+    setChinStatus(true);
   };
 
-  const handleRightFoot = () => {
-    setRightFootStatus(true);
-  };
-
-  // function to show modal at completion of game
+  // function to show finish modal at completion of game
   const handleClick = () => {
     // count number of clicks
     setCount(count += 1);
@@ -78,91 +73,80 @@ const GirlSvg = () => {
           x="0" 
           y="0"
         >
-          <a className="svg-click" eyes>
-            <ellipse cx="170" cy="220" rx="25" ry="25" onClick={() => {handleClick(); handleFace() }} />
-            <ellipse cx="290" cy="225" rx="25" ry="25" onClick={() => {handleClick(); handleFace() }} />
+          <a className="svg-click">
+            <ellipse cx="170" cy="220" rx="25" ry="25" onClick={() => {handleClick(); handleEyes() }} />
+            <ellipse cx="290" cy="225" rx="25" ry="25" onClick={() => {handleClick(); handleEyes() }} />
           </a> 
 
-          <a className="svg-click" nose>
-            <circle cx="230" cy="265" r="20" onClick={() => {handleClick(); handleLeftHand() }} />
+          <a className="svg-click">
+            <circle cx="230" cy="265" r="20" onClick={() => {handleClick(); handleNose() }} />
           </a> 
 
-          <a className="svg-click" mouth>
-            <ellipse cx="230" cy="330" rx="90" ry="40" onClick={() => {handleClick(); handleLeftFoot() }} />
+          <a className="svg-click">
+            <ellipse cx="230" cy="330" rx="90" ry="40" onClick={() => {handleClick(); handleMouth() }} />
           </a> 
 
-          <a className="svg-click" cheeks>
-            <circle cx="110" cy="270" r="40" onClick={() => {handleClick(); handleRightHand() }} />
-            <circle cx="350" cy="270" r="40" onClick={() => {handleClick(); handleRightHand() }} />
+          <a className="svg-click">
+            <circle cx="130" cy="270" r="40" onClick={() => {handleClick(); handleCheeks() }} />
+            <circle cx="330" cy="270" r="40" onClick={() => {handleClick(); handleCheeks() }} />
           </a> 
 
-          <a className="svg-click" chin>
-            <ellipse cx="230" cy="420" rx="70" ry="30" onClick={() => {handleClick(); handleLeftFoot() }} />
+          <a className="svg-click">
+            <ellipse cx="230" cy="420" rx="70" ry="30" onClick={() => {handleClick(); handleChin() }} />
           </a> 
         </svg>
       </div>
 
       <div>
-        {faceStatus && (
-          <BodyPartModal close={() => setFaceStatus(false)}>
+        {eyesStatus && (
+          <BodyPartModal close={() => setEyesStatus(false)}>
             <div className="container">
-              <p>Touch your face</p>
-              <TextToSpeech text={"Touch your face"} />
+              <p>Blink your eyes</p>
+              <TextToSpeech text={"Blink your eyes"} />
             </div>
           </BodyPartModal>
         )}
       </div>
 
       <div>
-        {bodyStatus && (
-          <BodyPartModal close={() => setBodyStatus(false)}>
+        {noseStatus && (
+          <BodyPartModal close={() => setNoseStatus(false)}>
             <div className="container">
-              <p>Shake your body</p>
-              <TextToSpeech text={"Shake your body"} />
+              <p>Point at your nose</p>
+              <TextToSpeech text={"Point at your nose"} />
             </div>
           </BodyPartModal>
         )}
       </div>
 
       <div>
-        {leftHandStatus && (
-          <BodyPartModal close={() => setLeftHandStatus(false)}>
+        {mouthStatus && (
+          <BodyPartModal close={() => setMouthStatus(false)}>
             <div className="container">
-              <p>Wave your left hand</p>
-              <TextToSpeech text={"Wave your left hand"} />
+              <p>Move your mouth</p>
+              <TextToSpeech text={"Move your mouth"} />
             </div>
           </BodyPartModal>
         )}
       </div>
 
       <div>
-        {rightHandStatus && (
-          <BodyPartModal close={() => setRightHandStatus(false)}>
+        {cheeksStatus && (
+          <BodyPartModal close={() => setCheeksStatus(false)}>
             <div className="container">
-              <p>Point to the ceiling with your right hand</p>
-              <TextToSpeech text={"Point to the ceiling with your right hand"} />
+              <p>Pat your cheeks</p>
+              <TextToSpeech text={"Pat your cheeks"} />
             </div>
           </BodyPartModal>
         )}
       </div>
 
       <div>
-        {leftFootStatus && (
-          <BodyPartModal close={() => setLeftFootStatus(false)}>
+        {chinStatus && (
+          <BodyPartModal close={() => setChinStatus(false)}>
             <div className="container">
-              <p>Lift your left foot</p>
-              <TextToSpeech text={"Lift your left foot"} />
-            </div>
-          </BodyPartModal>
-        )}
-      </div>
-
-      <div>
-        {rightFootStatus && (
-          <BodyPartModal close={() => setRightFootStatus(false)}>
-            <div className="container">
-              <p>Stomp your right foot</p>
-              <TextToSpeech text={"Stomp your right foot"} />
+              <p>Rub your chin</p>
+              <TextToSpeech text={"Rub your chin"} />
             </div>
           </BodyPartModal>
         )}
