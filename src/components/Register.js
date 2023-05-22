@@ -63,14 +63,17 @@ const Register = () => {
 
   return (
     <div>
-      <Header>
-            <Link to="/"><MdArrowCircleLeft className="left-arrow"/></Link>
-      </Header>
+      <div className="reg-header">
+        <Header>
+          <Link to="/"><MdArrowCircleLeft className="left-arrow"/></Link>
+        </Header>
+      </div>
+      
       
       <div className="container">
         <Card className="custom-card">
-          <Form className="custom-form">
-            <h1>Register User</h1>
+          <Form>
+            <h1>Sign Up</h1>
             <Form.Group controlId="formBasicName">
               <Form.Label>
                 <Form.Control
@@ -124,22 +127,28 @@ const Register = () => {
           </Form>
         </Card>
 
-        <ReusableButton 
-          disabled={disabled}
+        <div className="container">
+          <button 
+            disabled={disabled}
+            onClick={() => {
+              navigate("/menu")
+            }}
+          >Start Game
+          </button>
+        </div>
+        
+        <div className="container">
+          <p>Already a member?</p>
+          <ReusableButton>Log In</ReusableButton>
+        </div>
+        
+
+        <button
           onClick={() => {
             navigate("/menu")
           }}
-        >Start Game
-        </ReusableButton>
-
-        <p>Already a member?</p>
-        <ReusableButton>add link to log in pg</ReusableButton>
-
-        <button>
-          onClick={() => {
-            navigate("/menu")
-          }}
-          temp button to jump to mainmenu
+        > 
+          jump to mainmenu
         </button>
 
       </div>
