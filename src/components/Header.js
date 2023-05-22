@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import Logo from "./image/Logo.webp";
+import LogoText from "./image/LogoText.webp";
 
-const Header = ({ children }) => {
+const Header = () => {
   return (
-    <div className="header">
-      {children}
+    <div className="header-container">
+      <img src={Logo} alt="smart kids logo" />
+      <img src={LogoText} alt="smart kids text" />
     </div>
   );
 };
