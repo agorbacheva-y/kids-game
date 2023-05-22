@@ -2,6 +2,7 @@ import React from "react";
 import ReusableButton from "./ReusableButton";
 import CloseButton from 'react-bootstrap/CloseButton';
 import { Link } from "react-router-dom";
+import InfoForParents from "./InfoForParents";
 
 const Menu = () => {
     return (
@@ -23,6 +24,7 @@ const Menu = () => {
             <ReusableButton>
                 <Link className="menulink" to="dragndropgame">Drag & Drop </Link>        
             </ReusableButton>
+            <InfoForParents></InfoForParents>
         </div>
         </>
     );
