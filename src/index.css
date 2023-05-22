@@ -227,6 +227,7 @@ p {
   font-size: 4rem;
   color: #164B8A;
   margin: 0 2rem 2rem 2rem;
+  cursor: pointer;
 }
 
 /* css for the links in menu and Endgame*/
