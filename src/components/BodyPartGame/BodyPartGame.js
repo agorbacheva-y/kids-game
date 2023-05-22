@@ -15,9 +15,7 @@ const BodyPartGame = () => {
         <CloseButton 
           className="closebtn" 
           onClick={() => navigate("/endgame")}
-        >
-          Exit
-        </CloseButton> 
+        />
       </div>
       
       <div className="container">
