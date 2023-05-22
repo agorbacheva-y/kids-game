@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const InfoForParents = () => {
   const [status, setStatus] = useState(false);
-  
 
     return (
        <div className="container">
@@ -30,8 +29,8 @@ const InfoForParents = () => {
                </div> 
             </Modal>
             )}
-     
-        <button onClick={() => setStatus(true)} className="reuse-btn">For parents</button>
+           <p>Parents, click on the button please <br/> we have some information for you.</p>
+        <button onClick={() => setStatus(true)} className="reuse-btn"><h5>For parents!</h5></button>
 
        </div>
     );

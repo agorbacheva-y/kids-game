@@ -15,6 +15,7 @@ const Menu = () => {
         
         <div className="container"> 
             <h1>Choose a Game</h1>
+
             <ReusableButton>
                 <Link className="menulink" to="/bodypartgame">Body Parts </Link>
             </ReusableButton>
