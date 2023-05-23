@@ -1,6 +1,9 @@
 import React from "react";
 import CloseButton from 'react-bootstrap/CloseButton';
+import { Link } from "react-router-dom";
+import InfoForParents from "./InfoForParents";
 import { useNavigate } from "react-router-dom";
+
 
 const Menu = () => {
     const navigate = useNavigate();
@@ -26,12 +29,8 @@ const Menu = () => {
                     >
                         Find Objects
                     </button>
-                    <button
-                        className="menu-btn"
-                        onClick={() => navigate("/dragndropgame")}
-                    >
-                        Drag & Drop       
-                    </button>
+                    
+                    <InfoForParents></InfoForParents>
                 </div>
             </div>
         </>
