@@ -74,7 +74,6 @@ const Login = () => {
 
 export default Login;
 
-LoginFeature.js
 // since we use username to make the message "Hi {username} when player logs in, 
 // can we change login fields to username and pw instead of email and pw?
 
