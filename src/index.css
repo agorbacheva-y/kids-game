@@ -134,7 +134,6 @@ p {
   background-repeat: no-repeat;
   background-position: 0% 100%;
   width: 100%;
-  border: 1px solid red;
 }
 
 .custom-card {
@@ -362,7 +361,7 @@ p {
 .menu-btn {
   box-sizing: border-box;
   margin: 10px;
-  width: 350px;
+  width: 340px;
   height: 63px;
   background: #E4D379;
   border: 1px solid #55288E;
@@ -383,10 +382,12 @@ p {
 }
 
 .menu-container {
-  height: 70vh;
+  max-width: 100%;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 /* Endgame badge*/

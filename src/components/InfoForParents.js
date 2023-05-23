@@ -9,7 +9,7 @@ const InfoForParents = () => {
        
             {status && (
             <Modal close={() => setStatus(false)}>
-              <div className="container">
+              <div>
                    <h2> Welcome, parents!</h2>
                     <p>
                      SmartKids is a fun and educational 
