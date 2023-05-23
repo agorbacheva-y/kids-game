@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Nav from 'react-bootstrap/Nav';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { MdSettings } from "react-icons/md";
 import { Link } from "react-router-dom";

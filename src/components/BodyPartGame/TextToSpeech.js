@@ -12,27 +12,20 @@ const TextToSpeech = ({ text }) => {
     // create SpeechSynthesisUtterance object (text = what will be read)
     const u = new SpeechSynthesisUtterance(text);
 
+    // get voices array
     const voices = synth.getVoices();
     
     // initialize utterance and voice state
     setUtterance(u);
-    setVoice(voices.filter(function(voice) { return voice.name == 'Google UK English Female'; })[0] );
+    setVoice(voices[0]);
     // set female voice
-    setRate(0.8); // slower speed for targeted audience
+    setRate(0.7); // slower speed for targeted audience
 
     return () => {
       // cancel any ongoing speech synthesis when unmounted
       synth.cancel();
     };
   }, [text]);
-
-    var speech_voices;
-      if ('speechSynthesis' in window) {
-        speech_voices = window.speechSynthesis.getVoices();
-        window.speechSynthesis.onvoiceschanged = function() {
-          speech_voices = window.speechSynthesis.getVoices();
-        };
-      }
 
   // function to speak text
   const handlePlay = () => {
@@ -46,15 +39,21 @@ const TextToSpeech = ({ text }) => {
     console.log(utterance);
   };
 
+  // functionto stop speaking
   const handleStop = () => {
     const synth = window.speechSynthesis;
 
     synth.cancel();
   };
 
+  const handleVoiceChange = () => {
+    const voices = window.speechSynthesis.getVoices();
+    setVoice(voices.filter(function(voice) { return voice.name === 'Google UK English Female'; })[0] );
+  };
+
   return (
     <div> 
-      <button onClick={handlePlay} className="speech-btn"><BsFillPlayCircleFill className="speech-btn-icon"/></button>
+      <button onClick={() => {handlePlay(); handleVoiceChange() }} className="speech-btn"><BsFillPlayCircleFill className="speech-btn-icon"/></button>
       <button onClick={handleStop} className="speech-btn"><BsFillStopCircleFill className="speech-btn-icon"/></button>
     </div>
   );
@@ -64,4 +63,8 @@ export default TextToSpeech;
 
 // reference: https://edvins.io/react-text-to-speech
 
-// need to set interval or reload page in order for voice array to populate
+// voices array is empty on first load, then populates on second call
+// could not use time interval or event listener or pg reload to populate
+// i assume because play button is in modal. 
+
+//setVoice(voices.filter(function(voice) { return voice.name === 'Google UK English Female'; })[0] );
