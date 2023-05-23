@@ -1,10 +1,11 @@
-import BoySvg from "./BoySvg";
+import GirlSvg from "./GirlSvg";
 import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
-import Greeting from "./Greeting";
+import Greeting from "../Greeting";
 import { MdOutlineLogout } from "react-icons/md";
+import Setting from "./Setting";
 
-const BodyPartGame = () => {
+const FacePartGame = () => {
   const currentUser = localStorage.getItem("currentUser")
   const navigate = useNavigate();
 
@@ -19,18 +20,19 @@ const BodyPartGame = () => {
       
       <div className="container">
         <Greeting>Hi {currentUser}!</Greeting>
-        <h1 className="title">Guess Body Part</h1>
-        <BoySvg />
+        <h1 className="title">Guess Face Part</h1>
+        <GirlSvg />
       </div>
-
-      <div className="closebtn-container">
+      
+      <div className="settings">
         <MdOutlineLogout 
           className="logout"
           onClick={() => navigate("/logout")}
         />
+        <Setting />
       </div>
     </>
   );
 };
 
-export default BodyPartGame;
+export default FacePartGame;
