@@ -7,7 +7,7 @@ import TextToSpeech from "./TextToSpeech";
 import ReusableButtom from "../ReusableButton";
 import { MdClose } from "react-icons/md";
 
-const BoySvg = () => {
+const BodySvg = () => {
   // state to hold count of clicks
   let [ count, setCount ] = useState(null);
 
@@ -62,7 +62,7 @@ const BoySvg = () => {
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1000 1350" 
-          className="svg-overlay"
+          className="svg-boy-overlay"
           x="0" 
           y="0"
         >
@@ -164,4 +164,4 @@ const BoySvg = () => {
     </>
   );
 };
-export default BoySvg;
+export default BodySvg;

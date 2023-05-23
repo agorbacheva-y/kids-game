@@ -118,7 +118,7 @@ p {
   height: 600px;
 }
 
-.svg-overlay {
+.svg-boy-overlay {
   position: absolute;
   width: 400px;
   height: 600px;
@@ -133,6 +133,19 @@ p {
   stroke: blue;
   stroke-width: 0.5rem;
   opacity: 0.5;
+}
+
+/* face part game */
+.svg-girl {
+  position: relative;
+  width: 380px;
+  height: 400px;
+}
+
+.svg-girl-overlay {
+  position: absolute;
+  width: 380px;
+  height: 400px;
 }
 
 /* Body Part Game modal */

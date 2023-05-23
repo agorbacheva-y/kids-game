@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 import { MdClose } from "react-icons/md";
 
 
-const GirlSvg = () => {
+const FaceSvg = () => {
   // state to hold count of clicks
   let [ count, setCount ] = useState(null);
 
@@ -56,9 +56,9 @@ const GirlSvg = () => {
   return (
     <>
       <div className="container">
-        <img src={Girl} className="svg-boy" alt="boy full-body"/>
+        <img src={Girl} className="svg-girl" alt="girl face"/>
         <svg 
-          className="svg-overlay"
+          className="svg-girl-overlay"
           viewBox="0 0 458.16 515.14" 
           xmlns="http://www.w3.org/2000/svg"
           x="0" 
@@ -153,4 +153,4 @@ const GirlSvg = () => {
     </>
   );
 };
-export default GirlSvg;
+export default FaceSvg;
