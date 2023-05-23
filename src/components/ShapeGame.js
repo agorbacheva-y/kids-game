@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineLogout } from "react-icons/md";
 import ReusableButton from "./ReusableButton"
+import Greeting from "./Greeting";
 
 
 const ShapeGame = () => {
@@ -88,6 +89,12 @@ function Reset() {
             <CloseButton className="closebtn"></CloseButton>
         </Link>
       </div>
+      
+      <div className="container">
+        <Greeting>Hi {currentUser}!</Greeting>
+    
+      </div>
+
       <div className="container">
       <h1 className="title">Shape Game</h1>
       <p>
