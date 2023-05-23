@@ -1,12 +1,12 @@
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import ReusableButton from "./ReusableButton";
 import { MdArrowCircleLeft } from "react-icons/md";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
+import mouse from "./image/mouse.webp";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -63,14 +63,17 @@ const Register = () => {
 
   return (
     <div>
-      <Header>
-            <Link to="/"><MdArrowCircleLeft className="left-arrow"/></Link>
-      </Header>
+      <div className="reg-header">
+        <Header>
+          <Link to="/"><MdArrowCircleLeft className="left-arrow"/></Link>
+        </Header>
+      </div>
+      
       
       <div className="container">
         <Card className="custom-card">
-          <Form className="custom-form">
-            <h1>Register User</h1>
+          <Form>
+            <h1>Sign Up</h1>
             <Form.Group controlId="formBasicName">
               <Form.Label>
                 <Form.Control
@@ -115,28 +118,43 @@ const Register = () => {
                 </Form.Label>
               </Form.Group>
 
-            <ReusableButton
+            <button
               type="submit"
               className="reuse-btn"
               onClick={handleSubmit}
               >Submit
-            </ReusableButton>
+            </button>
           </Form>
         </Card>
 
-        <ReusableButton 
-          disabled={disabled}
-          onClick={() => {navigate("/menu")}}
-        >Start Game
-        </ReusableButton>
-
-        <p>Already a member?</p>
-        <ReusableButton>add link to log in pg</ReusableButton>
+        <div className="container">
+          <button 
+            disabled={disabled}
+            onClick={() => {
+              navigate("/menu")
+            }}
+          >Start Game
+          </button>
+        </div>
+        
+        <div className="container">
+          <p>Already a member?</p>
+          <button 
+            className="reuse-btn"
+          >Log In
+          </button>
+        </div>
+        
+        <div className="reg-image">
+          <img src={mouse} />
+        </div>
 
         <button
-          onClick={() => {navigate("/menu")}}
-        >
-          temp button to jump to mainmenu
+          onClick={() => {
+            navigate("/menu")
+          }}
+        > 
+          jump to mainmenu
         </button>
 
       </div>
