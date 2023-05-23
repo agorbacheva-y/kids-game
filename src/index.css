@@ -52,7 +52,7 @@ p {
   max-width: 100%;
 }
 
-/* header */
+/* HEADER */
 .header-container {
   display: flex;
   justify-content: center;
@@ -137,6 +137,12 @@ p {
   border: 1px solid red;
 }
 
+.custom-card {
+  border: none !important; 
+  background-color: #E8E1C5 !important;
+  text-align: center;
+}
+
 /* .btn {
   color: white !important;
   text-decoration: none;
@@ -151,7 +157,7 @@ p {
   left: 0;
 }
 
-/* Body Part Game */
+/* BODY PART GAME */
 .svg-boy {
   position: relative;
   width: 400px;
@@ -175,7 +181,7 @@ p {
   opacity: 0.5;
 }
 
-/* face part game */
+/* FACE PART GAME */
 .svg-girl {
   position: relative;
   width: 380px;
@@ -188,7 +194,7 @@ p {
   height: 400px;
 }
 
-/* Body Part Game modal */
+/* BODY/FACE PART GAME MODAL */
 .overlay {
   position: fixed;
   display: block;
@@ -220,7 +226,19 @@ p {
   cursor: pointer;
 }
 
-/* Finish Game */
+/* TEXT TO SPEECH BUTTONS */
+.speech-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0 2rem;
+}
+
+.speech-btn-icon {
+  fill: #164B8A;
+  font-size: 2.5rem;
+}
+
+/* FINISH GAME */
 .confetti {
   position: absolute;
   height: 100vh;
@@ -279,7 +297,7 @@ p {
   background-color: #d5c88b;
 }
 
-/* Css for the close button */
+/* CLOSE BUTTON */
 .closebtn {
   font-size: 1.5rem;
 }
@@ -291,7 +309,7 @@ p {
   margin: 1.5rem;
 }
 
-/* css for logout and setting icon */
+/* LOGOUT AND SETTINGS ICON */
 .logout {
   font-size: 3rem;
   color: #164B8A;
@@ -318,6 +336,13 @@ p {
 
 .settings:hover {
   color: #55288E;
+}
+
+.logout-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 /* css for the links in menu and Endgame*/
@@ -374,23 +399,6 @@ p {
   color: #164B8A;
 }
 
-.speech-btn {
-  border: none;
-  background-color: transparent;
-  padding: 0 2rem;
-}
-
-.speech-btn-icon {
-  fill: #164B8A;
-  font-size: 2.5rem;
-}
-
-.custom-card {
-  border: none !important; 
-  background-color: #E8E1C5 !important;
-  text-align: center;
-}
-
 /*the images in shapegame*/
 .shapeimg {
   width: 200px;
@@ -399,7 +407,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 }
 
-/* title on top of pages */
+/* GREETING */
 .greeting {
   font-family: 'Luckiest Guy';
   font-weight: 400;
@@ -429,7 +437,7 @@ border-radius: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* off canvas */
+/* OFF CANVAS */
 .offcanvas {
   border-radius: 20px;
 }
