@@ -10,7 +10,7 @@ import { CloseButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineLogout } from "react-icons/md";
-
+import ReusableButton from "./ReusableButton"
 
 
 const ShapeGame = () => {
@@ -105,9 +105,9 @@ function Reset() {
           <p>Press the button for the next image.</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="modal-btn " variant="primary" onClick={() => setShowModal(false)}>
+          <ReusableButton variant="primary" onClick={() => setShowModal(false)}>
             OK
-          </Button>
+          </ReusableButton>
         </Modal.Footer>
        </Modal>
        {currentImg && (
@@ -115,9 +115,9 @@ function Reset() {
        )}
       
       <h1>{timer}</h1>
-      <Button className="btn" size="lg" onClick={Reset}>
+      <ReusableButton onClick={Reset}>
         Start Timer
-      </Button>
+      </ReusableButton>
       </div>
 
       <div className="settings">
