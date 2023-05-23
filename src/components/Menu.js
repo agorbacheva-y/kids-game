@@ -29,7 +29,7 @@ const Menu = () => {
 
             <ReusableButton 
                 className="menulink"
-                onClick={() => navigate("/findobjectsgame")}
+                onClick={() => navigate("/shapegame")}
             >
                 Find Objects
             </ReusableButton>
