@@ -1,7 +1,6 @@
 import React from "react";
 import ReusableButton from "./ReusableButton";
 import CloseButton from 'react-bootstrap/CloseButton';
-import { Link } from "react-router-dom";
 import InfoForParents from "./InfoForParents";
 import { useNavigate } from "react-router-dom";
 
