@@ -1,10 +1,12 @@
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import ReusableButton from "./ReusableButton";
+import { MdArrowCircleLeft } from "react-icons/md";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import Header from "./Header";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -13,8 +15,12 @@ const Register = () => {
   const [ username, setUsername ] = useState("");
   const [ password, setPassword ] = useState("");
 
-  // state for disabled status of start game button
-  const [ disabled, setDisabled ] = useState(false);
+  // state and function for disabled status of start game button
+  const [ disabled, setDisabled ] = useState(true);
+
+  const handleDisable = () => {
+    setDisabled(false);
+  };
 
   let navigate = useNavigate();
 
@@ -46,6 +52,7 @@ const Register = () => {
       localStorage.setItem("currentUser", user.username);
       axios.post("/users", user)
         .then(alert("New user created!"));
+        handleDisable();
     }
 
     setMyName("");
@@ -55,64 +62,87 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <Card>
-        <Form>
-          <h1>Register</h1>
-          <Form.Group controlId="formBasicName">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Name"
-                value={myName}
-                onChange={(e) => setMyName(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
+    <div>
+      <Header>
+            <Link to="/"><MdArrowCircleLeft className="left-arrow"/></Link>
+      </Header>
+      
+      <div className="container">
+        <Card className="custom-card">
+          <Form className="custom-form">
+            <h1>Register User</h1>
+            <Form.Group controlId="formBasicName">
+              <Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Name"
+                  value={myName}
+                  onChange={(e) => setMyName(e.target.value)}
+                />
+              </Form.Label>
+            </Form.Group>
 
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Form.Label>
+              </Form.Group>
 
-          <Form.Group controlId="formBasicUsername">
-            <Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
+              <Form.Group controlId="formBasicUsername">
+                <Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                </Form.Label>
+              </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Label>
-          </Form.Group>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </Form.Label>
+              </Form.Group>
 
-          <ReusableButton
-            type="submit"
-            className="reuse-btn"
-            onClick={handleSubmit}
-            >Submit
-          </ReusableButton>
-        </Form>
-      </Card>
+            <ReusableButton
+              type="submit"
+              className="reuse-btn"
+              onClick={handleSubmit}
+              >Submit
+            </ReusableButton>
+          </Form>
+        </Card>
 
-      <ReusableButton onClick={() => navigate("/menu")}>Start Game</ReusableButton>
+        <ReusableButton 
+          disabled={disabled}
+          onClick={() => {
+            navigate("/menu")
+          }}
+        >Start Game
+        </ReusableButton>
+
+        <p>Already a member?</p>
+        <ReusableButton>add link to log in pg</ReusableButton>
+
+        <button>
+          onClick={() => {
+            navigate("/menu")
+          }}
+          temp button to jump to mainmenu
+        </button>
+
+      </div>
     </div>
   );
 };
@@ -120,3 +150,5 @@ const Register = () => {
 export default Register;
 
 // start game button will move to main menu page once it is created
+// temp button so can go to body part game w/o registering every time
+// remove before submit project
