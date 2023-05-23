@@ -128,6 +128,7 @@ const Register = () => {
 
         <div className="container">
           <button 
+            className="start-btn"
             disabled={disabled}
             onClick={() => {
               navigate("/menu")
