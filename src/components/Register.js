@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
-import mouse from "./image/mouse.webp";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -137,16 +136,12 @@ const Register = () => {
           </button>
         </div>
         
-        <div className="container">
+        <div className="to-login-container">
           <p>Already a member?</p>
           <button 
             className="reuse-btn"
           >Log In
           </button>
-        </div>
-        
-        <div className="reg-image">
-          <img src={mouse} alt="cartoon mouse" />
         </div>
 
         <button

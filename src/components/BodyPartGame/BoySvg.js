@@ -57,7 +57,7 @@ const BoySvg = () => {
   return (
     <>
       <div className="container">
-        <img src={Boy} className="svg-boy" alt="boy full-body"/>
+        <img src={Boy} className="svg-boy" alt="boy full-body" />
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1000 1140" 

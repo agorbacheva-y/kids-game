@@ -16,6 +16,7 @@
   font-weight: 400;
   background-color: #E8E1C5;
   color: #000;
+  max-width: 100%;
 }
 
 h1 {
@@ -43,11 +44,12 @@ p {
 }
 
 .container {
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 100%;
 }
 
 /* header */
@@ -57,6 +59,7 @@ p {
   align-items: center;
   flex-direction: column;
   height: 13rem;
+  max-width: 100%;
   position: relative;
 }
 
@@ -64,18 +67,27 @@ p {
   background-image: url("./components/image/homeShape.webp");
   background-repeat: no-repeat;
   height: 20rem;
+  max-width: 100%;
   background-size: contain;
 }
 
 .reg-header {
   background-image: url("./components/image/regShape.webp");
   background-repeat: no-repeat;
-  height: 20rem;
+  height: 15rem;
+  max-width: 100%;
   background-size: contain;
 }
 
-.reg-image {
-  width: 100%;
+.to-login-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("./components/image/mouse.webp");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  max-width: 100%;
 }
 
 /* .btn {
@@ -102,14 +114,12 @@ p {
 /* Body Part Game */
 .svg-boy {
   position: relative;
-  width: 560px;
-  height: 850px;
+  max-width: 90%;
 }
 
 .svg-overlay {
   position: absolute;
-  width: 560px;
-  height: 850px;
+  max-width: 90%;
 }
 
 .svg-click {
@@ -129,7 +139,7 @@ p {
   display: block;
   overflow: auto;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
@@ -142,7 +152,7 @@ p {
   margin: 15% auto;
   background-color: white;
   border-radius: 0.25rem;
-  width: 60vw;
+  width: 60%;
   padding: 2rem;
   position: relative;
   text-align: center;
@@ -159,7 +169,7 @@ p {
 .confetti {
   position: absolute;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .finish-overlay {
@@ -212,7 +222,6 @@ p {
 
 /* Css for the close button */
 .closebtn {
-  margin-right: 20px;
   font-size: 1.5rem;
 }
 
@@ -220,24 +229,37 @@ p {
 .closebtn-container {
   display: flex;
   justify-content: flex-end;
+  max-width: 100%;
+  margin: 1.5rem;
 }
 
 /* css for logout and setting icon */
 .logout {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #164B8A;
-  margin: 0 3rem 2rem 3rem;
   cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 2rem;
 }
 
 .logout:hover {
   color: #55288E;
 }
 
-/* logout and setting */
 .settings {
-  display: flex;
-  justify-content: space-between;
+  font-size: 3rem;
+  color: #164B8A;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2rem;
+}
+
+.settings:hover {
+  color: #55288E;
 }
 
 /* css for the links in menu and Endgame*/
@@ -247,7 +269,6 @@ p {
   font-weight: 400;
   text-decoration: none;
   color: #000;
-  border: 1px solid red;
 }
 
 .menulink:hover{
@@ -322,9 +343,8 @@ border-radius: 20px;
 /* title on top of pages */
 .greeting {
   font-family: 'Luckiest Guy';
-  font-style: normal;
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 5px;
   /* or 136% */
   text-align: center;
@@ -334,11 +354,14 @@ border-radius: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.greeting-container {
+  max-width: 100%;
+}
+
 .title {
   font-family: 'Luckiest Guy';
-  font-style: normal;
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 2.5rem;
   line-height: 6rem;
   /* or 143% */
   text-align: center;

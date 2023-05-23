@@ -14,7 +14,7 @@ const Setting = () => {
   return (
     <>
       <MdSettings 
-        className="logout"
+        className="settings"
         onClick={handleShow}
       />
       <Offcanvas show={show} onHide={handleClose}>

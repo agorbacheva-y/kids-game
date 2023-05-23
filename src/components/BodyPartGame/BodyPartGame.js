@@ -18,17 +18,20 @@ const BodyPartGame = () => {
         />
       </div>
       
-      <div className="container">
+      <div className="greeting-container">
         <Greeting>Hi {currentUser}!</Greeting>
         <h1 className="title">Guess Body Part</h1>
-        <BoySvg />
       </div>
 
-      <div className="settings">
+      <BoySvg />
+
+      <div>
         <MdOutlineLogout 
           className="logout"
           onClick={() => navigate("/logout")}
         />
+      </div>
+      <div>
         <Setting />
       </div>
     </>
