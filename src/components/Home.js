@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import hamster from "./image/hamster.webp";
+import ReusableButton from "./ReusableButton";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,19 +16,17 @@ const Home = () => {
       </div>
 
       <div className="btnContainer">
-        <button 
-          className="reuse-btn"
+        <ReusableButton 
           onClick={() => navigate("/register")}
         >
           Register
-        </button>
+        </ReusableButton>
 
-        <button 
-          className="reuse-btn"
+        <ReusableButton 
           onClick={() => navigate("/login")}
         >
           Log in
-        </button>
+        </ReusableButton>
       </div>
     </>
   );
