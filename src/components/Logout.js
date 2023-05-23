@@ -1,5 +1,16 @@
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 const Logout = () => {
-  localStorage.clear();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(function() {
+      navigate("/")
+    }, 2000 );
+
+    localStorage.clear();
+  });
   
   return (
     <div className="container">

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Boy from "../images/Boy.svg";
+import Boy from "../BodyPartGame/images/Boy.svg";
+import FinishGame from "../FinishGame";
 import { useNavigate } from "react-router-dom";
 import BodyPartModal from "./BodyPartModal";
 import TextToSpeech from "./TextToSpeech";
 import Button from "react-bootstrap/Button";
-import FinishGame from "./FinishGame";
 
 const BoySvg = () => {
   // state to hold count of clicks
@@ -23,30 +23,18 @@ const BoySvg = () => {
 
   const navigate = useNavigate();
   
-  // function for alert when click on body part
-  const handleFace = () => {
-    setFaceStatus(true);
-  };
+  // function for modal when click on body part
+  const handleFace = () => { setFaceStatus(true); };
 
-  const handleBody = () => {
-    setBodyStatus(true);
-  };
+  const handleBody = () => { setBodyStatus(true); };
 
-  const handleLeftHand = () => {
-    setLeftHandStatus(true);
-  };
+  const handleLeftHand = () => { setLeftHandStatus(true); };
 
-  const handleRightHand = () => {
-    setRightHandStatus(true);
-  };
+  const handleRightHand = () => { setRightHandStatus(true); };
 
-  const handleLeftFoot = () => {
-    setLeftFootStatus(true);
-  };
+  const handleLeftFoot = () => { setLeftFootStatus(true); };
 
-  const handleRightFoot = () => {
-    setRightFootStatus(true);
-  };
+  const handleRightFoot = () => { setRightFootStatus(true); };
 
   // function to show modal at completion of game
   const handleClick = () => {
@@ -77,30 +65,12 @@ const BoySvg = () => {
           x="0" 
           y="0"
         >
-          <a className="svg-click">
-            <ellipse cx="490" cy="445" rx="275" ry="165" onClick={() => {handleClick(); handleFace() }} />
-          </a> 
-
-          <a className="svg-click">
-            <rect x="360" y="600" width="295" height="420" onClick={() => {handleClick(); handleBody() }} />
-          </a>    
-
-          <a className="svg-click">
-            <circle cx="150" cy="740" r="80" onClick={() => {handleClick(); handleLeftHand() }} />
-          </a> 
-
-          <a className="svg-click">
-            <circle cx="850" cy="710" r="80" onClick={() => {handleClick(); handleRightHand() }} />
-          </a> 
-
-          <a className="svg-click">
-            <ellipse cx="400" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleLeftFoot() }} />
-          </a> 
-
-          <a className="svg-click">
-            <ellipse cx="630" cy="1240" rx="80" ry="30" onClick={() => {handleClick(); handleRightFoot() }} />
-          </a> 
-
+          <ellipse cx="490" cy="445" rx="275" ry="165" className="svg-click" onClick={() => {handleClick(); handleFace() }} />
+          <rect x="360" y="600" width="295" height="420" className="svg-click" onClick={() => {handleClick(); handleBody() }} />
+          <circle cx="150" cy="740" r="80" className="svg-click" onClick={() => {handleClick(); handleLeftHand() }} />
+          <circle cx="850" cy="710" r="80" className="svg-click" onClick={() => {handleClick(); handleRightHand() }} />
+          <ellipse cx="400" cy="1240" rx="80" ry="30" className="svg-click" onClick={() => {handleClick(); handleLeftFoot() }} />
+          <ellipse cx="630" cy="1240" rx="80" ry="30" className="svg-click" onClick={() => {handleClick(); handleRightFoot() }} />
         </svg>
       </div>
 
@@ -172,10 +142,14 @@ const BoySvg = () => {
 
       <div>
         {status && (
+          // overlay with confetti underneath modal
           <FinishGame>
             <Button 
-              onClick={() => {navigate("/menu")}}
               className="modal-btn"
+              onClick={() => {
+                setStatus(true)
+                navigate("/menu")
+              }}
             >
               Back to menu
             </Button>

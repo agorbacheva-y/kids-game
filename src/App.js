@@ -4,7 +4,8 @@ import Home from "./components/Home";
 import Register from "./components/Register";
 import ShapeGame from "./components/ShapeGame";
 import EndGame from "./components/EndGame";
-import BodyPartGame from "./components/BodyPartGame";
+import FacePartGame from "./components/BodyPartGame/FacePartGame"
+import BodyPartGame from "./components/BodyPartGame/BodyPartGame";
 import Menu from "./components/Menu";
 import Logout from "./components/Logout";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/endgame" exact element={<EndGame />} />
         <Route path="/menu" exact element={<Menu />} />
         <Route path="/bodypartgame" exact element={<BodyPartGame />} />
+        <Route path="/facepartgame" exact element={<FacePartGame />} />
         <Route path="/logout" exact element={<Logout />} />
       </Routes>
     </BrowserRouter>

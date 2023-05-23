@@ -4,21 +4,16 @@ import { BsFillPlayCircleFill, BsFillStopCircleFill } from "react-icons/bs";
 const TextToSpeech = ({ text }) => {
   // state to store text, voice, speed for speech synthesis
   const [ utterance, setUtterance ] = useState("");
-  const [ voice, setVoice ] = useState("");
   const [ rate, setRate ] = useState(1);
 
   useEffect(() => {
     const synth = window.speechSynthesis;
     // create SpeechSynthesisUtterance object (text = what will be read)
     const u = new SpeechSynthesisUtterance(text);
-
-    const voices = synth.getVoices();
     
     // initialize utterance and voice state
     setUtterance(u);
-    setVoice(voices.filter(function(voice) { return voice.name == 'Google UK English Female'; })[0] );
-    // set female voice
-    setRate(0.8); // slower speed for targeted audience
+    setRate(0.7); // slower speed for targeted audience
 
     return () => {
       // cancel any ongoing speech synthesis when unmounted
@@ -26,19 +21,10 @@ const TextToSpeech = ({ text }) => {
     };
   }, [text]);
 
-    var speech_voices;
-      if ('speechSynthesis' in window) {
-        speech_voices = window.speechSynthesis.getVoices();
-        window.speechSynthesis.onvoiceschanged = function() {
-          speech_voices = window.speechSynthesis.getVoices();
-        };
-      }
-
   // function to speak text
   const handlePlay = () => {
     const synth = window.speechSynthesis;
 
-    utterance.voice = voice;
     utterance.rate = rate;
     synth.speak(utterance);
 
@@ -46,6 +32,7 @@ const TextToSpeech = ({ text }) => {
     console.log(utterance);
   };
 
+  // function to stop speaking
   const handleStop = () => {
     const synth = window.speechSynthesis;
 
@@ -64,4 +51,9 @@ export default TextToSpeech;
 
 // reference: https://edvins.io/react-text-to-speech
 
-// need to set interval or reload page in order for voice array to populate
+// voices array is empty on first load, then populates on second call
+// could not use time interval or event listener or pg reload to populate
+// i assume because play button is in modal. 
+
+// for female voice:
+// setVoice(voices.filter(function(voice) { return voice.name === 'Google UK English Female'; })[0] );
