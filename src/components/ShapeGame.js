@@ -8,9 +8,13 @@ import redTriangle from "./shapesImg/redTriangle.png";
 import blueRectangle from "./shapesImg/blueRectangle.png";
 import { CloseButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { MdOutlineLogout } from "react-icons/md";
 
 
 const ShapeGame = () => {
+  const currentUser = localStorage.getItem("currentUser")
+  const navigate = useNavigate();
   // this is the timer function
   const [timer, setTimer] = useState(0);
   const Ref = useRef();
@@ -112,6 +116,13 @@ function Reset() {
       <Button className="btn" size="lg" onClick={Reset}>
         Start Timer
       </Button>
+
+      <div className="settings">
+        <MdOutlineLogout 
+          className="logout"
+          onClick={() => navigate("/logout")}
+        />
+      </div>
     </div>
   );
 };
