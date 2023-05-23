@@ -11,7 +11,7 @@ const Home = () => {
       </div>
 
       <div className="container">
-        <img src={hamster} />
+        <img src={hamster} alt="cartoon hamster" />
       </div>
 
       <div className="btnContainer">

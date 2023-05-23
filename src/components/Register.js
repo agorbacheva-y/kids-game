@@ -146,7 +146,7 @@ const Register = () => {
         </div>
         
         <div className="reg-image">
-          <img src={mouse} />
+          <img src={mouse} alt="cartoon mouse" />
         </div>
 
         <button
