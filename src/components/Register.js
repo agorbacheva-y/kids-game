@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
-import ReusableButton from "./ReusableButton";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
