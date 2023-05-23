@@ -126,9 +126,7 @@ const Register = () => {
 
         <ReusableButton 
           disabled={disabled}
-          onClick={() => {
-            navigate("/menu")
-          }}
+          onClick={() => {navigate("/menu")}}
         >Start Game
         </ReusableButton>
 
@@ -136,9 +134,7 @@ const Register = () => {
         <ReusableButton>add link to log in pg</ReusableButton>
 
         <button
-          onClick={() => {
-            navigate("/menu")
-          }}
+          onClick={() => {navigate("/menu")}}
         >
           temp button to jump to mainmenu
         </button>
