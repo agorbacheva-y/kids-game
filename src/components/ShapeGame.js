@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { MdOutlineLogout } from "react-icons/md";
 
 
+
 const ShapeGame = () => {
   const currentUser = localStorage.getItem("currentUser")
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ function Reset() {
 
   // game information desplayed here
   return (
-    <div className="container">
+    <>
 
       {/*Here is the button to go back to home page*/}
       <div className="closebtn-container">
@@ -87,7 +88,8 @@ function Reset() {
             <CloseButton className="closebtn"></CloseButton>
         </Link>
       </div>
-      <h1>Shape Game</h1>
+      <div className="container">
+      <h1 className="title">Shape Game</h1>
       <p>
         You have 15 seconds to find an object that is similar <br /> to the
         object that is displayed on the screen in your home.
@@ -116,6 +118,7 @@ function Reset() {
       <Button className="btn" size="lg" onClick={Reset}>
         Start Timer
       </Button>
+      </div>
 
       <div className="settings">
         <MdOutlineLogout 
@@ -123,7 +126,8 @@ function Reset() {
           onClick={() => navigate("/logout")}
         />
       </div>
-    </div>
+    
+    </>
   );
 };
 
