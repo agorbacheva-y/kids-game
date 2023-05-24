@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { MdOutlineLogout } from "react-icons/md";
 import ReusableButton from "./ReusableButton"
 import Greeting from "./Greeting";
-import { FcClock } from "react-icons/fc"
+import { FcAlarmClock } from "react-icons/fc"
 
 
 const ShapeGame = () => {
@@ -122,7 +122,7 @@ function Reset() {
        )}
       
       <h1 className="">
-      <FcClock></FcClock>
+      <FcAlarmClock></FcAlarmClock>
         {timer}</h1>
       <ReusableButton onClick={Reset}>
         Start Timer
