@@ -1,7 +1,5 @@
 import React from "react";
-import ReusableButton from "./ReusableButton";
 import CloseButton from 'react-bootstrap/CloseButton';
-import { Link } from "react-router-dom";
 import InfoForParents from "./InfoForParents";
 import { useNavigate } from "react-router-dom";
 
@@ -16,27 +14,22 @@ const Menu = () => {
             
             <div className="container"> 
                 <h1>Choose a Game</h1>
+            </div>
 
-                <div className="menu-container">
-                    <button 
-                        className="menu-btn"
-                        onClick={() => navigate("/bodypartgame")}
-                    >
-                        Body Part Game
-                    </button>
-                    <button 
-                        className="menu-btn"
-                        onClick={() => navigate("/findobjectsgame")}
-                    >
-                        Find Objects
-                    </button>
-                    <button
-                        className="menu-btn"
-                        onClick={() => navigate("/dragndropgame")}
-                    >
-                        Drag & Drop       
-                    </button>
-                </div>
+            <div className="menu-container">
+                <button 
+                    className="menu-btn"
+                    onClick={() => navigate("/bodypartgame")}
+                >
+                    Body Part Game
+                </button>
+                <button 
+                    className="menu-btn"
+                    onClick={() => navigate("/findobjectsgame")}
+                >
+                    Find Objects
+                </button>
+                <InfoForParents></InfoForParents>
             </div>
         </>
     );

@@ -2,11 +2,13 @@ import { useState } from "react";
 import Girl from "../BodyPartGame/images/Girl.svg";
 import FinishGame from "../FinishGame";
 import { useNavigate } from "react-router-dom";
-import BodyPartModal from "./BodyPartModal";
+import Modal from "../Modal";
 import TextToSpeech from "./TextToSpeech";
 import Button from "react-bootstrap/Button";
+import { MdClose } from "react-icons/md";
 
-const GirlSvg = () => {
+
+const FaceSvg = () => {
   // state to hold count of clicks
   let [ count, setCount ] = useState(null);
 
@@ -54,9 +56,9 @@ const GirlSvg = () => {
   return (
     <>
       <div className="container">
-        <img src={Girl} className="svg-boy" alt="boy full-body"/>
+        <img src={Girl} className="svg-girl" alt="girl face"/>
         <svg 
-          className="svg-overlay"
+          className="svg-girl-overlay"
           viewBox="0 0 458.16 515.14" 
           xmlns="http://www.w3.org/2000/svg"
           x="0" 
@@ -74,56 +76,61 @@ const GirlSvg = () => {
 
       <div>
         {eyesStatus && (
-          <BodyPartModal close={() => setEyesStatus(false)}>
-            <div className="container">
+          <Modal>
+            <div>
+              <MdClose className="close" onClick={() => setEyesStatus(false)}/> 
               <p>Blink your eyes</p>
               <TextToSpeech text={"Blink your eyes"} />
             </div>
-          </BodyPartModal>
+          </Modal>
         )}
       </div>
 
       <div>
         {noseStatus && (
-          <BodyPartModal close={() => setNoseStatus(false)}>
-            <div className="container">
+          <Modal>
+            <div>
+              <MdClose className="close" onClick={() => setNoseStatus(false)}/> 
               <p>Point at your nose</p>
               <TextToSpeech text={"Point at your nose"} />
             </div>
-          </BodyPartModal>
+          </Modal>
         )}
       </div>
 
       <div>
         {mouthStatus && (
-          <BodyPartModal close={() => setMouthStatus(false)}>
-            <div className="container">
+          <Modal>
+            <div>
+              <MdClose className="close" onClick={() => setMouthStatus(false)}/> 
               <p>Move your mouth</p>
               <TextToSpeech text={"Move your mouth"} />
             </div>
-          </BodyPartModal>
+          </Modal>
         )}
       </div>
 
       <div>
         {cheeksStatus && (
-          <BodyPartModal close={() => setCheeksStatus(false)}>
-            <div className="container">
+          <Modal>
+            <div>
+              <MdClose className="close" onClick={() => setCheeksStatus(false)}/>
               <p>Pat your cheeks</p>
               <TextToSpeech text={"Pat your cheeks"} />
             </div>
-          </BodyPartModal>
+          </Modal>
         )}
       </div>
 
       <div>
         {chinStatus && (
-          <BodyPartModal close={() => setChinStatus(false)}>
-            <div className="container">
+          <Modal>
+            <div>
+              <MdClose className="close" onClick={() => setChinStatus(false)}/>
               <p>Rub your chin</p>
               <TextToSpeech text={"Rub your chin"} />
             </div>
-          </BodyPartModal>
+          </Modal>
         )}
       </div>
 
@@ -146,4 +153,4 @@ const GirlSvg = () => {
     </>
   );
 };
-export default GirlSvg;
+export default FaceSvg;

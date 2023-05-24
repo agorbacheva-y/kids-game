@@ -13,7 +13,7 @@ const Logout = () => {
   });
   
   return (
-    <div className="container">
+    <div className="logout-container">
       <h1>Thanks for playing!</h1>
     </div>
   );

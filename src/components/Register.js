@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
-import mouse from "./image/mouse.webp";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -65,7 +64,9 @@ const Register = () => {
     <div>
       <div className="reg-header">
         <Header>
-          <Link to="/"><MdArrowCircleLeft className="left-arrow"/></Link>
+          <Link to="/">
+            <MdArrowCircleLeft className="left-arrow"/>
+          </Link>
         </Header>
       </div>
       
@@ -119,8 +120,8 @@ const Register = () => {
               </Form.Group>
 
             <button
+              className="sm-btn"
               type="submit"
-              className="reuse-btn"
               onClick={handleSubmit}
               >Submit
             </button>
@@ -129,6 +130,7 @@ const Register = () => {
 
         <div className="container">
           <button 
+            className="lg-btn"
             disabled={disabled}
             onClick={() => {
               navigate("/menu")
@@ -137,16 +139,12 @@ const Register = () => {
           </button>
         </div>
         
-        <div className="container">
+        <div className="to-login-container">
           <p>Already a member?</p>
           <button 
-            className="reuse-btn"
+            className="sm-btn"
           >Log In
           </button>
-        </div>
-        
-        <div className="reg-image">
-          <img src={mouse} />
         </div>
 
         <button

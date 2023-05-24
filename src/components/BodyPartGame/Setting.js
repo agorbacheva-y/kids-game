@@ -1,37 +1,43 @@
 import { useState } from "react";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { MdSettings } from "react-icons/md";
-import { Link } from "react-router-dom";
-
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Setting = () => {
+  // state for off canvas
   const [ show, setShow ] = useState(false);
 
+  // functions to show and hide off canvas
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
+  const navigate = useNavigate();
 
   return (
     <>
       <MdSettings 
-        className="logout"
+        className="settings"
         onClick={handleShow}
       />
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas show={show} onHide={handleClose} className="offcanvas">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>
-            Setting
+          <Offcanvas.Title className="m-auto">
+            <p>Setting</p>
           </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          <ul>
-            <li>
-              <Link to="/bodypartgame">Body Part Game</Link>
-            </li>
-            <li>
-              <Link to="/facepartgame">Face Part Game</Link>   
-            </li>
-          </ul>
+        <Offcanvas.Body className="text-center">
+          <button 
+            className="setting-btn"
+            onClick={() => navigate("/bodypartgame")}
+            >
+            Body Parts
+          </button>
+          <button 
+            className="setting-btn"
+            onClick={() => navigate("/facepartgame")}
+            >
+            Face Parts
+          </button>
         </Offcanvas.Body>
       </Offcanvas>
     </>
