@@ -1,25 +1,29 @@
-import ReusableButton from "./ReusableButton";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import hamster from "./image/hamster.webp";
+import ReusableButton from "./ReusableButton";
 
 const Home = () => {
   const navigate = useNavigate();
   return (
     <>
+      <div className="home-header">
+        <Header />
+      </div>
+
       <div className="container">
-        <h1>Home</h1>
+        <img src={hamster} alt="cartoon hamster" />
       </div>
 
       <div className="btnContainer">
         <ReusableButton 
-          className="reuse-btn"
           onClick={() => navigate("/register")}
         >
           Register
         </ReusableButton>
 
         <ReusableButton 
-          className="reuse-btn"
-          onClick={() => navigate("/loginfeature")}
+          onClick={() => navigate("/login")}
         >
           Log in
         </ReusableButton>
