@@ -3,7 +3,6 @@ import CloseButton from 'react-bootstrap/CloseButton';
 import InfoForParents from "./InfoForParents";
 import { useNavigate } from "react-router-dom";
 
-
 const Menu = () => {
     const navigate = useNavigate();
     return (
@@ -36,5 +35,3 @@ const Menu = () => {
 };
 
 export default Menu;
-
-// When the games are done link to it in each button

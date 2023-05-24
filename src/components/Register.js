@@ -162,6 +162,5 @@ const Register = () => {
 
 export default Register;
 
-// start game button will move to main menu page once it is created
 // temp button so can go to body part game w/o registering every time
 // remove before submit project

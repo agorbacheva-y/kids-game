@@ -28,10 +28,15 @@ const Home = () => {
           Log in
         </ReusableButton>
       </div>
+
+      <div className="btnContainer">
+        <ReusableButton 
+          onClick={() => {navigate("/menu")}}
+          >Start Game
+        </ReusableButton>
+      </div>
     </>
   );
 };
 
 export default Home;
-
-// add Link to log in page once log in component is created
