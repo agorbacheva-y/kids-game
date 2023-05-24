@@ -143,6 +143,9 @@ const Register = () => {
           <p>Already a member?</p>
           <button 
             className="sm-btn"
+            onClick={() => {
+              navigate("/loginfeature")
+            }}
           >Log In
           </button>
         </div>

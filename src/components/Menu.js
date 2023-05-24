@@ -24,7 +24,7 @@ const Menu = () => {
                 </button>
                 <button 
                     className="menu-btn"
-                    onClick={() => navigate("/findobjectsgame")}
+                    onClick={() => navigate("/shapegame")}
                 >
                     Find Objects
                 </button>
