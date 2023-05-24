@@ -1,9 +1,23 @@
 import { useState } from "react";
 import axios from "axios";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import { MdArrowCircleLeft } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // state and function for disabled status of start game button
+  const [ disabled, setDisabled ] = useState(true);
+
+  const handleDisable = () => {
+    setDisabled(false);
+  };
+
+  let navigate = useNavigate();
 
   // 1. kolla både email och password i databasen så att det stämmer
   // 2. Logga ut värdet för att dubbellkolla så det blir rätt
@@ -31,7 +45,7 @@ const Login = () => {
       .get("http://localhost:6001/users")
       .then((res) => checkEmail(res.data, email))
       .catch((error) => {
-        alert("Error");
+        console.log("Error");
       });
 
     //console.log(user);
@@ -39,43 +53,89 @@ const Login = () => {
 
     if (user.email === email && user.password === password) {
       alert("Success!");
+      handleDisable();
 
       // om login success ska vi spara user i localstorage
-      localStorage.setItem("user", JSON.stringify(user.id));
+      localStorage.setItem("currentUser", JSON.stringify(user.username));
     }
     setEmail("");
     setPassword("");
   };
 
   return (
-    <form>
-      <div>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          type="text"
-          value={email}
-          placeholder="Email"
-        />
+    <div>
+      <div className="reg-header">
+        <Header>
+          <Link to="/">
+            <MdArrowCircleLeft className="left-arrow"/>
+          </Link>
+        </Header>
       </div>
-      <div>
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          type="text"
-          value={password}
-          placeholder="Password"
-        />
+
+      <div className="container">
+        <Card className="custom-card">
+          <Form>
+            <h1>Log In</h1>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>
+                <Form.Control
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="text"
+                  value={email}
+                  placeholder="Email"
+                />
+              </Form.Label>
+            </Form.Group>
+            
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>
+                <Form.Control
+                  onChange={(e) => setPassword(e.target.value)}
+                  type="text"
+                  value={password}
+                  placeholder="Password"
+                />
+              </Form.Label>
+            </Form.Group>
+            <button type="submit" onClick={handleSubmit}>
+              Log in
+            </button>
+          </Form>
+        </Card>
+
+        <div className="container">
+          <button 
+            className="lg-btn"
+            disabled={disabled}
+            onClick={() => {
+              navigate("/menu")
+            }}
+          >Start Game
+          </button>
+        </div>
+        
+        <div className="to-login-container">
+          <p>Don't have an account?</p>
+          <button 
+            className="sm-btn"
+            onClick={() => {
+              navigate("/register")
+            }}
+          >Sign Up
+          </button>
+        </div>
+
+        <button
+          onClick={() => {
+            navigate("/menu")
+          }}
+        > 
+          jump to mainmenu
+        </button>
+
       </div>
-      <button typw="submit" onClick={handleSubmit}>
-        Log in
-      </button>
-    </form>
+    </div>
   );
 };
 
 export default Login;
-
-// since we use username to make the message "Hi {username} when player logs in, 
-// can we change login fields to username and pw instead of email and pw?
-
-// line 44, in Register.js we save current player as “currentUser” 
-// so let’s use "currentUser" instead of "user" for consistency

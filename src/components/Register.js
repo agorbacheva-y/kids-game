@@ -131,7 +131,13 @@ const Register = () => {
         </ReusableButton>
 
         <p>Already a member?</p>
-        <ReusableButton>add link to log in pg</ReusableButton>
+        <button 
+            className="sm-btn"
+            onClick={() => {
+              navigate("/loginfeature")
+            }}
+          >Log In
+          </button>
 
         <button
           onClick={() => {navigate("/menu")}}
