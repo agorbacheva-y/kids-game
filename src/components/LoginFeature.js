@@ -128,14 +128,6 @@ const Login = () => {
           </button>
         </div>
 
-        <button
-          onClick={() => {
-            navigate("/menu")
-          }}
-        > 
-          jump to mainmenu
-        </button>
-
       </div>
     </div>
   );
