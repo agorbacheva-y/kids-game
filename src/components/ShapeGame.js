@@ -120,10 +120,10 @@ function Reset() {
        {currentImg && (
             <img src={currentImg} className="shapeimg" alt="star"/>
        )}
-      
-      <h1>
-      <FcAlarmClock></FcAlarmClock>
+      <div className="timer-container">
+      <h1><FcAlarmClock />
         {timer}</h1>
+      </div>
 
         <div>
          <ReusableButton onClick={Reset}>
