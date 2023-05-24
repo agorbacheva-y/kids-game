@@ -1,10 +1,8 @@
 import React from "react";
 import ReusableButton from "./ReusableButton";
 import CloseButton from 'react-bootstrap/CloseButton';
-import { Link } from "react-router-dom";
 import InfoForParents from "./InfoForParents";
 import { useNavigate } from "react-router-dom";
-
 
 const Menu = () => {
     const navigate = useNavigate();
@@ -17,23 +15,19 @@ const Menu = () => {
         <div className="container"> 
             <h1>Choose a Game</h1>
 
-
-   
             <ReusableButton 
                 className="menulink"
                 onClick={() => navigate("/bodypartgame")}
             >
                 Body Part Game
-
             </ReusableButton>
 
             <ReusableButton 
                 className="menulink"
-                onClick={() => navigate("/findobjectsgame")}
+                onClick={() => navigate("/shapegame")}
             >
                 Find Objects
             </ReusableButton>
-
 
             <InfoForParents></InfoForParents>
           
@@ -43,5 +37,3 @@ const Menu = () => {
 };
 
 export default Menu;
-
-// When the games are done link to it in each button

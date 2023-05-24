@@ -56,7 +56,7 @@ const Login = () => {
       handleDisable();
 
       // om login success ska vi spara user i localstorage
-      localStorage.setItem("currentUser", JSON.stringify(user.username));
+      localStorage.setItem("currentUser", user.username);
     }
     setEmail("");
     setPassword("");

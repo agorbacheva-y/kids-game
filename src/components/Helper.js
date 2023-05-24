@@ -3,7 +3,7 @@ export const authenticate = () => {
   console.log("current user is: " + currentUser);
 
   if (currentUser) {
-    return JSON.parse(currentUser);
+    return currentUser;
   } else {
     return false;
   }

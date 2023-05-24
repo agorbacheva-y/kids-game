@@ -23,7 +23,6 @@ const Home = () => {
         >
           Log in
         </ReusableButton>
-        
       </div>
 
       <div className="btnContainer">
@@ -37,5 +36,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// add Link to log in page once log in component is created
