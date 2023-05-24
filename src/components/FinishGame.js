@@ -6,7 +6,7 @@ const FinishGame = ({ children }) => {
     <div>
         <Modal>
           <div className="finish-overlay"><Confetti /></div>
-          <p>Congratulations! You've finished the game!</p>
+          <p>Great job!</p>
           {children}
         </Modal>
     </div>
