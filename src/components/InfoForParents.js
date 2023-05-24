@@ -1,14 +1,22 @@
 import Modal from "./Modal";
 import { useState } from "react";
+import CloseButton from 'react-bootstrap/CloseButton';
+
 
 const InfoForParents = () => {
   const [status, setStatus] = useState(false);
+
+  const closeModal = () => {
+    setStatus(false);
+    
+  };
 
     return (
        <div className="container">
        
             {status && (
-            <Modal close={() => setStatus(false)}>
+            <Modal close={closeModal}>
+                 <CloseButton className="closebtn" onClick={closeModal}/>
               <div className="container">
                    <h2> Welcome, parents!</h2>
                     <p>
