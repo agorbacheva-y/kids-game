@@ -24,7 +24,7 @@ const Home = () => {
 
         <button 
           className="reuse-btn"
-          onClick={() => navigate("/login")}
+          onClick={() => navigate("/loginfeature")}
         >
           Log in
         </button>
