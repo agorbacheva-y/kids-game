@@ -23,6 +23,14 @@ const Home = () => {
         >
           Log in
         </ReusableButton>
+        
+      </div>
+
+      <div className="btnContainer">
+        <ReusableButton 
+          onClick={() => {navigate("/menu")}}
+          >Start Game
+        </ReusableButton>
       </div>
     </>
   );

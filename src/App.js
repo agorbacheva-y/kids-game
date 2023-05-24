@@ -9,6 +9,7 @@ import BodyPartGame from "./components/BodyPartGame/BodyPartGame";
 import Menu from "./components/Menu";
 import Logout from "./components/Logout";
 import Login from "./components/LoginFeature";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -19,7 +20,15 @@ function App() {
         <Route path="/loginfeature" exact element={<Login />} />
         <Route path="/shapegame" exact element={<ShapeGame />} />
         <Route path="/endgame" exact element={<EndGame />} />
-        <Route path="/menu" exact element={<Menu />} />
+        <Route 
+          path="/menu" 
+          exact 
+          element={
+            <PrivateRoute>
+              <Menu />
+            </PrivateRoute>
+          }
+        />
         <Route path="/bodypartgame" exact element={<BodyPartGame />} />
         <Route path="/facepartgame" exact element={<FacePartGame />} />
         <Route path="/logout" exact element={<Logout />} />
