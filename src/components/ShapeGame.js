@@ -85,9 +85,10 @@ function Reset() {
 
       {/*Here is the button to go back to home page*/}
       <div className="closebtn-container">
-        <Link to="/endgame">
-            <CloseButton className="closebtn"></CloseButton>
-        </Link>
+      <CloseButton 
+          className="closebtn" 
+          onClick={() => navigate("/endgame")}
+        />
       </div>
       
       <div className="container">
