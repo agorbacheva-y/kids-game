@@ -1,4 +1,4 @@
-import GirlSvg from "./GirlSvg";
+import FaceSvg from "./FaceSvg";
 import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
 import Greeting from "../Greeting";
@@ -21,10 +21,11 @@ const FacePartGame = () => {
       <div className="container">
         <Greeting>Hi {currentUser}!</Greeting>
         <h1 className="title">Guess Face Part</h1>
-        <GirlSvg />
       </div>
+
+      <FaceSvg />
       
-      <div className="settings">
+      <div>
         <MdOutlineLogout 
           className="logout"
           onClick={() => navigate("/logout")}

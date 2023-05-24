@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
+/* generic styles */
 *,
 ::after,
 ::before {
@@ -15,36 +16,59 @@
   font-weight: 400;
   background-color: #E8E1C5;
   color: #000;
+  max-width: 100%;
+}
+
+h1 {
+  font-family: 'Luckiest Guy';
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  /* or 125% */
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
+  mix-blend-mode: normal;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+p {
+  font-family: 'Luckiest Guy';
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  /* or 125% */
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
 }
 
 .container {
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 100%;
 }
 
-.header {
+/* HEADER */
+.header-container {
   display: flex;
-  justify-content: space-around;
-  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 13rem;
+  max-width: 100%;
+  position: relative;
 }
 
-.btn {
-  color: white !important;
-  text-decoration: none;
-}
-
-.header {
-  display: flex;
-  justify-content: space-around;
-  margin: 2rem;
-}
-
-.btn {
-  color: white !important;
-  text-decoration: none;
+.home-header {
+  background-image: url("./components/image/homeShape.webp");
+  background-repeat: no-repeat;
+  height: 20rem;
+  max-width: 100%;
+  background-size: contain;
 }
 
 .btnContainer {
@@ -54,27 +78,100 @@
   align-items: center;
 }
 
+.reg-header {
+  background-image: url("./components/image/regShape.webp");
+  background-repeat: no-repeat;
+  height: 15rem;
+  max-width: 100%;
+  background-size: contain;
+}
+
+.lg-btn{
+  margin: 1rem;
+  background: #E4D379;
+  border: 1px solid #55288E;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 1rem;
+  font-family: 'Luckiest Guy';
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sm-btn {
+  margin: 1rem;
+  background: #E4D379;
+  border: 1px solid #55288E;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 1rem;
+  font-family: 'Luckiest Guy';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.lg-btn:disabled,
+.sm-btn:disabled {
+  opacity: 0.5;
+}
+
+.to-login-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("./components/image/mouse.webp");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  width: 100%;
+}
+
+.custom-card {
+  border: none !important; 
+  background-color: #E8E1C5 !important;
+  text-align: center;
+}
+
+/* .btn {
+  color: white !important;
+  text-decoration: none;
+} */
+
 .left-arrow {
   font-size: 3rem;
   color: #51bd96;
+  margin: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-/* Body Part Game */
+/* BODY PART GAME */
 .svg-boy {
   position: relative;
-  width: 560px;
-  height: 850px;
+  width: 400px;
+  height: 600px;
 }
 
-.svg-overlay {
+.svg-boy-overlay {
   position: absolute;
-  width: 560px;
-  height: 850px;
+  width: 400px;
+  height: 600px;
 }
 
 .svg-click {
-  fill: transparent;
   cursor: pointer;
+  fill: transparent;
 }
 
 .svg-click:hover {
@@ -83,13 +180,26 @@
   opacity: 0.5;
 }
 
-/* Body Part Game modal */
+/* FACE PART GAME */
+.svg-girl {
+  position: relative;
+  width: 380px;
+  height: 400px;
+}
+
+.svg-girl-overlay {
+  position: absolute;
+  width: 380px;
+  height: 400px;
+}
+
+/* BODY/FACE PART GAME MODAL */
 .overlay {
   position: fixed;
   display: block;
   overflow: auto;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
@@ -99,10 +209,10 @@
 }
 
 .content {
-  margin: 15% auto;
+  margin: 30% auto;
   background-color: white;
   border-radius: 0.25rem;
-  width: 60vw;
+  width: 70%;
   padding: 2rem;
   position: relative;
   text-align: center;
@@ -115,18 +225,30 @@
   cursor: pointer;
 }
 
-/* Finish Game */
+/* TEXT TO SPEECH BUTTONS */
+.speech-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0 2rem;
+}
+
+.speech-btn-icon {
+  fill: #164B8A;
+  font-size: 2.5rem;
+}
+
+/* FINISH GAME */
 .confetti {
   position: absolute;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .finish-overlay {
   position: fixed;
   display: block;
   overflow: auto;
-  width: 100%;
+  width: 100px;
   height: 100%;
   top: 0;
   left: 0;
@@ -144,6 +266,11 @@
   background-color: #000;
 }
 
+.btn-text {
+  font-size: 20px;
+  margin: auto;
+}
+
 /* Css for ReusableButton */
 .reuse-btn{
   box-sizing: border-box;
@@ -154,40 +281,67 @@
   border: 1px solid #55288E;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+
+  font-family: 'Luckiest Guy';
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .reuse-btn:hover {
   background-color: #d5c88b;
 }
 
-/* Css for the close button */
+/* CLOSE BUTTON */
 .closebtn {
-  margin-right: 20px;
   font-size: 1.5rem;
 }
 
-/* css for close button container */
 .closebtn-container {
   display: flex;
   justify-content: flex-end;
+  max-width: 100%;
+  margin: 1.5rem;
 }
 
-/* css for logout and setting icon */
+/* LOGOUT AND SETTINGS ICON */
 .logout {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #164B8A;
-  margin: 0 3rem 2rem 3rem;
   cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 2rem;
 }
 
 .logout:hover {
   color: #55288E;
 }
 
-/* logout and setting */
 .settings {
-  display: flex;
-  justify-content: space-between;
+  font-size: 3rem;
+  color: #164B8A;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2rem;
+}
+
+.settings:hover {
+  color: #55288E;
+}
+
+.logout-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 /* css for the links in menu and Endgame*/
@@ -203,6 +357,39 @@
   color: #000;
 }
 
+/* MAIN MENU */
+.menu-btn {
+  box-sizing: border-box;
+  margin: 10px;
+  width: 340px;
+  height: 63px;
+  background: #E4D379;
+  border: 1px solid #55288E;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+
+  font-family: 'Luckiest Guy';
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.menu-btn:hover {
+  background-color: #d5c88b;
+}
+
+.menu-container {
+  max-width: 100%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 /* Endgame badge*/
 .badge{
   margin: 50px;
@@ -213,21 +400,6 @@
   color: #164B8A;
 }
 
-.speech-btn {
-  border: none;
-  background-color: transparent;
-  padding: 0 2rem;
-}
-
-.speech-btn-icon {
-  fill: #164B8A;
-  font-size: 2.5rem;
-}
-.custom-card {
-  border: none !important; 
-  background-color: #E8E1C5 !important;
-}
-
 /*the images in shapegame*/
 .shapeimg {
   width: 200px;
@@ -236,12 +408,11 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 }
 
-/* title on top of pages */
+/* GREETING */
 .greeting {
   font-family: 'Luckiest Guy';
-  font-style: normal;
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 5px;
   /* or 136% */
   text-align: center;
@@ -251,15 +422,95 @@ border-radius: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.greeting-container {
+  max-width: 100%;
+}
+
 .title {
   font-family: 'Luckiest Guy';
-  font-style: normal;
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 2.5rem;
   line-height: 6rem;
   /* or 143% */
   text-align: center;
   letter-spacing: 2px;
   color: #164B8A;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* OFF CANVAS */
+.offcanvas {
+  border-radius: 20px;
+}
+
+.setting-btn {
+  margin: 1rem;
+  width: 250px;
+  background: #E4D379;
+  border: 1px solid #55288E;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+
+  font-family: 'Luckiest Guy';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+.shgm-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timer-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 49px;
+  background: #e4d290;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+}
+
+.alarm{
+font-size: 70px;
+margin-right: 30px;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.alarm:hover{
+  animation: shake 0.5s;
+animation-iteration-count: infinite;
+}
+
+.timer{
+  margin-right: 55px;
+  margin-top: 7px;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.info-text{
+line-height: 2;
+max-width: 350px;
 }

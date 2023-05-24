@@ -1,5 +1,4 @@
 import React from "react";
-import ReusableButton from "./ReusableButton";
 import CloseButton from 'react-bootstrap/CloseButton';
 import InfoForParents from "./InfoForParents";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +7,7 @@ const Menu = () => {
     const navigate = useNavigate();
     return (
         <>
+
         <div className="closebtn-container">
             <CloseButton onClick={() => navigate("/")} className="closebtn"></CloseButton> 
         </div>
@@ -32,6 +32,7 @@ const Menu = () => {
             <InfoForParents></InfoForParents>
           
         </div>
+
         </>
     );
 };
