@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Header from "./Header";
-import Register from "./Register";
-import ShapeGame from "./ShapeGame";
-import EndGame from "./EndGame";
-import BodyPartGame from "./BodyPartGame";
-import Menu from "./Menu";
-import Logout from "./Logout";
+import Home from "./components/Home";
+import Header from "./components/Header";
+import Register from "./components/Register";
+import ShapeGame from "./components/ShapeGame";
+import EndGame from "./components/EndGame";
+import BodyPartGame from "./components/BodyPartGame";
+import Menu from "./components/Menu";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -24,5 +24,3 @@ function App() {
     </BrowserRouter>
   );
 };
-
-export default App;

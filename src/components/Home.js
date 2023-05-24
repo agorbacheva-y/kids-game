@@ -19,7 +19,7 @@ const Home = () => {
 
         <ReusableButton 
           className="reuse-btn"
-          onClick={() => navigate("/login")}
+          onClick={() => navigate("/loginfeature")}
         >
           Log in
         </ReusableButton>

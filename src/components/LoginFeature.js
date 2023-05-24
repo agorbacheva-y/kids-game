@@ -73,3 +73,9 @@ const Login = () => {
 };
 
 export default Login;
+
+// since we use username to make the message "Hi {username} when player logs in, 
+// can we change login fields to username and pw instead of email and pw?
+
+// line 44, in Register.js we save current player as “currentUser” 
+// so let’s use "currentUser" instead of "user" for consistency

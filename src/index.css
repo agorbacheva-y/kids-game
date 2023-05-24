@@ -13,6 +13,8 @@
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
+  background-color: #E8E1C5;
+  color: #000;
 }
 
 .container {
@@ -21,7 +23,28 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
 
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.btn {
+  color: white !important;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.btn {
+  color: white !important;
+  text-decoration: none;
 }
 
 .btnContainer {
@@ -29,6 +52,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.left-arrow {
+  font-size: 3rem;
+  color: #51bd96;
 }
 
 /* Body Part Game */
@@ -183,6 +211,10 @@
 .speech-btn-icon {
   fill: #164B8A;
   font-size: 2.5rem;
+}
+.custom-card {
+  border: none !important; 
+  background-color: #E8E1C5 !important;
 }
 
 /*the images in shapegame*/
