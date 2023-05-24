@@ -7,7 +7,6 @@ import bluePentagon from "./shapesImg/BluePentagon.png";
 import redTriangle from "./shapesImg/redTriangle.png";
 import blueRectangle from "./shapesImg/blueRectangle.png";
 import { CloseButton } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineLogout } from "react-icons/md";
 import ReusableButton from "./ReusableButton"
