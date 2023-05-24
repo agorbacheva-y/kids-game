@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import yellowStar from "./shapesImg/yellowStar.png";
 import orangeCircle from "./shapesImg/orangeCircle.png";
@@ -11,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { MdOutlineLogout } from "react-icons/md";
 import ReusableButton from "./ReusableButton"
 import Greeting from "./Greeting";
+import { FcClock } from "react-icons/fc"
 
 
 const ShapeGame = () => {
@@ -96,7 +96,7 @@ function Reset() {
       </div>
 
       <div className="container">
-      <h1 className="title">Shape Game</h1>
+      <h1 className="title">The Shape Game</h1>
       <p>
         You have 15 seconds to find an object that is similar <br /> to the
         object that is displayed on the screen in your home.
@@ -104,7 +104,7 @@ function Reset() {
       
       {/* here the h5 disapers when the user clicks the button*/}
       { timer === 0 ? (
-        <h5>Start the game by pressing the button when you are ready!</h5>
+        <p>Start the game by pressing the button when you are ready!</p>
       ): null}
        <Modal show={showModal} centered>
         <Modal.Body>
@@ -121,7 +121,9 @@ function Reset() {
             <img src={currentImg} className="shapeimg" alt="star"/>
        )}
       
-      <h1>{timer}</h1>
+      <h1 className="">
+      <FcClock></FcClock>
+        {timer}</h1>
       <ReusableButton onClick={Reset}>
         Start Timer
       </ReusableButton>
