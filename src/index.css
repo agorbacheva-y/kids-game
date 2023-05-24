@@ -275,9 +275,15 @@ border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 130px;
 height: 49px;
 background: #D9D9D9;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 30px;
+}
+
+.alarm{
+font-size: 70px;
+margin-right: 60px;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }

@@ -121,7 +121,8 @@ function Reset() {
             <img src={currentImg} className="shapeimg" alt="star"/>
        )}
       <div className="timer-container">
-      <h1><FcAlarmClock />
+        <div><FcAlarmClock className="alarm"/></div>
+      <h1>
         {timer}</h1>
       </div>
 
