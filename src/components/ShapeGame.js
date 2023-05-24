@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import yellowStar from "./shapesImg/yellowStar.png";
 import orangeCircle from "./shapesImg/orangeCircle.png";
@@ -7,10 +6,16 @@ import bluePentagon from "./shapesImg/BluePentagon.png";
 import redTriangle from "./shapesImg/redTriangle.png";
 import blueRectangle from "./shapesImg/blueRectangle.png";
 import { CloseButton } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { MdOutlineLogout } from "react-icons/md";
+import ReusableButton from "./ReusableButton"
+import Greeting from "./Greeting";
+import { FcAlarmClock } from "react-icons/fc"
 
 
 const ShapeGame = () => {
+  const currentUser = localStorage.getItem("currentUser")
+  const navigate = useNavigate();
   // this is the timer function
   const [timer, setTimer] = useState(0);
   const Ref = useRef();
@@ -75,15 +80,23 @@ function Reset() {
 
   // game information desplayed here
   return (
-    <div className="container">
+    <>
 
       {/*Here is the button to go back to home page*/}
       <div className="closebtn-container">
-        <Link to="/">
-            <CloseButton className="closebtn"></CloseButton>
-        </Link>
+      <CloseButton 
+          className="closebtn" 
+          onClick={() => navigate("/endgame")}
+        />
       </div>
-      <h1>Shape Game</h1>
+      
+      <div className="container">
+        <Greeting>Hi {currentUser}!</Greeting>
+    
+      </div>
+
+      <div className="shgm-container">
+      <h1 className="title">The Shape Game</h1>
       <p>
         You have 15 seconds to find an object that is similar <br /> to the
         object that is displayed on the screen in your home.
@@ -91,7 +104,7 @@ function Reset() {
       
       {/* here the h5 disapers when the user clicks the button*/}
       { timer === 0 ? (
-        <h5>Start the game by pressing the button when you are ready!</h5>
+        <p>Start the game by pressing the button when you are ready!</p>
       ): null}
        <Modal show={showModal} centered>
         <Modal.Body>
@@ -99,20 +112,35 @@ function Reset() {
           <p>Press the button for the next image.</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="modal-btn " variant="primary" onClick={() => setShowModal(false)}>
+          <ReusableButton variant="primary" onClick={() => setShowModal(false)}>
             OK
-          </Button>
+          </ReusableButton>
         </Modal.Footer>
        </Modal>
        {currentImg && (
             <img src={currentImg} className="shapeimg" alt="star"/>
        )}
-      
-      <h1>{timer}</h1>
-      <Button className="btn" size="lg" onClick={Reset}>
-        Start Timer
-      </Button>
-    </div>
+      <div className="timer-container">
+        <div><FcAlarmClock className="alarm"/></div>
+        <h1 className="timer">{timer}</h1>
+      </div>
+
+        <div>
+         <ReusableButton onClick={Reset}>
+            Start Timer
+          </ReusableButton>
+        </div>
+
+      </div>
+
+      <div className="settings">
+        <MdOutlineLogout 
+          className="logout"
+          onClick={() => navigate("/logout")}
+        />
+      </div>
+    
+    </>
   );
 };
 
