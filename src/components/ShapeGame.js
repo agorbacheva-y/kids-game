@@ -95,7 +95,7 @@ function Reset() {
     
       </div>
 
-      <div className="container">
+      <div className="shgm-container">
       <h1 className="title">The Shape Game</h1>
       <p>
         You have 15 seconds to find an object that is similar <br /> to the
@@ -121,12 +121,16 @@ function Reset() {
             <img src={currentImg} className="shapeimg" alt="star"/>
        )}
       
-      <h1 className="">
+      <h1>
       <FcAlarmClock></FcAlarmClock>
         {timer}</h1>
-      <ReusableButton onClick={Reset}>
-        Start Timer
-      </ReusableButton>
+
+        <div>
+         <ReusableButton onClick={Reset}>
+            Start Timer
+          </ReusableButton>
+        </div>
+
       </div>
 
       <div className="settings">
