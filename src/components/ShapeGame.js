@@ -122,7 +122,7 @@ function Reset() {
        )}
       <div className="timer-container">
         <div><FcAlarmClock className="alarm"/></div>
-      <h1>
+      <h1 className="timer">
         {timer}</h1>
       </div>
 
