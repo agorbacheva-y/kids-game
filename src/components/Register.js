@@ -132,9 +132,7 @@ const Register = () => {
           <button 
             className="lg-btn"
             disabled={disabled}
-            onClick={() => {
-              navigate("/menu")
-            }}
+            onClick={() => {navigate("/menu")}}
           >Start Game
           </button>
         </div>
@@ -143,9 +141,7 @@ const Register = () => {
           <p>Already a member?</p>
           <button 
             className="sm-btn"
-            onClick={() => {
-              navigate("/loginfeature")
-            }}
+            onClick={() => {navigate("/loginfeature")}}
           >Log In
           </button>
         </div>

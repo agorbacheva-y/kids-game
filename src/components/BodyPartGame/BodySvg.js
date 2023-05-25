@@ -4,7 +4,6 @@ import FinishGame from "../FinishGame";
 import { useNavigate } from "react-router-dom";
 import Modal from "../Modal";
 import TextToSpeech from "./TextToSpeech";
-import ReusableButtom from "../ReusableButton";
 import { MdClose } from "react-icons/md";
 
 const BodySvg = () => {
@@ -151,13 +150,14 @@ const BodySvg = () => {
         {status && (
           // overlay with confetti underneath modal
           <FinishGame>
-            <ReusableButtom 
+            <button 
+              className="sm-btn"
               onClick={() => {
                 navigate("/menu")
               }}
             >
-              <p className="btn-text">Back to menu</p>
-            </ReusableButtom>
+              Back to menu
+            </button>
           </FinishGame>
         )}
       </div>
