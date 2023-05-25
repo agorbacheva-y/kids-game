@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { MdSettings } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Setting = () => {
   // state for off canvas

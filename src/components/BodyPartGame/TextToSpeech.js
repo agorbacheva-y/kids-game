@@ -29,7 +29,7 @@ const TextToSpeech = ({ text }) => {
     synth.speak(utterance);
 
     // voice array empty on first call?
-    console.log(utterance);
+    // console.log(utterance);
   };
 
   // function to stop speaking
