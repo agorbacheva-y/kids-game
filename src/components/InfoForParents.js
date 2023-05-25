@@ -20,21 +20,17 @@ const InfoForParents = () => {
                  <CloseButton className="closebtn" onClick={closeModal}/>
               <div className="container">
 
-                   <h2> Welcome, parents!</h2>
                     <p className="info-text">
                      SmartKids is a fun and educational 
-                     app  designed to stimulate your child's learning and 
-                     development. With engaging games focused on cognitive
-                     skills, shape recognition and body awareness our app
-                     offers a delightful way for your child to learn while 
-                     having fun. Each game is thoughtfully crafted to promote 
-                     problem-solving, creativity, and critical thinking. 
-                     Through interactive gameplay and gentle guidance, your 
-                     child can enhance their cognitive abilities, spatial 
-                     awareness, and attention to detail. Join us in empowering 
-                     your child's growth and watch them thrive in a safe and 
-                     engaging digital environment. Thank You for start their learning adventure 
-                     with SmartKids today!
+                     app to stimulate your child's learning and 
+                     development. With games focused on shape recognition and body awareness we
+                     offer for your child to learn while 
+                     having fun. Each game is crafted to promote creativity, and critical thinking. 
+                     With interactive gameplay and gentle guidance, your 
+                     child can enhance their cognitive
+                     awareness and attention to detail. Thank You for starting their learning adventure 
+                     with SmartKids and empowering 
+                     your child's growth!
                    </p> 
                </div> 
             </Modal>

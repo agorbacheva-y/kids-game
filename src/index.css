@@ -531,7 +531,7 @@ animation-iteration-count: infinite;
 }
 
 .info-text{
-  line-height: 1;
+  line-height: 100%;
   max-width: 100%;
   font-family: "Poppins", sans-serif;
   font-size: 100%;

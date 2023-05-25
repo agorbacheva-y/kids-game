@@ -26,7 +26,7 @@ const Menu = () => {
                     className="menu-btn"
                     onClick={() => navigate("/shapegame")}
                 >
-                    Find Objects
+                    The shape Game
                 </button>
                 <InfoForParents></InfoForParents>
             </div>
