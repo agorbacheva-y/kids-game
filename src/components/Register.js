@@ -146,20 +146,9 @@ const Register = () => {
           </button>
         </div>
 
-        <button
-          onClick={() => {
-            navigate("/menu")
-          }}
-        > 
-          jump to mainmenu
-        </button>
-
       </div>
     </div>
   );
 };
 
 export default Register;
-
-// temp button so can go to body part game w/o registering every time
-// remove before submit project

@@ -4,7 +4,6 @@ import FinishGame from "../FinishGame";
 import { useNavigate } from "react-router-dom";
 import Modal from "../Modal";
 import TextToSpeech from "./TextToSpeech";
-import Button from "react-bootstrap/Button";
 import { MdClose } from "react-icons/md";
 
 
@@ -138,15 +137,14 @@ const FaceSvg = () => {
         {status && (
           // overlay with confetti underneath modal
           <FinishGame>
-            <Button 
-              className="modal-btn"
+            <button 
+              className="sm-btn"
               onClick={() => {
-                setStatus(true)
                 navigate("/menu")
               }}
             >
               Back to menu
-            </Button>
+            </button>
           </FinishGame>
         )}
       </div>

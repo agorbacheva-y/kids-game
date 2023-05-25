@@ -78,12 +78,19 @@ p {
   align-items: center;
 }
 
+/* LOGIN AND REGISTER */
 .reg-header {
   background-image: url("./components/image/regShape.webp");
   background-repeat: no-repeat;
   height: 15rem;
-  max-width: 100%;
-  background-size: contain;
+  background-size: cover;
+}
+
+.login-header {
+  background-image: url("./components/image/loginShape.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 15rem;
 }
 
 .lg-btn{
@@ -130,6 +137,17 @@ p {
   align-items: center;
   flex-direction: column;
   background-image: url("./components/image/mouse.webp");
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  width: 100%;
+}
+
+.to-reg-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("./components/image/butterfly.webp");
   background-size: 100px;
   background-repeat: no-repeat;
   background-position: 0% 100%;

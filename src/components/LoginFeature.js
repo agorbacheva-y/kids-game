@@ -64,7 +64,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="reg-header">
+      <div className="login-header">
         <Header>
           <Link to="/">
             <MdArrowCircleLeft className="left-arrow"/>
@@ -97,8 +97,11 @@ const Login = () => {
                 />
               </Form.Label>
             </Form.Group>
-            <button type="submit" onClick={handleSubmit}>
-              Log in
+            <button
+              className="sm-btn"
+              type="submit"
+              onClick={handleSubmit}
+              >Continue
             </button>
           </Form>
         </Card>
@@ -114,7 +117,7 @@ const Login = () => {
           </button>
         </div>
         
-        <div className="to-login-container">
+        <div className="to-reg-container">
           <p>Don't have an account?</p>
           <button 
             className="sm-btn"
@@ -124,14 +127,6 @@ const Login = () => {
           >Sign Up
           </button>
         </div>
-
-        <button
-          onClick={() => {
-            navigate("/menu")
-          }}
-        > 
-          jump to mainmenu
-        </button>
 
       </div>
     </div>
