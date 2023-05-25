@@ -126,9 +126,9 @@ function Reset() {
       </div>
 
         <div>
-         <ReusableButton onClick={Reset}>
+         <button className="menu-btn" onClick={Reset}>
             Start Timer
-          </ReusableButton>
+          </button>
         </div>
 
       </div>
