@@ -1,7 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import CloseButton from 'react-bootstrap/CloseButton';
 import InfoForParents from "./InfoForParents";
-import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
     const navigate = useNavigate();

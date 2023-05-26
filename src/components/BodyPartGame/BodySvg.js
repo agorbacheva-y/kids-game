@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { MdClose } from "react-icons/md";
 import Boy from "../BodyPartGame/images/Boy.svg";
 import FinishGame from "../FinishGame";
-import { useNavigate } from "react-router-dom";
 import Modal from "../Modal";
 import TextToSpeech from "./TextToSpeech";
-import { MdClose } from "react-icons/md";
 
 const BodySvg = () => {
   // state to hold count of clicks
@@ -65,12 +65,36 @@ const BodySvg = () => {
           x="0" 
           y="0"
         >
-          <ellipse cx="490" cy="560" rx="275" ry="165" className="svg-click" onClick={() => {handleClick(); handleFace() }} />
-          <rect x="360" y="710" width="295" height="420" className="svg-click" onClick={() => {handleClick(); handleBody() }} />
-          <circle cx="150" cy="840" r="80" className="svg-click" onClick={() => {handleClick(); handleLeftHand() }} />
-          <circle cx="850" cy="810" r="80" className="svg-click" onClick={() => {handleClick(); handleRightHand() }} />
-          <ellipse cx="400" cy="1350" rx="80" ry="30" className="svg-click" onClick={() => {handleClick(); handleLeftFoot() }} />
-          <ellipse cx="630" cy="1340" rx="80" ry="30" className="svg-click" onClick={() => {handleClick(); handleRightFoot() }} />
+          <ellipse 
+            cx="490" cy="560" rx="275" ry="165" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleFace() }} 
+          />
+          <rect 
+            x="360" y="710" width="295" height="420" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleBody() }}
+          />
+          <circle 
+            cx="150" cy="840" r="80" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleLeftHand() }}
+          />
+          <circle 
+            cx="850" cy="810" r="80" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleRightHand() }}
+          />
+          <ellipse 
+            cx="400" cy="1350" rx="80" ry="30" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleLeftFoot() }}
+          />
+          <ellipse 
+            cx="630" cy="1340" rx="80" ry="30" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleRightFoot() }}
+          />
         </svg>
       </div>
 
@@ -78,7 +102,10 @@ const BodySvg = () => {
         {faceStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setFaceStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setFaceStatus(false)}
+              /> 
               <p>Touch your face</p>
               <TextToSpeech text={"Touch your face"} />
             </div>
@@ -90,7 +117,10 @@ const BodySvg = () => {
         {bodyStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setBodyStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setBodyStatus(false)}
+              /> 
               <p>Shake your body</p>
               <TextToSpeech text={"Shake your body"} />
             </div>
@@ -102,7 +132,10 @@ const BodySvg = () => {
         {leftHandStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setLeftHandStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setLeftHandStatus(false)}
+              /> 
               <p>Wave your left hand</p>
               <TextToSpeech text={"Wave your left hand"} />
             </div>
@@ -114,7 +147,10 @@ const BodySvg = () => {
         {rightHandStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setRightHandStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setRightHandStatus(false)}
+              /> 
               <p>Point up with your right hand</p>
               <TextToSpeech text={"Point to the ceiling with your right hand"} />
             </div>
@@ -126,7 +162,10 @@ const BodySvg = () => {
         {leftFootStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setLeftFootStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setLeftFootStatus(false)}
+              /> 
               <p>Lift your left foot</p>
               <TextToSpeech text={"Lift your left foot"} />
             </div>
@@ -138,7 +177,10 @@ const BodySvg = () => {
         {rightFootStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setRightFootStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setRightFootStatus(false)}
+              /> 
               <p>Stomp your right foot</p>
               <TextToSpeech text={"Stomp your right foot"} />
             </div>

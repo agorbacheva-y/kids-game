@@ -1,8 +1,8 @@
-import BodySvg from "./BodySvg";
-import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
-import Greeting from "../Greeting";
 import { MdOutlineLogout } from "react-icons/md";
+import CloseButton from "react-bootstrap/CloseButton";
+import BodySvg from "./BodySvg";
+import Greeting from "../Greeting";
 import Setting from "./Setting";
 
 const BodyPartGame = () => {

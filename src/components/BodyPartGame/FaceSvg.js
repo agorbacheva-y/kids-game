@@ -1,11 +1,10 @@
 import { useState } from "react";
-import Girl from "../BodyPartGame/images/Girl.svg";
-import FinishGame from "../FinishGame";
 import { useNavigate } from "react-router-dom";
+import { MdClose } from "react-icons/md";
+import Girl from "../BodyPartGame/images/Girl.svg";
 import Modal from "../Modal";
 import TextToSpeech from "./TextToSpeech";
-import { MdClose } from "react-icons/md";
-
+import FinishGame from "../FinishGame";
 
 const FaceSvg = () => {
   // state to hold count of clicks
@@ -14,7 +13,7 @@ const FaceSvg = () => {
   // state for finish modal open and close
   const [ status, setStatus ] = useState(false);
 
-  // state for body part modal open and close
+  // state for face part modal open and close
   const [ eyesStatus, setEyesStatus ] = useState(false);
   const [ noseStatus, setNoseStatus ] = useState(false);
   const [ mouthStatus, setMouthStatus ] = useState(false);
@@ -23,7 +22,7 @@ const FaceSvg = () => {
 
   const navigate = useNavigate();
   
-  // function for opening modal when click on body part
+  // function for opening modal when click on face part
   const handleEyes = () => { setEyesStatus(true); };
 
   const handleNose = () => { setNoseStatus(true); };
@@ -63,13 +62,41 @@ const FaceSvg = () => {
           x="0" 
           y="0"
         >
-          <ellipse cx="170" cy="220" rx="25" ry="25" className="svg-click" onClick={() => {handleClick(); handleEyes() }} />
-          <ellipse cx="290" cy="225" rx="25" ry="25" className="svg-click" onClick={() => {handleClick(); handleEyes() }} />
-          <circle cx="230" cy="265" r="20" className="svg-click" onClick={() => {handleClick(); handleNose() }} />
-          <ellipse cx="230" cy="330" rx="90" ry="40" className="svg-click" onClick={() => {handleClick(); handleMouth() }} />
-          <circle cx="130" cy="270" r="40" className="svg-click" onClick={() => {handleClick(); handleCheeks() }} />
-          <circle cx="330" cy="270" r="40" className="svg-click" onClick={() => {handleClick(); handleCheeks() }} />
-          <ellipse cx="230" cy="420" rx="70" ry="30" className="svg-click" onClick={() => {handleClick(); handleChin() }} />
+          <ellipse 
+            cx="170" cy="220" rx="25" ry="25" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleEyes() }}
+          />
+          <ellipse 
+            cx="290" cy="225" rx="25" ry="25" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleEyes() }} 
+          />
+          <circle 
+            cx="230" cy="265" r="20" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleNose() }}
+          />
+          <ellipse
+            cx="230" cy="330" rx="90" ry="40" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleMouth() }} 
+          />
+          <circle 
+            cx="130" cy="270" r="40" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleCheeks() }} 
+          />
+          <circle 
+            cx="330" cy="270" r="40" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleCheeks() }} 
+          />
+          <ellipse 
+            cx="230" cy="420" rx="70" ry="30" 
+            className="svg-click" 
+            onClick={() => {handleClick(); handleChin() }} 
+          />
         </svg>
       </div>
 
@@ -77,7 +104,10 @@ const FaceSvg = () => {
         {eyesStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setEyesStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setEyesStatus(false)}
+              /> 
               <p>Blink your eyes</p>
               <TextToSpeech text={"Blink your eyes"} />
             </div>
@@ -89,7 +119,10 @@ const FaceSvg = () => {
         {noseStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setNoseStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setNoseStatus(false)}
+              /> 
               <p>Point at your nose</p>
               <TextToSpeech text={"Point at your nose"} />
             </div>
@@ -101,7 +134,10 @@ const FaceSvg = () => {
         {mouthStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setMouthStatus(false)}/> 
+              <MdClose 
+                className="close" 
+                onClick={() => setMouthStatus(false)}
+              /> 
               <p>Move your mouth</p>
               <TextToSpeech text={"Move your mouth"} />
             </div>
@@ -113,7 +149,10 @@ const FaceSvg = () => {
         {cheeksStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setCheeksStatus(false)}/>
+              <MdClose 
+                className="close" 
+                onClick={() => setCheeksStatus(false)}
+              />
               <p>Pat your cheeks</p>
               <TextToSpeech text={"Pat your cheeks"} />
             </div>
@@ -125,7 +164,10 @@ const FaceSvg = () => {
         {chinStatus && (
           <Modal>
             <div>
-              <MdClose className="close" onClick={() => setChinStatus(false)}/>
+              <MdClose 
+                className="close" 
+                onClick={() => setChinStatus(false)}
+              />
               <p>Rub your chin</p>
               <TextToSpeech text={"Rub your chin"} />
             </div>

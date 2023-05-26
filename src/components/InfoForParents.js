@@ -1,25 +1,20 @@
-import Modal from "./Modal";
 import { useState } from "react";
 import CloseButton from 'react-bootstrap/CloseButton';
-
+import Modal from "./Modal";
 
 const InfoForParents = () => {
   const [status, setStatus] = useState(false);
 
   const closeModal = () => {
     setStatus(false);
-    
   };
 
     return (
        <div className="container">
-       
             {status && (
-
             <Modal close={closeModal}>
                  <CloseButton className="closebtn" onClick={closeModal}/>
               <div className="container">
-
                     <p className="info-text">
                      SmartKids is a fun and educational 
                      app to stimulate your child's learning and 
@@ -37,11 +32,8 @@ const InfoForParents = () => {
             )}
            <p>Parents, click on the button please <br/> we have some information for you.</p>
         <button onClick={() => setStatus(true)} className="reuse-btn"><h5>For parents!</h5></button>
-
        </div>
     );
 };
 
 export default InfoForParents;
-
-// change the button to reusablebutton

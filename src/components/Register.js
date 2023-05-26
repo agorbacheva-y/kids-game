@@ -1,11 +1,11 @@
-import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
 import { MdArrowCircleLeft } from "react-icons/md";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 import Header from "./Header";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
 
 const Register = () => {
   // create states for holding user's name, email, username, password
@@ -54,6 +54,7 @@ const Register = () => {
         handleDisable();
     }
 
+    // clear form
     setMyName("");
     setEmail("");
     setUsername("");
@@ -69,7 +70,6 @@ const Register = () => {
           </Link>
         </Header>
       </div>
-      
       
       <div className="container">
         <Card className="custom-card">

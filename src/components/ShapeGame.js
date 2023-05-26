@@ -1,17 +1,16 @@
 import { useState, useRef } from "react";
+import { CloseButton } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { MdOutlineLogout } from "react-icons/md";
+import { FcAlarmClock } from "react-icons/fc"
 import Modal from "react-bootstrap/Modal";
 import yellowStar from "./shapesImg/yellowStar.png";
 import orangeCircle from "./shapesImg/orangeCircle.png";
 import bluePentagon from "./shapesImg/BluePentagon.png";
 import redTriangle from "./shapesImg/redTriangle.png";
 import blueRectangle from "./shapesImg/blueRectangle.png";
-import { CloseButton } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { MdOutlineLogout } from "react-icons/md";
 import ReusableButton from "./ReusableButton"
 import Greeting from "./Greeting";
-import { FcAlarmClock } from "react-icons/fc"
-
 
 const ShapeGame = () => {
   const currentUser = localStorage.getItem("currentUser")
@@ -145,5 +144,3 @@ function Reset() {
 };
 
 export default ShapeGame;
-
-// add a link to the endgame in the closebutton link

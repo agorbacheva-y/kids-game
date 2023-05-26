@@ -1,9 +1,9 @@
-import FaceSvg from "./FaceSvg";
-import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
-import Greeting from "../Greeting";
 import { MdOutlineLogout } from "react-icons/md";
+import FaceSvg from "./FaceSvg";
+import Greeting from "../Greeting";
 import Setting from "./Setting";
+import CloseButton from "react-bootstrap/CloseButton";
 
 const FacePartGame = () => {
   const currentUser = localStorage.getItem("currentUser")

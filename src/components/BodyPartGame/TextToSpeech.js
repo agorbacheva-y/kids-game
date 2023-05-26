@@ -41,8 +41,18 @@ const TextToSpeech = ({ text }) => {
 
   return (
     <div> 
-      <button onClick={handlePlay} className="speech-btn"><BsFillPlayCircleFill className="speech-btn-icon"/></button>
-      <button onClick={handleStop} className="speech-btn"><BsFillStopCircleFill className="speech-btn-icon"/></button>
+      <button 
+        onClick={handlePlay} 
+        className="speech-btn"
+      >
+        <BsFillPlayCircleFill className="speech-btn-icon"/>
+      </button>
+      <button 
+        onClick={handleStop} 
+        className="speech-btn"
+      >
+        <BsFillStopCircleFill className="speech-btn-icon"/>
+      </button>
     </div>
   );
 };
@@ -51,6 +61,7 @@ export default TextToSpeech;
 
 // reference: https://edvins.io/react-text-to-speech
 
+// wanted to set female voice as default but first call was always default male voice
 // voices array is empty on first load, then populates on second call
 // could not use time interval or event listener or pg reload to populate
 // i assume because play button is in modal. 

@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import ReusableButton from "./ReusableButton";
 
-
 const EndGame = () => {
   const navigate = useNavigate();
     return (
@@ -12,7 +11,6 @@ const EndGame = () => {
           
           <div className="container">     
             <p>Play Again?</p>
-
               <ReusableButton 
                 onClick={() => navigate("/bodypartgame")}  
               >

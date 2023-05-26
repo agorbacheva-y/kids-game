@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import { MdSettings } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 const Setting = () => {
   // state for off canvas
@@ -19,12 +19,18 @@ const Setting = () => {
         className="settings"
         onClick={handleShow}
       />
-      <Offcanvas show={show} onHide={handleClose} className="offcanvas">
+
+      <Offcanvas 
+        show={show} 
+        onHide={handleClose} 
+        className="offcanvas"
+      >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="m-auto">
             <p>Setting</p>
           </Offcanvas.Title>
         </Offcanvas.Header>
+
         <Offcanvas.Body className="text-center">
           <button 
             className="setting-btn"
@@ -32,6 +38,7 @@ const Setting = () => {
             >
             Body Parts
           </button>
+          
           <button 
             className="setting-btn"
             onClick={() => navigate("/facepartgame")}

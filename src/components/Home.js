@@ -5,6 +5,7 @@ import ReusableButton from "./ReusableButton";
 
 const Home = () => {
   const navigate = useNavigate();
+  
   return (
     <>
       <div className="home-header">
