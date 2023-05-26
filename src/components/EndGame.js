@@ -12,7 +12,7 @@ const EndGame = () => {
           <div className="container">     
             <p>Play Again?</p>
               <ReusableButton 
-                onClick={() => navigate("/bodypartgame")}  
+                onClick={() => navigate(-1)}  
               >
                 Play Game
               </ReusableButton>

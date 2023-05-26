@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 /* generic styles */
@@ -30,6 +29,17 @@ h1 {
   color: #164B8A;
   mix-blend-mode: normal;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+h4 {
+  font-family: 'Luckiest Guy';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  /* or 125% */
+  text-align: center;
+  letter-spacing: 2px;
+  color: #164B8A;
 }
 
 p {
@@ -160,11 +170,6 @@ p {
   text-align: center;
 }
 
-/* .btn {
-  color: white !important;
-  text-decoration: none;
-} */
-
 .left-arrow {
   font-size: 3rem;
   color: #51bd96;
@@ -256,37 +261,17 @@ p {
 }
 
 /* FINISH GAME */
-.confetti {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-}
-
 .finish-overlay {
   position: fixed;
   display: block;
   overflow: auto;
-  width: 100px;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: -1;
-}
-
-.modal-btn {
-  border-radius: 40px;
-  padding: 1rem 2rem;
-  letter-spacing: 1px;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: #000;
-}
-
-.btn-text {
-  font-size: 20px;
-  margin: auto;
 }
 
 /* Css for ReusableButton */
@@ -361,19 +346,6 @@ p {
   transform: translate(-50%,-50%);
 }
 
-/* css for the links in menu and Endgame*/
-.menulink{
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  text-decoration: none;
-  color: #000;
-}
-
-.menulink:hover{
-  color: #000;
-}
-
 /* MAIN MENU */
 .menu-btn {
   box-sizing: border-box;
@@ -405,16 +377,6 @@ p {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-}
-
-/* Endgame badge*/
-.badge{
-  margin: 50px;
-}
-
-.link {
-  text-decoration: none;
-  color: #164B8A;
 }
 
 /*the images in shapegame*/
@@ -478,6 +440,11 @@ border-radius: 20px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+/* SHAPE GAME */
+.shgm-modal {
+  max-width: 80%;
+}
+
 .shgm-container{
   display: flex;
   margin: 1rem;
@@ -485,7 +452,6 @@ border-radius: 20px;
   align-items: center;
   flex-direction: column;
   gap: 30px;
-
 }
 
 .timer-container{

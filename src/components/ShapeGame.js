@@ -105,15 +105,17 @@ function Reset() {
       { timer === 0 ? (
         <p>Start the game by pressing the button when you are ready!</p>
       ): null}
-       <Modal show={showModal} centered>
+       <Modal show={showModal} centered dialogClassName="shgm-modal">
         <Modal.Body>
           <h4>Time is up!</h4>
           <p>Press the button for the next image.</p>
         </Modal.Body>
         <Modal.Footer>
-          <ReusableButton variant="primary" onClick={() => setShowModal(false)}>
-            OK
-          </ReusableButton>
+          <div className="container">
+            <ReusableButton onClick={() => setShowModal(false)}>
+              OK
+            </ReusableButton>
+          </div>
         </Modal.Footer>
        </Modal>
        {currentImg && (
