@@ -3,4 +3,5 @@ const Greeting = ({ children }) => {
     <h1 className="greeting">{children}</h1>
   );
 };
+
 export default Greeting;

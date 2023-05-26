@@ -71,7 +71,6 @@ function Reset() {
       setCurrentImg(null) //img disapars when timer is 00
       setShowModal(true);
     }, 15000); // this the 15 seconds in the timer
-
 };
 
 // a modal pops up when the timer hits 00 
@@ -80,7 +79,6 @@ function Reset() {
   // game information desplayed here
   return (
     <>
-
       {/*Here is the button to go back to home page*/}
       <div className="closebtn-container">
       <CloseButton 
@@ -91,7 +89,6 @@ function Reset() {
       
       <div className="container">
         <Greeting>Hi {currentUser}!</Greeting>
-    
       </div>
 
       <div className="shgm-container">
@@ -134,13 +131,12 @@ function Reset() {
 
       </div>
 
-      <div className="settings">
+      <div>
         <MdOutlineLogout 
           className="logout"
           onClick={() => navigate("/logout")}
         />
       </div>
-    
     </>
   );
 };

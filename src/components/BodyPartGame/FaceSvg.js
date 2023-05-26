@@ -193,4 +193,5 @@ const FaceSvg = () => {
     </>
   );
 };
+
 export default FaceSvg;

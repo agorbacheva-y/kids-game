@@ -206,4 +206,5 @@ const BodySvg = () => {
     </>
   );
 };
+
 export default BodySvg;

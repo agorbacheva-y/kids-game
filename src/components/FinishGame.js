@@ -12,4 +12,5 @@ const FinishGame = ({ children }) => {
     </div>
   );
 };
+
 export default FinishGame;
