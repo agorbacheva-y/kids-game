@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { MdOutlineLogout } from "react-icons/md";
 import FaceSvg from "./FaceSvg";
 import Greeting from "../Greeting";
 import Setting from "./Setting";

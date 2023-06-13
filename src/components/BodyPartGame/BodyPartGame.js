@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { MdOutlineLogout } from "react-icons/md";
 import CloseButton from "react-bootstrap/CloseButton";
 import BodySvg from "./BodySvg";
 import Greeting from "../Greeting";

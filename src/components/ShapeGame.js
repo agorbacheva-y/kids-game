@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import { CloseButton } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { MdOutlineLogout } from "react-icons/md";
 import { FcAlarmClock } from "react-icons/fc"
 import Modal from "react-bootstrap/Modal";
 import yellowStar from "./shapesImg/yellowStar.png";
