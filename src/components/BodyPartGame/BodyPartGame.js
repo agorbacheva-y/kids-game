@@ -6,7 +6,6 @@ import Greeting from "../Greeting";
 import Setting from "./Setting";
 
 const BodyPartGame = () => {
-  const currentUser = localStorage.getItem("currentUser")
   const navigate = useNavigate();
 
   return (
@@ -19,17 +18,13 @@ const BodyPartGame = () => {
       </div>
       
       <div className="greeting-container">
-        <Greeting>Hi {currentUser}!</Greeting>
+        <Greeting>Hi!</Greeting>
         <h1 className="title">Guess Body Part</h1>
       </div>
 
       <BodySvg />
 
       <div>
-        <MdOutlineLogout 
-          className="logout"
-          onClick={() => navigate("/logout")}
-        />
         <Setting />
       </div>
     </>

@@ -13,7 +13,6 @@ import ReusableButton from "./ReusableButton"
 import Greeting from "./Greeting";
 
 const ShapeGame = () => {
-  const currentUser = localStorage.getItem("currentUser")
   const navigate = useNavigate();
   // this is the timer function
   const [timer, setTimer] = useState(0);
@@ -88,7 +87,7 @@ function Reset() {
       </div>
       
       <div className="container">
-        <Greeting>Hi {currentUser}!</Greeting>
+        <Greeting>Hi!</Greeting>
       </div>
 
       <div className="shgm-container">
@@ -129,13 +128,6 @@ function Reset() {
           </button>
         </div>
 
-      </div>
-
-      <div>
-        <MdOutlineLogout 
-          className="logout"
-          onClick={() => navigate("/logout")}
-        />
       </div>
     </>
   );
